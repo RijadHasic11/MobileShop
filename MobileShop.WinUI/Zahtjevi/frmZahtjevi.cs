@@ -22,10 +22,15 @@ namespace MobileShop.WinUI.Zahtjevi
         private async void Button1_Click(object sender, EventArgs e)
         {
             var result = await _apiService.Get<List<Model.Models.Zahtjevi>>(null);
-
+            dgvZahtjevi.AutoGenerateColumns = false;
             dgvZahtjevi.DataSource = result;
 
         }
-        
+        private void FrmZahtjevi_Load(object sender, EventArgs e)
+        {
+            dgvZahtjevi.AutoGenerateColumns = false;
+            
+        }
+
     }
 }
