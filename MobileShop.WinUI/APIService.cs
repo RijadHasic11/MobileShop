@@ -25,6 +25,8 @@ namespace MobileShop.WinUI
             {
                 url += "?";
                 url += await search.ToQueryString();
+
+
             }
 
             return await url.GetJsonAsync<T>();

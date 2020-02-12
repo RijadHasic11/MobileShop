@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobileShop.Model.Models;
+using MobileShop.Model.Requests;
 
 namespace MobileShop.WinUI.Zahtjevi
 {
@@ -21,7 +22,13 @@ namespace MobileShop.WinUI.Zahtjevi
 
         private async void Button1_Click(object sender, EventArgs e)
         {
-            var result = await _apiService.Get<List<Model.Models.Zahtjevi>>(null);
+            var search = new ZahtjeviSearchRequest()
+            {
+                Naslov = txtPretraga.Text
+
+            };
+
+            var result = await _apiService.Get<List<Model.Models.Zahtjevi>>(search);
             dgvZahtjevi.AutoGenerateColumns = false;
             dgvZahtjevi.DataSource = result;
 
@@ -32,5 +39,9 @@ namespace MobileShop.WinUI.Zahtjevi
             
         }
 
+        private void DgvZahtjevi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

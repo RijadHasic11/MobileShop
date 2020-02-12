@@ -9,8 +9,8 @@ namespace MobileShop.WebAPI.Services
 {
     public class BaseService<TModel, TSearch, TDatabase> : IService<TModel, TSearch> where TDatabase:class
     {
-        private readonly MyContext _context;
-        private readonly IMapper _mapper;
+        protected readonly MyContext _context;
+        protected readonly IMapper _mapper;
         public BaseService(MyContext context, IMapper mapper)
         {
             _context = context;
