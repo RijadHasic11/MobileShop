@@ -11,6 +11,7 @@ namespace MobileShop.WebAPI.Mappers
         public Mapper()
         {
             CreateMap<Model.Database.Klijenti, Model.Models.Klijenti>();
+
             CreateMap<Model.Database.Zahtjevi, Model.Models.Zahtjevi>();
         }
     }
