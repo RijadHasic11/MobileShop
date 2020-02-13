@@ -57,3 +57,4 @@ C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\Mobile
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csproj.CopyComplete
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.exe
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.pdb
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Zahtjevi.frmZahtjeviOdgovor.resources

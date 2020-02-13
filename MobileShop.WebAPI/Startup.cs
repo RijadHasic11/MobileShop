@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using MobileShop.WebAPI.Filters;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,13 +14,31 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
 using MobileShop.Model;
 using MobileShop.Model.Requests;
+using MobileShop.WebAPI.Security;
 using MobileShop.WebAPI.Services;
+using Swashbuckle.AspNetCore;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.Swagger;
+
 
 namespace MobileShop.WebAPI
 {
+    public class BasicAuthDocumentFilter : IDocumentFilter
+    {
+        public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
+        {
+            var securityRequirements = new Dictionary<string, IEnumerable<string>>()
+        {
+            { "basic", new string[] { } }  // in swagger you specify empty list unless using OAuth2 scopes
+        };
+
+            swaggerDoc.Security = new[] { securityRequirements };
+        }
+
+    }
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -33,18 +53,26 @@ namespace MobileShop.WebAPI
         {
             services.AddDbContext<MyContext>(x => x.UseSqlServer(Configuration.GetConnectionString("localDB")));
 
+            //services.AddAuthentication("BasicAuthentication")
+            //   .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.AddSecurityDefinition("basic", new BasicAuthScheme() { Type = "basic" });
+                c.DocumentFilter<BasicAuthDocumentFilter>();
+
             });
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IService<Model.Models.Klijenti,object>,BaseService<Model.Models.Klijenti,object,Model.Database.Klijenti>>();
             services.AddScoped<IService<Model.Models.Zahtjevi, object>, BaseService<Model.Models.Zahtjevi, object, Model.Database.Zahtjevi>>();
 
             services.AddScoped<ICRUDService<Model.Models.Zahtjevi, ZahtjeviSearchRequest, object, object>, ZahtjeviService>();
+            services.AddScoped<IKorisniciService, KorisniciService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +89,7 @@ namespace MobileShop.WebAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseAuthentication();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
