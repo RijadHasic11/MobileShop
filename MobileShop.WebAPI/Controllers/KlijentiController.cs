@@ -10,9 +10,9 @@ using MobileShop.WebAPI.Services;
 namespace MobileShop.WebAPI.Controllers
 {
    
-    public class KlijentiController : BaseController<Model.Models.Klijenti,ZahtjeviSearchRequest>
+    public class KlijentiController : BaseController<Model.Models.Klijenti,object>
     {
-        public KlijentiController(IService<Model.Models.Klijenti,ZahtjeviSearchRequest> service):base(service)
+        public KlijentiController(IService<Model.Models.Klijenti,object> service):base(service)
         {
 
         }
