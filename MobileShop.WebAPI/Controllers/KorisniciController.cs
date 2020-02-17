@@ -10,7 +10,7 @@ using MobileShop.WebAPI.Services;
 
 namespace MobileShop.WebAPI.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class KorisniciController : ControllerBase
@@ -27,16 +27,18 @@ namespace MobileShop.WebAPI.Controllers
             return _service.Get(request);
         }
 
-        [HttpPost]
-        public Model.Models.Korisnici Insert(KorisniciInsertRequest request)
-        {
-            return _service.Insert(request);
-        }
 
-        [HttpPut("{id}")]
-        public Model.Models.Korisnici Update(int id, [FromBody]KorisniciInsertRequest request)
+        
+        [HttpPost]
+        public void Insert(KorisniciInsertRequest request)
         {
-            return _service.Update(id, request);
+            _service.Insert(request);
+        }
+       
+        [HttpPut("{id}")]
+        public void Update(int id, [FromBody]KorisniciInsertRequest request)
+        {
+            _service.Update(id, request);
         }
 
         [HttpGet("{id}")]

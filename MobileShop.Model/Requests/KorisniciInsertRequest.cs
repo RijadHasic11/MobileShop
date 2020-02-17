@@ -24,5 +24,8 @@ namespace MobileShop.Model.Requests
         public string Password { get; set; }
         [Required(AllowEmptyStrings = false)]
         public string PasswordPotvrda { get; set; }
+
+
+        public List<int> Uloge { get; set; } = new List<int>();
     }
 }

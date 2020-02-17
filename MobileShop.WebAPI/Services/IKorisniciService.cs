@@ -12,9 +12,9 @@ namespace MobileShop.WebAPI.Services
 
         Model.Models.Korisnici GetById(int id);
 
-        Model.Models.Korisnici Insert(KorisniciInsertRequest request);
+        void Insert(KorisniciInsertRequest request);
 
-        Model.Models.Korisnici Update(int id, KorisniciInsertRequest request);
+        void Update(int id, KorisniciInsertRequest request);
 
         Model.Models.Korisnici Authenticiraj(string username, string pass);
     }

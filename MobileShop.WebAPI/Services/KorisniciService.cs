@@ -24,7 +24,7 @@ namespace MobileShop.WebAPI.Services
         }
         public Model.Models.Korisnici Authenticiraj(string username, string pass)
         {
-            var user = _context.Korisnici.FirstOrDefault(x => x.KorisnickoIme == username);
+            var user = _context.Korisnici.Include("KorisniciUloge.Uloga").FirstOrDefault(x => x.KorisnickoIme == username);
 
             if (user != null)
             {
@@ -91,10 +91,11 @@ namespace MobileShop.WebAPI.Services
             var entity = _context.Korisnici.Find(id);
 
             return _mapper.Map<Model.Models.Korisnici>(entity);
+           
         }
-        public Model.Models.Korisnici Insert(KorisniciInsertRequest request)
+        public void Insert(KorisniciInsertRequest request)
         {
-            var entity = _mapper.Map<Model.Database.Korisnici>(request);
+            Model.Database.Korisnici entity = _mapper.Map<Model.Database.Korisnici>(request);
 
             if (request.Password != request.PasswordPotvrda)
             {
@@ -107,10 +108,22 @@ namespace MobileShop.WebAPI.Services
             _context.Korisnici.Add(entity);
             _context.SaveChanges();
 
-            return _mapper.Map<Model.Models.Korisnici>(entity);
+            foreach (var uloga in request.Uloge)
+            {
+                Model.Database.KorisniciUloge korisniciUloge = new Model.Database.KorisniciUloge();
+                korisniciUloge.KorisnikId = entity.KorisnikId;
+                korisniciUloge.UlogaId = uloga;
+                korisniciUloge.DatumIzmjene = DateTime.Now;
+                _context.KorisniciUloge.Add(korisniciUloge);
+            }
+
+            _context.SaveChanges();
+
+           
+
         }
 
-        public Model.Models.Korisnici Update(int id, KorisniciInsertRequest request)
+        public void Update(int id, KorisniciInsertRequest request)
         {
             var entity = _context.Korisnici.Find(id);
             _context.Korisnici.Attach(entity);
@@ -131,7 +144,7 @@ namespace MobileShop.WebAPI.Services
 
             _context.SaveChanges();
 
-            return _mapper.Map<Model.Models.Korisnici>(entity);
+            
         }
     }
 }

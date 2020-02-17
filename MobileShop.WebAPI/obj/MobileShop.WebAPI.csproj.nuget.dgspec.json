@@ -161,6 +161,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[4.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

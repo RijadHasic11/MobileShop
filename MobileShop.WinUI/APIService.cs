@@ -56,13 +56,13 @@ namespace MobileShop.WinUI
             return await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
         }
 
-        public async Task<T> Insert<T>(object request)
+        public async void Insert<T>(object request)
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
 
             try
             {
-                return await url.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
+                 await url.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -75,17 +75,17 @@ namespace MobileShop.WinUI
                 }
 
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return default(T);
+               
             }
         }
 
-        public async Task<T> Update<T>(int id, object request)
+        public async void Update<T>(int id, object request)
         {
             try
             {
                 var url = $"{Properties.Settings.Default.APIUrl}/{_route}/{id}";
 
-                return await url.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
+                 await url.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -98,7 +98,7 @@ namespace MobileShop.WinUI
                 }
 
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return default(T);
+                
             }
 
         }
