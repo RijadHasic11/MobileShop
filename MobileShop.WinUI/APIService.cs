@@ -25,6 +25,7 @@ namespace MobileShop.WinUI
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
 
+
             try
             {
                 if (search != null)
