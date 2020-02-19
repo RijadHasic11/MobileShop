@@ -90,6 +90,12 @@
     <Compile Include="Korisnici\frmKorisniciDetalji.Designer.cs">
       <DependentUpon>frmKorisniciDetalji.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nabavke\frmNabavke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nabavke\frmNabavke.Designer.cs">
+      <DependentUpon>frmNabavke.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Zahtjevi\frmZahtjevi.cs">
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisniciDetalji.resx">
       <DependentUpon>frmKorisniciDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nabavke\frmNabavke.resx">
+      <DependentUpon>frmNabavke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

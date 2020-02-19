@@ -49,9 +49,8 @@ namespace MobileShop.WebAPI.Services
            
         }
 
-        public StavkeNabavke GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+
+
+       
     }
 }
