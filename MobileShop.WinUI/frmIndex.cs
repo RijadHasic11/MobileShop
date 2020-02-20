@@ -1,4 +1,5 @@
 ﻿using MobileShop.WinUI.Korisnici;
+using MobileShop.WinUI.Nabavke;
 using MobileShop.WinUI.Zahtjevi;
 using System;
 using System.Collections.Generic;
@@ -125,6 +126,14 @@ namespace MobileShop.WinUI
         private void NoviKorisnikToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmKorisniciDetalji frm = new frmKorisniciDetalji();
+            frm.Show();
+        }
+
+        private void PregledDetaljaNabavkeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNabavke frm = new frmNabavke();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

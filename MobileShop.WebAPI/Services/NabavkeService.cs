@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MobileShop.Model;
 using MobileShop.Model.Models;
+using MobileShop.Model.Requests;
 
 namespace MobileShop.WebAPI.Services
 {
