@@ -66,6 +66,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIndexAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIndexAdmin.Designer.cs">
+      <DependentUpon>frmIndexAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIndex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Zahtjevi\frmZahtjeviOdgovor.Designer.cs">
       <DependentUpon>frmZahtjeviOdgovor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmIndexAdmin.resx">
+      <DependentUpon>frmIndexAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIndex.resx">
       <DependentUpon>frmIndex.cs</DependentUpon>
     </EmbeddedResource>
