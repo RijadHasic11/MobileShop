@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Model.Models;
+using MobileShop.Model.Requests;
 using MobileShop.WebAPI.Services;
 
 namespace MobileShop.WebAPI.Controllers
@@ -29,6 +30,11 @@ namespace MobileShop.WebAPI.Controllers
         public Nabavke GetById(int id)
         {
             return _service.GetById(id);
+        }
+        [HttpPost]
+        public void Insert(NabavkeInsertRequest request)
+        {
+            _service.Insert(request);
         }
     }
 }

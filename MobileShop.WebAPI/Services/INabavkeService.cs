@@ -11,5 +11,7 @@ namespace MobileShop.WebAPI.Services
         List<Model.Models.Nabavke> Get();
 
         Model.Models.Nabavke GetById(int id);
+
+        void Insert(NabavkeInsertRequest request);
     }
 }

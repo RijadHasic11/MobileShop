@@ -102,6 +102,12 @@
     <Compile Include="Nabavke\frmNabavke.Designer.cs">
       <DependentUpon>frmNabavke.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nabavke\frmNovaNabavka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nabavke\frmNovaNabavka.Designer.cs">
+      <DependentUpon>frmNovaNabavka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skladista\frmSkladista.cs">
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nabavke\frmNabavke.resx">
       <DependentUpon>frmNabavke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nabavke\frmNovaNabavka.resx">
+      <DependentUpon>frmNovaNabavka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
