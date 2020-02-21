@@ -36,6 +36,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.skladištaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaSkladištaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoSkladišteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +46,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.korisniciToolStripMenuItem});
+            this.korisniciToolStripMenuItem,
+            this.skladištaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -58,6 +62,7 @@
             this.korisniciToolStripMenuItem.Name = "korisniciToolStripMenuItem";
             this.korisniciToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.korisniciToolStripMenuItem.Text = "Korisnici";
+            this.korisniciToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // listaKorisnikaToolStripMenuItem
             // 
@@ -89,6 +94,27 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // skladištaToolStripMenuItem
+            // 
+            this.skladištaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaSkladištaToolStripMenuItem,
+            this.novoSkladišteToolStripMenuItem});
+            this.skladištaToolStripMenuItem.Name = "skladištaToolStripMenuItem";
+            this.skladištaToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.skladištaToolStripMenuItem.Text = "Skladišta";
+            // 
+            // listaSkladištaToolStripMenuItem
+            // 
+            this.listaSkladištaToolStripMenuItem.Name = "listaSkladištaToolStripMenuItem";
+            this.listaSkladištaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaSkladištaToolStripMenuItem.Text = "Lista skladišta";
+            // 
+            // novoSkladišteToolStripMenuItem
+            // 
+            this.novoSkladišteToolStripMenuItem.Name = "novoSkladišteToolStripMenuItem";
+            this.novoSkladišteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoSkladišteToolStripMenuItem.Text = "Novo skladište";
+            // 
             // frmIndexAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +144,9 @@
         private System.Windows.Forms.ToolStripMenuItem korisniciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaKorisnikaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noviKorisnikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem skladištaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaSkladištaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoSkladišteToolStripMenuItem;
     }
 }
 

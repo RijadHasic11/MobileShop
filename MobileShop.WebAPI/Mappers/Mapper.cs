@@ -16,6 +16,7 @@ namespace MobileShop.WebAPI.Mappers
             CreateMap<Model.Database.Korisnici, Model.Models.Korisnici>();
             
             CreateMap<Model.Database.Uloge, Model.Models.Uloge>();
+            CreateMap<Model.Database.Skladista, Model.Models.Skladista>();
 
 
 

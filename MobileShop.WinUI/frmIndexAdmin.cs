@@ -107,14 +107,6 @@ namespace MobileShop.WinUI
             }
         }
 
-        private void PregledZahtjevaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmZahtjevi frm = new frmZahtjevi();
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
         private void ListaKorisnikaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmKorisnici frm = new frmKorisnici();
@@ -128,13 +120,20 @@ namespace MobileShop.WinUI
             frmKorisniciDetalji frm = new frmKorisniciDetalji();
             frm.Show();
         }
-
-        private void PregledDetaljaNabavkeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ListaSkladistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNabavke frm = new frmNabavke();
+            frmKorisnici frm = new frmKorisnici();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void NovoSkladisteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKorisniciDetalji frm = new frmKorisniciDetalji();
+            frm.Show();
+        }
+
+
     }
 }
