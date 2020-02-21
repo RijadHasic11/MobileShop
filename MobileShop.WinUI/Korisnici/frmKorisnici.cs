@@ -23,7 +23,9 @@ namespace MobileShop.WinUI.Korisnici
         {
             var search = new KorisniciSearchRequest()
             {
-                Ime = txtPretraga.Text
+                Ime = txtPretraga.Text,
+
+                
             };
 
            var result= await _service.Get<List<Model.Models.Korisnici>>(search);

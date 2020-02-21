@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{71AF81AE-B1BC-43F6-BE49-5BE719EEDD11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileShop.WinUI", "MobileShop.WinUI\MobileShop.WinUI.csproj", "{60D04906-76BA-432A-9E06-135E4C387601}"
+	ProjectSection(ProjectDependencies) = postProject
+		{38CCCA69-C695-45D0-8B5A-F9AEF23EA345} = {38CCCA69-C695-45D0-8B5A-F9AEF23EA345}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

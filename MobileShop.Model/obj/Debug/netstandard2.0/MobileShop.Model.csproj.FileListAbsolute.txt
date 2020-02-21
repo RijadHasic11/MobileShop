@@ -32,3 +32,11 @@ C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netsta
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.AssemblyInfo.cs
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.dll
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.pdb
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\bin\Debug\netstandard2.0\MobileShop.Model.deps.json
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\bin\Debug\netstandard2.0\MobileShop.Model.dll
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\bin\Debug\netstandard2.0\MobileShop.Model.pdb
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.csprojAssemblyReference.cache
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.AssemblyInfoInputs.cache
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.AssemblyInfo.cs
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.dll
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.pdb
