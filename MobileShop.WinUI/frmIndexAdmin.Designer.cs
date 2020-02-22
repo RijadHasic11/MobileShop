@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.korisniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaKorisnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.noviKorisnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListaKorisnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NoviKorisnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.skladistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaSkladistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoSkladisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.skladištaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaSkladištaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoSkladišteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.korisniciToolStripMenuItem,
-            this.skladištaToolStripMenuItem});
+            this.skladistaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -57,26 +57,49 @@
             // korisniciToolStripMenuItem
             // 
             this.korisniciToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaKorisnikaToolStripMenuItem,
-            this.noviKorisnikToolStripMenuItem});
+            this.ListaKorisnikaToolStripMenuItem,
+            this.NoviKorisnikToolStripMenuItem});
             this.korisniciToolStripMenuItem.Name = "korisniciToolStripMenuItem";
             this.korisniciToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.korisniciToolStripMenuItem.Text = "Korisnici";
             this.korisniciToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // listaKorisnikaToolStripMenuItem
+            // ListaKorisnikaToolStripMenuItem
             // 
-            this.listaKorisnikaToolStripMenuItem.Name = "listaKorisnikaToolStripMenuItem";
-            this.listaKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listaKorisnikaToolStripMenuItem.Text = "Lista korisnika";
-            this.listaKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.ListaKorisnikaToolStripMenuItem_Click);
+            this.ListaKorisnikaToolStripMenuItem.Name = "ListaKorisnikaToolStripMenuItem";
+            this.ListaKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.ListaKorisnikaToolStripMenuItem.Text = "Lista korisnika";
+            this.ListaKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.ListaKorisnikaToolStripMenuItem_Click);
             // 
-            // noviKorisnikToolStripMenuItem
+            // NoviKorisnikToolStripMenuItem
             // 
-            this.noviKorisnikToolStripMenuItem.Name = "noviKorisnikToolStripMenuItem";
-            this.noviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.noviKorisnikToolStripMenuItem.Text = "Novi korisnik";
-            this.noviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.NoviKorisnikToolStripMenuItem_Click);
+            this.NoviKorisnikToolStripMenuItem.Name = "NoviKorisnikToolStripMenuItem";
+            this.NoviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.NoviKorisnikToolStripMenuItem.Text = "Novi korisnik";
+            this.NoviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.NoviKorisnikToolStripMenuItem_Click);
+            // 
+            // skladistaToolStripMenuItem
+            // 
+            this.skladistaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaSkladistaToolStripMenuItem,
+            this.novoSkladisteToolStripMenuItem});
+            this.skladistaToolStripMenuItem.Name = "skladistaToolStripMenuItem";
+            this.skladistaToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.skladistaToolStripMenuItem.Text = "Skladista";
+            // 
+            // listaSkladistaToolStripMenuItem
+            // 
+            this.listaSkladistaToolStripMenuItem.Name = "listaSkladistaToolStripMenuItem";
+            this.listaSkladistaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaSkladistaToolStripMenuItem.Text = "Lista skladista";
+            this.listaSkladistaToolStripMenuItem.Click += new System.EventHandler(this.listaSkladistaToolStripMenuItem_Click_1);
+            // 
+            // novoSkladisteToolStripMenuItem
+            // 
+            this.novoSkladisteToolStripMenuItem.Name = "novoSkladisteToolStripMenuItem";
+            this.novoSkladisteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoSkladisteToolStripMenuItem.Text = "Novo skladiste";
+            this.novoSkladisteToolStripMenuItem.Click += new System.EventHandler(this.NovoSkladisteToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -93,27 +116,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // skladištaToolStripMenuItem
-            // 
-            this.skladištaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaSkladištaToolStripMenuItem,
-            this.novoSkladišteToolStripMenuItem});
-            this.skladištaToolStripMenuItem.Name = "skladištaToolStripMenuItem";
-            this.skladištaToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.skladištaToolStripMenuItem.Text = "Skladišta";
-            // 
-            // listaSkladištaToolStripMenuItem
-            // 
-            this.listaSkladištaToolStripMenuItem.Name = "listaSkladištaToolStripMenuItem";
-            this.listaSkladištaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listaSkladištaToolStripMenuItem.Text = "Lista skladišta";
-            // 
-            // novoSkladišteToolStripMenuItem
-            // 
-            this.novoSkladišteToolStripMenuItem.Name = "novoSkladišteToolStripMenuItem";
-            this.novoSkladišteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.novoSkladišteToolStripMenuItem.Text = "Novo skladište";
             // 
             // frmIndexAdmin
             // 
@@ -142,11 +144,11 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem korisniciToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaKorisnikaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem noviKorisnikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem skladištaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaSkladištaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem novoSkladišteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListaKorisnikaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NoviKorisnikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem skladistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaSkladistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoSkladisteToolStripMenuItem;
     }
 }
 

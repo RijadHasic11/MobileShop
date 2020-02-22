@@ -9,35 +9,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MobileShop.WinUI.Korisnici
+namespace MobileShop.WinUI.Skladista
 {
-    public partial class frmKorisnici : Form
+    public partial class frmSkladista : Form
     {
-        APIService _service = new APIService("korisnici");
-        public frmKorisnici()
+        APIService _service = new APIService("skladista");
+
+
+        public frmSkladista()
         {
             InitializeComponent();
         }
-
         private async void BtnPretraga_Click(object sender, EventArgs e)
         {
-            var search = new KorisniciSearchRequest()
+            var search = new SkladistaSearchRequest()
             {
-                Ime = txtPretraga.Text,
+                Naziv = txtPretraga.Text,
 
-                
+
             };
 
-           var result= await _service.Get<List<Model.Models.Korisnici>>(search);
-           dgvKorisnici.DataSource = result;
+            var result = await _service.Get<List<Model.Models.Skladista>>(search);
+            dgvSkladista.DataSource = result;
 
         }
-        private void DgvKorisnici_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            var korisnikId = int.Parse(dgvKorisnici.SelectedRows[0].Cells[0].Value.ToString());
 
-            frmKorisniciDetalji frm = new frmKorisniciDetalji(korisnikId);
-            frm.Show();
-        }
+
     }
 }

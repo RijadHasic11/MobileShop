@@ -445,7 +445,7 @@ namespace MobileShop.Model.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MobileShop.Model.Database.Skladista", "Skladiste")
-                        .WithMany("Nabavka")
+                        .WithMany()
                         .HasForeignKey("SkladisteId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -475,7 +475,7 @@ namespace MobileShop.Model.Migrations
                         .HasForeignKey("KorisnikId");
 
                     b.HasOne("MobileShop.Model.Database.Skladista", "Skladiste")
-                        .WithMany("Narudzba")
+                        .WithMany()
                         .HasForeignKey("SkladisteId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

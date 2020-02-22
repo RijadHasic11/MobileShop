@@ -74,6 +74,7 @@ namespace MobileShop.WebAPI
 
             services.AddScoped<ICRUDService<Model.Models.Zahtjevi, ZahtjeviSearchRequest, object, object>, ZahtjeviService>();
             services.AddScoped<IKorisniciService, KorisniciService>();
+            services.AddScoped<ISkladistaService, SkladistaService>();
             services.AddScoped<IService<Model.Models.Uloge, object>, BaseService<Model.Models.Uloge, object, Model.Database.Uloge>>();
             services.AddScoped<IStavkeNabavke, StavkeNabavkeService>();
             services.AddScoped<INabavkeService, NabavkeService>();

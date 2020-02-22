@@ -1,5 +1,6 @@
 ﻿using MobileShop.WinUI.Korisnici;
 using MobileShop.WinUI.Nabavke;
+using MobileShop.WinUI.Skladista;
 using MobileShop.WinUI.Zahtjevi;
 using System;
 using System.Collections.Generic;
@@ -120,9 +121,11 @@ namespace MobileShop.WinUI
             frmKorisniciDetalji frm = new frmKorisniciDetalji();
             frm.Show();
         }
-        private void ListaSkladistaToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void listaSkladistaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmKorisnici frm = new frmKorisnici();
+            frmSkladista frm = new frmSkladista();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
@@ -130,7 +133,7 @@ namespace MobileShop.WinUI
 
         private void NovoSkladisteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmKorisniciDetalji frm = new frmKorisniciDetalji();
+            frmSkladistaDetalji frm = new frmSkladistaDetalji();
             frm.Show();
         }
 

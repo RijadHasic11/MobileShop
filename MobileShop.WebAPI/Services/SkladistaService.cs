@@ -23,30 +23,29 @@ namespace MobileShop.WebAPI.Services
             _mapper = mapper;
         }
 
-        public List<Skladista> Get()
+        public List<Skladista> Get(SkladistaSearchRequest search)
         {
-            var list = _context.Skladista.ToList();
-
-            var lista = new List<Skladista>();
-
-            foreach (var item in list)
             {
+                var query = _context.Skladista.AsQueryable();
+
+                if (!string.IsNullOrWhiteSpace(search?.Naziv))
+                {
+                    query = query.Where(x => x.Naziv.StartsWith(search.Naziv));
+                }
+
+                if (!string.IsNullOrWhiteSpace(search?.Adresa))
+                {
+                    query = query.Where(x => x.Adresa.StartsWith(search.Adresa));
+                }
 
 
-                Skladista skladiste = new Skladista();
 
-                skladiste.Naziv = item.Naziv;
-                skladiste.Adresa = item.Adresa;
-                skladiste.Opis = item.Opis;
+                var list = query.ToList();
 
-                
-                lista.Add(skladiste);
+                return _mapper.Map<List<Model.Models.Skladista>>(list);
 
             }
-
-            return lista;
         }
-
         public Skladista GetById(int id)
         {
             var entity = _context.Skladista.Find(id);
@@ -54,9 +53,20 @@ namespace MobileShop.WebAPI.Services
             return _mapper.Map<Model.Models.Skladista>(entity);
            
         }
-       
+        public void Insert(SkladistaInsertRequest request)
+        {
+            Model.Database.Skladista novo = new Model.Database.Skladista();
 
-       
+            novo.Naziv = request.Naziv;
+            novo.Adresa = request.Adresa;
+            novo.Opis = request.Opis;
+
+            _context.Skladista.Add(novo);
+            _context.SaveChanges();
+
+        }
+
+
 
 
     }
