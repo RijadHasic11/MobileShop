@@ -126,6 +126,7 @@ namespace MobileShop.WinUI.Skladista
                     Telefon = txtTelefon.Text,
                     Uloge = roleList
                 };
+<<<<<<< HEAD
 
                 
                 if (!_id.HasValue)
@@ -144,7 +145,11 @@ namespace MobileShop.WinUI.Skladista
                
 
             }
+=======
+            _service.Insert<Model.Models.Skladista>(request);
+>>>>>>> parent of 8ee6975... dobavljaci
 
+                   
         }
     }
 }

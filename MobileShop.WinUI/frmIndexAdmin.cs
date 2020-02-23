@@ -155,6 +155,9 @@ namespace MobileShop.WinUI
         }
 
 
+<<<<<<< HEAD
 >>>>>>> parent of 5510cd9... skladistaDT
+=======
+>>>>>>> parent of 8ee6975... dobavljaci
     }
 }
