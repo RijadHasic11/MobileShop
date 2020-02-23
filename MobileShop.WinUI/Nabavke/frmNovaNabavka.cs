@@ -39,7 +39,7 @@ namespace MobileShop.WinUI.Nabavke
 
         private async void FrmNovaNabavka_Load(object sender, EventArgs e)
         {
-            List<Dobavljaci> dobavljaci_result = await _serviceDobavljaci.Get<List<Dobavljaci>>(null);
+            List<Model.Models.Dobavljaci> dobavljaci_result = await _serviceDobavljaci.Get<List<Model.Models.Dobavljaci>>(null);
 
             cmbDobavljaci.DataSource = dobavljaci_result;
             cmbDobavljaci.DisplayMember = "Naziv";

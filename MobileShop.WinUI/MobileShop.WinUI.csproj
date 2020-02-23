@@ -60,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIService.cs" />
+    <Compile Include="Dobavljaci\frmDobavljaci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dobavljaci\frmDobavljaci.Designer.cs">
+      <DependentUpon>frmDobavljaci.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <Compile Include="Zahtjevi\frmZahtjeviOdgovor.Designer.cs">
       <DependentUpon>frmZahtjeviOdgovor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dobavljaci\frmDobavljaci.resx">
+      <DependentUpon>frmDobavljaci.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIndexAdmin.resx">
       <DependentUpon>frmIndexAdmin.cs</DependentUpon>
     </EmbeddedResource>

@@ -172,7 +172,7 @@
             this.btnSnimi.TabIndex = 14;
             this.btnSnimi.Text = "Sacuvaj";
             this.btnSnimi.UseVisualStyleBackColor = true;
-            this.btnSnimi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnSnimi_MouseClick);
+            this.btnSnimi.Click += new System.EventHandler(this.btnSnimi_Click);
             // 
             // clbRole
             // 

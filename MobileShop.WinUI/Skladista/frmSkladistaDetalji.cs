@@ -34,8 +34,8 @@ namespace MobileShop.WinUI.Skladista
                     Opis = txtOpis.Text
                 };
             _service.Insert<Model.Models.Skladista>(request);
+            MessageBox.Show("Uspješno dodano skladište");
 
-                   
         }
     }
   
