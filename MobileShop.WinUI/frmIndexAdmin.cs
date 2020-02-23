@@ -128,17 +128,33 @@ namespace MobileShop.WinUI
             frmKorisniciDetalji frm = new frmKorisniciDetalji();
             frm.Show();
         }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         private void PregledDetaljaNabavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNabavke frm = new frmNabavke();
+=======
+        private void ListaSkladistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKorisnici frm = new frmKorisnici();
+>>>>>>> parent of 5510cd9... skladistaDT
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
 =======
 
+<<<<<<< HEAD
 >>>>>>> parent of 8ee6975... dobavljaci
+=======
+        private void NovoSkladisteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKorisniciDetalji frm = new frmKorisniciDetalji();
+            frm.Show();
+        }
+
+
+>>>>>>> parent of 5510cd9... skladistaDT
     }
 }

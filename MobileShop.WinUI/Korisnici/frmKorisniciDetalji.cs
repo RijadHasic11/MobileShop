@@ -146,7 +146,5 @@ namespace MobileShop.WinUI.Korisnici
             }
 
         }
-
-
     }
 }

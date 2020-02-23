@@ -36,6 +36,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.skladištaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaSkladištaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoSkladišteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -47,8 +50,12 @@
             this.korisniciToolStripMenuItem});
 =======
             this.korisniciToolStripMenuItem,
+<<<<<<< HEAD
             this.skladistaToolStripMenuItem});
 >>>>>>> parent of 8ee6975... dobavljaci
+=======
+            this.skladištaToolStripMenuItem});
+>>>>>>> parent of 5510cd9... skladistaDT
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -74,10 +81,14 @@
             // noviKorisnikToolStripMenuItem
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 5510cd9... skladistaDT
             this.noviKorisnikToolStripMenuItem.Name = "noviKorisnikToolStripMenuItem";
             this.noviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.noviKorisnikToolStripMenuItem.Text = "Novi korisnik";
             this.noviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.NoviKorisnikToolStripMenuItem_Click);
+<<<<<<< HEAD
 =======
             this.NoviKorisnikToolStripMenuItem.Name = "NoviKorisnikToolStripMenuItem";
             this.NoviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
@@ -107,6 +118,8 @@
             this.novoSkladisteToolStripMenuItem.Text = "Novo skladiste";
             this.novoSkladisteToolStripMenuItem.Click += new System.EventHandler(this.NovoSkladisteToolStripMenuItem_Click);
 >>>>>>> parent of 8ee6975... dobavljaci
+=======
+>>>>>>> parent of 5510cd9... skladistaDT
             // 
             // statusStrip
             // 
@@ -123,6 +136,27 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // skladištaToolStripMenuItem
+            // 
+            this.skladištaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaSkladištaToolStripMenuItem,
+            this.novoSkladišteToolStripMenuItem});
+            this.skladištaToolStripMenuItem.Name = "skladištaToolStripMenuItem";
+            this.skladištaToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.skladištaToolStripMenuItem.Text = "Skladišta";
+            // 
+            // listaSkladištaToolStripMenuItem
+            // 
+            this.listaSkladištaToolStripMenuItem.Name = "listaSkladištaToolStripMenuItem";
+            this.listaSkladištaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaSkladištaToolStripMenuItem.Text = "Lista skladišta";
+            // 
+            // novoSkladišteToolStripMenuItem
+            // 
+            this.novoSkladišteToolStripMenuItem.Name = "novoSkladišteToolStripMenuItem";
+            this.novoSkladišteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoSkladišteToolStripMenuItem.Text = "Novo skladište";
             // 
             // frmIndexAdmin
             // 
@@ -152,6 +186,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem korisniciToolStripMenuItem;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem listaKorisnikaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noviKorisnikToolStripMenuItem;
 =======
@@ -161,6 +196,13 @@
         private System.Windows.Forms.ToolStripMenuItem listaSkladistaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novoSkladisteToolStripMenuItem;
 >>>>>>> parent of 8ee6975... dobavljaci
+=======
+        private System.Windows.Forms.ToolStripMenuItem listaKorisnikaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem noviKorisnikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem skladištaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaSkladištaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoSkladišteToolStripMenuItem;
+>>>>>>> parent of 5510cd9... skladistaDT
     }
 }
 

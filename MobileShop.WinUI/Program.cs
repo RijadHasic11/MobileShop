@@ -17,7 +17,7 @@ namespace MobileShop.WinUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIndexAdmin());
+            Application.Run(new frmIndex());
         }
     }
 }
