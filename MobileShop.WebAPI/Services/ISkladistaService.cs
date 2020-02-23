@@ -8,10 +8,8 @@ namespace MobileShop.WebAPI.Services
 {
     public interface ISkladistaService
     {
-        List<Model.Models.Skladista> Get(SkladistaSearchRequest search);
+        List<Model.Models.Skladista> Get();
 
         Model.Models.Skladista GetById(int id);
-        void Insert(SkladistaInsertRequest request);
-
     }
 }

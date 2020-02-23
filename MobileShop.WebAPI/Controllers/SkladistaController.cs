@@ -5,39 +5,30 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Model.Models;
-using MobileShop.Model.Requests;
 using MobileShop.WebAPI.Services;
 
 namespace MobileShop.WebAPI.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class SkladistaController : ControllerBase
     {
+        private readonly INabavkeService _service;
 
-        private readonly ISkladistaService _service;
-
-        public SkladistaController(ISkladistaService service)
+        public SkladistaController(INabavkeService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public List<Skladista> Get([FromQuery]SkladistaSearchRequest request)
+        public List<Nabavke> Get()
         {
-            var list = _service.Get(request);
-            return list;
+            return _service.Get();
         }
         [HttpGet("{id}")]
-        public Skladista GetById(int id)
+        public Nabavke GetById(int id)
         {
             return _service.GetById(id);
-        }
-        [HttpPost]
-        public void Insert(SkladistaInsertRequest request)
-        {
-            _service.Insert(request);
         }
     }
 }

@@ -7,7 +7,11 @@ namespace MobileShop.Model.Database
 {
     public  class Skladista
     {
-
+        public Skladista()
+        {
+            Narudzba = new HashSet<Narudzba>();
+            Nabavka = new HashSet<Nabavka>();
+        }
 
         [Key]
         public int SkladisteId { get; set; }
@@ -15,5 +19,7 @@ namespace MobileShop.Model.Database
         public string Adresa { get; set; }
         public string Opis { get; set; }
 
+        public ICollection<Narudzba> Narudzba { get; set; }
+        public ICollection<Nabavka> Nabavka { get; set; }
     }
 }

@@ -74,14 +74,26 @@ namespace MobileShop.WebAPI
 
             services.AddScoped<ICRUDService<Model.Models.Zahtjevi, ZahtjeviSearchRequest, object, object>, ZahtjeviService>();
             services.AddScoped<IKorisniciService, KorisniciService>();
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
             services.AddScoped<ISkladistaService, SkladistaService>();
-            services.AddScoped<IDobavljaciService, DobavljaciService>();
+<<<<<<< HEAD
+>>>>>>> parent of 8ee6975... dobavljaci
+=======
+>>>>>>> parent of 5510cd9... skladistaDT
             services.AddScoped<IService<Model.Models.Uloge, object>, BaseService<Model.Models.Uloge, object, Model.Database.Uloge>>();
             services.AddScoped<IStavkeNabavke, StavkeNabavkeService>();
             services.AddScoped<INabavkeService, NabavkeService>();
+=======
+            services.AddScoped<IService<Model.Models.Uloge, object>, BaseService<Model.Models.Uloge, object, Model.Database.Uloge>>();
+            services.AddScoped<IStavkeNabavke, StavkeNabavkeService>();
+            services.AddScoped<INabavkeService, NabavkeService>();
+<<<<<<< HEAD
             services.AddScoped<IService<Model.Models.Dobavljaci, object>, BaseService<Model.Models.Dobavljaci, object, Model.Database.Dobavljaci>>();
-            //services.AddScoped<ICRUDService<Model.Models.Dobavljaci, DobavljaciSearchRequest, object, object>, DobavljaciService>();
-
+>>>>>>> parent of 8ee6975... dobavljaci
+=======
+>>>>>>> parent of 185315f... 11ti commit
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
