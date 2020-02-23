@@ -75,37 +75,5 @@ namespace MobileShop.WebAPI.Services
 
             return nabavka;
         }
-
-        public void Insert(NabavkeInsertRequest request)
-        {
-            Model.Database.Nabavka nova = new Model.Database.Nabavka();
-
-            nova.BrojNabavke = request.BrojNabavke;
-            nova.Datum = request.Datum;
-            nova.DobavljacId = request.DobavljacId;
-            nova.IznosRacuna = request.IznosRacuna;
-            nova.KorisnikId = request.KorisnikId;
-            nova.Napomena = request.Napomena;
-            nova.Pdv = request.Pdv;
-            nova.SkladisteId = request.SkladisteId;
-
-            _context.Nabavka.Add(nova);
-            _context.SaveChanges();
-
-            foreach(var item in request.stavke)
-            {
-                Model.Database.NabavkaStavke stavka = new Model.Database.NabavkaStavke();
-
-                stavka.NabavkaId = nova.NabavkaId;
-                stavka.ArtikalId = item.ArtikalId;
-                stavka.Cijena = item.Cijena;
-                stavka.Kolicina = item.Kolicina;
-
-                _context.NabavkaStavke.Add(stavka);
-                _context.SaveChanges();
-            }
-            
-
-        }
     }
 }

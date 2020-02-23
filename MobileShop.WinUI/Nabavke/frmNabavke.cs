@@ -125,11 +125,5 @@ namespace MobileShop.WinUI.Nabavke
         {
             dgvStavkeNabavke.AutoGenerateColumns = false;
         }
-
-        private void BtnDodajNabavku_Click(object sender, EventArgs e)
-        {
-            frmNovaNabavka forma = new frmNovaNabavka();
-            forma.Show();
-        }
     }
 }

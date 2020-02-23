@@ -91,6 +91,7 @@ C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.c
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.exe
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.pdb
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndexAdmin.resources
+<<<<<<< HEAD
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndexAdmin.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Nabavke.frmNovaNabavka.resources
 <<<<<<< HEAD
@@ -99,3 +100,5 @@ C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.N
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Skladista.frmSkladista.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Skladista.frmSkladistaDetalji.resources
 >>>>>>> parent of 8ee6975... dobavljaci
+=======
+>>>>>>> parent of 4a6c37a... Merge branch 'master' of https://github.com/Emin404/MobileShop

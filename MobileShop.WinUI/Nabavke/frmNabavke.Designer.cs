@@ -57,6 +57,7 @@
             this.txtNazivDobavljaca = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvStavkeNabavke = new System.Windows.Forms.DataGridView();
+            this.btnDodajNabavku = new System.Windows.Forms.Button();
             this.StavkeNabavkeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Artikal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proizvodjac = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +65,6 @@
             this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnDodajNabavku = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -346,6 +346,15 @@
             this.dgvStavkeNabavke.Size = new System.Drawing.Size(611, 180);
             this.dgvStavkeNabavke.TabIndex = 0;
             // 
+            // btnDodajNabavku
+            // 
+            this.btnDodajNabavku.Location = new System.Drawing.Point(495, 64);
+            this.btnDodajNabavku.Name = "btnDodajNabavku";
+            this.btnDodajNabavku.Size = new System.Drawing.Size(134, 32);
+            this.btnDodajNabavku.TabIndex = 9;
+            this.btnDodajNabavku.Text = "Nova nabavka";
+            this.btnDodajNabavku.UseVisualStyleBackColor = true;
+            // 
             // StavkeNabavkeId
             // 
             this.StavkeNabavkeId.HeaderText = "StavkeNabavkeId";
@@ -396,16 +405,6 @@
             this.Slika.HeaderText = "Slika";
             this.Slika.Name = "Slika";
             this.Slika.ReadOnly = true;
-            // 
-            // btnDodajNabavku
-            // 
-            this.btnDodajNabavku.Location = new System.Drawing.Point(495, 64);
-            this.btnDodajNabavku.Name = "btnDodajNabavku";
-            this.btnDodajNabavku.Size = new System.Drawing.Size(134, 32);
-            this.btnDodajNabavku.TabIndex = 9;
-            this.btnDodajNabavku.Text = "Nova nabavka";
-            this.btnDodajNabavku.UseVisualStyleBackColor = true;
-            this.btnDodajNabavku.Click += new System.EventHandler(this.BtnDodajNabavku_Click);
             // 
             // frmNabavke
             // 
