@@ -89,8 +89,11 @@ namespace MobileShop.WebAPI
             services.AddScoped<IService<Model.Models.Uloge, object>, BaseService<Model.Models.Uloge, object, Model.Database.Uloge>>();
             services.AddScoped<IStavkeNabavke, StavkeNabavkeService>();
             services.AddScoped<INabavkeService, NabavkeService>();
+<<<<<<< HEAD
             services.AddScoped<IService<Model.Models.Dobavljaci, object>, BaseService<Model.Models.Dobavljaci, object, Model.Database.Dobavljaci>>();
 >>>>>>> parent of 8ee6975... dobavljaci
+=======
+>>>>>>> parent of 185315f... 11ti commit
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
