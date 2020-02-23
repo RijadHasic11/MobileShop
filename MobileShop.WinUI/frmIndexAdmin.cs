@@ -129,6 +129,7 @@ namespace MobileShop.WinUI
             frm.Show();
         }
 
+<<<<<<< HEAD
         private void PregledDetaljaNabavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNabavke frm = new frmNabavke();
@@ -136,5 +137,8 @@ namespace MobileShop.WinUI
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+=======
+
+>>>>>>> parent of 8ee6975... dobavljaci
     }
 }

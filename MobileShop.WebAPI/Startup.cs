@@ -74,6 +74,10 @@ namespace MobileShop.WebAPI
 
             services.AddScoped<ICRUDService<Model.Models.Zahtjevi, ZahtjeviSearchRequest, object, object>, ZahtjeviService>();
             services.AddScoped<IKorisniciService, KorisniciService>();
+<<<<<<< HEAD
+=======
+            services.AddScoped<ISkladistaService, SkladistaService>();
+>>>>>>> parent of 8ee6975... dobavljaci
             services.AddScoped<IService<Model.Models.Uloge, object>, BaseService<Model.Models.Uloge, object, Model.Database.Uloge>>();
             services.AddScoped<IStavkeNabavke, StavkeNabavkeService>();
             services.AddScoped<INabavkeService, NabavkeService>();

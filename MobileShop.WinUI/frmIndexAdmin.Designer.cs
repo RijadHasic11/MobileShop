@@ -43,7 +43,12 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+<<<<<<< HEAD
             this.korisniciToolStripMenuItem});
+=======
+            this.korisniciToolStripMenuItem,
+            this.skladistaToolStripMenuItem});
+>>>>>>> parent of 8ee6975... dobavljaci
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -68,10 +73,40 @@
             // 
             // noviKorisnikToolStripMenuItem
             // 
+<<<<<<< HEAD
             this.noviKorisnikToolStripMenuItem.Name = "noviKorisnikToolStripMenuItem";
             this.noviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.noviKorisnikToolStripMenuItem.Text = "Novi korisnik";
             this.noviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.NoviKorisnikToolStripMenuItem_Click);
+=======
+            this.NoviKorisnikToolStripMenuItem.Name = "NoviKorisnikToolStripMenuItem";
+            this.NoviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.NoviKorisnikToolStripMenuItem.Text = "Novi korisnik";
+            this.NoviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.NoviKorisnikToolStripMenuItem_Click);
+            // 
+            // skladistaToolStripMenuItem
+            // 
+            this.skladistaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaSkladistaToolStripMenuItem,
+            this.novoSkladisteToolStripMenuItem});
+            this.skladistaToolStripMenuItem.Name = "skladistaToolStripMenuItem";
+            this.skladistaToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.skladistaToolStripMenuItem.Text = "Skladista";
+            // 
+            // listaSkladistaToolStripMenuItem
+            // 
+            this.listaSkladistaToolStripMenuItem.Name = "listaSkladistaToolStripMenuItem";
+            this.listaSkladistaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaSkladistaToolStripMenuItem.Text = "Lista skladista";
+            this.listaSkladistaToolStripMenuItem.Click += new System.EventHandler(this.listaSkladistaToolStripMenuItem_Click_1);
+            // 
+            // novoSkladisteToolStripMenuItem
+            // 
+            this.novoSkladisteToolStripMenuItem.Name = "novoSkladisteToolStripMenuItem";
+            this.novoSkladisteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoSkladisteToolStripMenuItem.Text = "Novo skladiste";
+            this.novoSkladisteToolStripMenuItem.Click += new System.EventHandler(this.NovoSkladisteToolStripMenuItem_Click);
+>>>>>>> parent of 8ee6975... dobavljaci
             // 
             // statusStrip
             // 
@@ -116,8 +151,16 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem korisniciToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem listaKorisnikaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noviKorisnikToolStripMenuItem;
+=======
+        private System.Windows.Forms.ToolStripMenuItem ListaKorisnikaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NoviKorisnikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem skladistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaSkladistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoSkladisteToolStripMenuItem;
+>>>>>>> parent of 8ee6975... dobavljaci
     }
 }
 
