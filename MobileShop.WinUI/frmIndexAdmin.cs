@@ -1,5 +1,7 @@
-﻿using MobileShop.WinUI.Korisnici;
+﻿using MobileShop.WinUI.Dobavljaci;
+using MobileShop.WinUI.Korisnici;
 using MobileShop.WinUI.Nabavke;
+using MobileShop.WinUI.Skladista;
 using MobileShop.WinUI.Zahtjevi;
 using System;
 using System.Collections.Generic;
@@ -107,14 +109,6 @@ namespace MobileShop.WinUI
             }
         }
 
-        private void PregledZahtjevaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmZahtjevi frm = new frmZahtjevi();
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
         private void ListaKorisnikaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmKorisnici frm = new frmKorisnici();
@@ -128,36 +122,28 @@ namespace MobileShop.WinUI
             frmKorisniciDetalji frm = new frmKorisniciDetalji();
             frm.Show();
         }
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-        private void PregledDetaljaNabavkeToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void listaSkladistaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmNabavke frm = new frmNabavke();
-=======
-        private void ListaSkladistaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmKorisnici frm = new frmKorisnici();
->>>>>>> parent of 5510cd9... skladistaDT
+            frmSkladista frm = new frmSkladista();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
-=======
 
-<<<<<<< HEAD
->>>>>>> parent of 8ee6975... dobavljaci
-=======
         private void NovoSkladisteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmKorisniciDetalji frm = new frmKorisniciDetalji();
+            frmSkladistaDetalji frm = new frmSkladistaDetalji();
             frm.Show();
         }
 
-
-<<<<<<< HEAD
->>>>>>> parent of 5510cd9... skladistaDT
-=======
->>>>>>> parent of 8ee6975... dobavljaci
+        private void listaDobavljacaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDobavljaci frm = new frmDobavljaci();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }

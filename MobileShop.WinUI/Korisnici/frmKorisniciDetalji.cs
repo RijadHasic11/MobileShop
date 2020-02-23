@@ -109,9 +109,15 @@ namespace MobileShop.WinUI.Korisnici
             }
         }
 
-        private async void BtnSnimi_MouseClick(object sender, MouseEventArgs e)
+        //private async void BtnSnimi_MouseClick(object sender, MouseEventArgs e)
+        //{
+           
+
+        //}
+
+        private void btnSnimi_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren())
+ if (ValidateChildren())
             {
                 var roleList = clbRole.CheckedItems.Cast<Model.Models.Uloge>().Select(x => x.UlogaId).ToList();
 
@@ -144,9 +150,6 @@ namespace MobileShop.WinUI.Korisnici
                
 
             }
-
         }
-
-
     }
 }
