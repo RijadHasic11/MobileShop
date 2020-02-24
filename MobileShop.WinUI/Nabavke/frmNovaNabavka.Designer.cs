@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnZakljuci = new System.Windows.Forms.Button();
             this.txtPDV = new System.Windows.Forms.TextBox();
@@ -38,14 +38,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStavkeNabavke = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtKolicina = new System.Windows.Forms.TextBox();
+            this.txtCijena = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cmbArtikli = new System.Windows.Forms.ComboBox();
             this.cmbSkladista = new System.Windows.Forms.ComboBox();
             this.cmbDobavljaci = new System.Windows.Forms.ComboBox();
             this.cmbKorisnici = new System.Windows.Forms.ComboBox();
@@ -58,16 +57,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBrojNabavke = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSifra = new System.Windows.Forms.TextBox();
             this.NabavkaStavkeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Artikal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proizvodjac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sifra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Slika = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeNabavke)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -105,6 +103,7 @@
             this.btnZakljuci.TabIndex = 17;
             this.btnZakljuci.Text = "Zakljuci";
             this.btnZakljuci.UseVisualStyleBackColor = true;
+            this.btnZakljuci.Click += new System.EventHandler(this.BtnZakljuci_Click);
             // 
             // txtPDV
             // 
@@ -143,14 +142,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.txtSifra);
+            this.groupBox2.Controls.Add(this.dgvStavkeNabavke);
             this.groupBox2.Controls.Add(this.btnDodaj);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtKolicina);
+            this.groupBox2.Controls.Add(this.txtCijena);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.cmbArtikli);
             this.groupBox2.Location = new System.Drawing.Point(0, 107);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(611, 262);
@@ -158,71 +157,70 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stavke nabavke";
             // 
-            // dataGridView1
+            // dgvStavkeNabavke
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvStavkeNabavke.AllowUserToAddRows = false;
+            this.dgvStavkeNabavke.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStavkeNabavke.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvStavkeNabavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStavkeNabavke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NabavkaStavkeId,
             this.Artikal,
-            this.Proizvodjac,
-            this.Model,
+            this.Sifra,
             this.Kolicina,
-            this.Cijena,
-            this.Slika});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 94);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(568, 151);
-            this.dataGridView1.TabIndex = 23;
+            this.Cijena});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStavkeNabavke.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvStavkeNabavke.Location = new System.Drawing.Point(23, 94);
+            this.dgvStavkeNabavke.Name = "dgvStavkeNabavke";
+            this.dgvStavkeNabavke.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStavkeNabavke.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvStavkeNabavke.Size = new System.Drawing.Size(454, 151);
+            this.dgvStavkeNabavke.TabIndex = 23;
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(390, 53);
+            this.btnDodaj.Location = new System.Drawing.Point(402, 53);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnDodaj.TabIndex = 22;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.BtnDodaj_Click);
             // 
-            // textBox2
+            // txtKolicina
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 20);
-            this.textBox2.TabIndex = 21;
+            this.txtKolicina.Location = new System.Drawing.Point(82, 56);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(129, 20);
+            this.txtKolicina.TabIndex = 21;
             // 
-            // textBox1
+            // txtCijena
             // 
-            this.textBox1.Location = new System.Drawing.Point(267, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtCijena.Location = new System.Drawing.Point(267, 56);
+            this.txtCijena.Name = "txtCijena";
+            this.txtCijena.Size = new System.Drawing.Size(100, 20);
+            this.txtCijena.TabIndex = 20;
             // 
             // label10
             // 
@@ -248,17 +246,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(29, 37);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 18;
-            this.label9.Text = "Artikal:";
-            // 
-            // cmbArtikli
-            // 
-            this.cmbArtikli.FormattingEnabled = true;
-            this.cmbArtikli.Location = new System.Drawing.Point(82, 29);
-            this.cmbArtikli.Name = "cmbArtikli";
-            this.cmbArtikli.Size = new System.Drawing.Size(129, 21);
-            this.cmbArtikli.TabIndex = 18;
+            this.label9.Text = "Sifra ar:";
             // 
             // cmbSkladista
             // 
@@ -360,6 +350,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Broj nabavke:";
             // 
+            // txtSifra
+            // 
+            this.txtSifra.Location = new System.Drawing.Point(82, 30);
+            this.txtSifra.Name = "txtSifra";
+            this.txtSifra.Size = new System.Drawing.Size(129, 20);
+            this.txtSifra.TabIndex = 24;
+            // 
             // NabavkaStavkeId
             // 
             this.NabavkaStavkeId.HeaderText = "NabavkaStavkeId";
@@ -369,44 +366,32 @@
             // 
             // Artikal
             // 
+            this.Artikal.DataPropertyName = "Artikal";
             this.Artikal.HeaderText = "Artikal";
             this.Artikal.Name = "Artikal";
             this.Artikal.ReadOnly = true;
-            this.Artikal.Visible = false;
+            this.Artikal.Width = 110;
             // 
-            // Proizvodjac
+            // Sifra
             // 
-            this.Proizvodjac.HeaderText = "Proizvodjac";
-            this.Proizvodjac.Name = "Proizvodjac";
-            this.Proizvodjac.ReadOnly = true;
-            this.Proizvodjac.Visible = false;
-            // 
-            // Model
-            // 
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            this.Model.ReadOnly = true;
-            this.Model.Visible = false;
+            this.Sifra.DataPropertyName = "Sifra";
+            this.Sifra.HeaderText = "Sifra";
+            this.Sifra.Name = "Sifra";
+            this.Sifra.ReadOnly = true;
             // 
             // Kolicina
             // 
+            this.Kolicina.DataPropertyName = "Kolicina";
             this.Kolicina.HeaderText = "Kolicina";
             this.Kolicina.Name = "Kolicina";
             this.Kolicina.ReadOnly = true;
-            this.Kolicina.Visible = false;
             // 
             // Cijena
             // 
+            this.Cijena.DataPropertyName = "Cijena";
             this.Cijena.HeaderText = "Cijena";
             this.Cijena.Name = "Cijena";
             this.Cijena.ReadOnly = true;
-            this.Cijena.Visible = false;
-            // 
-            // Slika
-            // 
-            this.Slika.HeaderText = "Slika";
-            this.Slika.Name = "Slika";
-            this.Slika.ReadOnly = true;
             // 
             // frmNovaNabavka
             // 
@@ -421,7 +406,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeNabavke)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,19 +433,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnZakljuci;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cmbArtikli;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStavkeNabavke;
         private System.Windows.Forms.Button btnDodaj;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtKolicina;
+        private System.Windows.Forms.TextBox txtCijena;
+        private System.Windows.Forms.TextBox txtSifra;
         private System.Windows.Forms.DataGridViewTextBoxColumn NabavkaStavkeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Artikal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Proizvodjac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Model;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sifra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cijena;
-        private System.Windows.Forms.DataGridViewImageColumn Slika;
     }
 }

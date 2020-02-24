@@ -56,6 +56,13 @@ namespace MobileShop.WinUI
 
             return await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
         }
+        public async Task<T> GetBySifra<T>(string sifra)
+        {
+            var url = $"{Properties.Settings.Default.APIUrl}/{_route}/GetBySifra/{sifra}";
+
+            return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
+        }
+
 
         public async void Insert<T>(object request)
         {

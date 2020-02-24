@@ -26,7 +26,6 @@ C:\Users\WhoAm1\Desktop\RSII\MobileShop\MobileShop.Model\obj\Debug\netstandard2.
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\bin\Debug\netstandard2.0\MobileShop.Model.deps.json
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\bin\Debug\netstandard2.0\MobileShop.Model.dll
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\bin\Debug\netstandard2.0\MobileShop.Model.pdb
-C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.csprojAssemblyReference.cache
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.csproj.CoreCompileInputs.cache
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.AssemblyInfoInputs.cache
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.AssemblyInfo.cs

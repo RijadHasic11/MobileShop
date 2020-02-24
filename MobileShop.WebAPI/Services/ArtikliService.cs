@@ -32,7 +32,12 @@ namespace MobileShop.WebAPI.Services
 
             return _mapper.Map<Model.Models.Artikli>(entity);
         }
-        
+        public Model.Models.Artikli GetBySifra(string sifra)
+        {
+            var entity = _context.Artikli.Where(x => x.Sifra.Equals(sifra)).FirstOrDefault();
+
+            return _mapper.Map<Model.Models.Artikli>(entity);
+        }
 
         
     }

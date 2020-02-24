@@ -28,6 +28,12 @@ namespace MobileShop.WebAPI.Controllers
         {
             return _service.GetById(id);
         }
+        [HttpGet]
+        [Route("GetBySifra/{sifra}")]
+        public Model.Models.Artikli GetBySifra(string sifra)
+        {
+            return _service.GetBySifra(sifra);
+        }
         
     }
 }
