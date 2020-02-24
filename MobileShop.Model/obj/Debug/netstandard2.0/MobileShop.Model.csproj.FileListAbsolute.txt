@@ -39,3 +39,4 @@ C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\Mob
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.AssemblyInfo.cs
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.dll
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.pdb
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.Model\obj\Debug\netstandard2.0\MobileShop.Model.csprojAssemblyReference.cache

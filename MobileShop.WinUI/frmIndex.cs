@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MobileShop.WinUI.Obavijesti;
+
 
 namespace MobileShop.WinUI
 {
@@ -132,6 +134,14 @@ namespace MobileShop.WinUI
         private void PregledDetaljaNabavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNabavke frm = new frmNabavke();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void ListaObavijestiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmObavijesti frm = new frmObavijesti();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();

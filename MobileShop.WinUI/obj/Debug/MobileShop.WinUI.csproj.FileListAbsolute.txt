@@ -100,3 +100,5 @@ C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.D
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Dobavljaci.frmDobavljaci.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Skladista.frmSkladista.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Skladista.frmSkladistaDetalji.resources
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmObavijesti.resources
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmObavijestiDetalji.resources
