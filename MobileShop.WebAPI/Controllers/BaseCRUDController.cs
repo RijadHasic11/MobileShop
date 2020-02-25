@@ -17,15 +17,15 @@ namespace MobileShop.WebAPI.Controllers
         }
 
         [HttpPost]
-        public TModel Insert(TInsert request)
+        public void Insert(TInsert request)
         {
-            return _service.Insert(request);
+             _service.Insert(request);
         }
 
         [HttpPut("{id}")]
-        public TModel Update(int id, [FromBody]TUpdate request)
+        public void Update(int id, [FromBody]TUpdate request)
         {
-            return _service.Update(id, request);
+            _service.Update(id, request);
         }
     }
 }

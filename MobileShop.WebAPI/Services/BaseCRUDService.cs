@@ -13,17 +13,17 @@ namespace MobileShop.WebAPI.Services
         {
         }
 
-        public virtual TModel Insert(TInsert request)
+        public virtual void Insert(TInsert request)
         {
             var entity = _mapper.Map<TDatabase>(request);
 
             _context.Set<TDatabase>().Add(entity);
             _context.SaveChanges();
 
-            return _mapper.Map<TModel>(entity);
+           
         }
 
-        public virtual TModel Update(int id, TUpdate request)
+        public virtual void Update(int id, TUpdate request)
         {
             var entity = _context.Set<TDatabase>().Find(id);
             _context.Set<TDatabase>().Attach(entity);
@@ -33,7 +33,7 @@ namespace MobileShop.WebAPI.Services
 
             _context.SaveChanges();
 
-            return _mapper.Map<TModel>(entity);
+           
         }
     }
 }

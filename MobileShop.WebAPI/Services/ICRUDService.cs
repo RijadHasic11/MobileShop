@@ -7,8 +7,8 @@ namespace MobileShop.WebAPI.Services
 {
     public interface ICRUDService<TModel, TSearch, TInsert, TUpdate> : IService<TModel, TSearch>
     {
-        TModel Insert(TInsert request);
+        void Insert(TInsert request);
 
-        TModel Update(int id, TUpdate request);
+        void Update(int id, TUpdate request);
     }
 }

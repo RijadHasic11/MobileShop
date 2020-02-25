@@ -146,5 +146,11 @@ namespace MobileShop.WinUI
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void PostaviNovuObavijestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNovaObavijest frm = new frmNovaObavijest();
+            frm.Show();
+        }
     }
 }

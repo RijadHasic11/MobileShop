@@ -83,7 +83,7 @@ namespace MobileShop.WebAPI
             //services.AddScoped<ICRUDService<Model.Models.Dobavljaci, DobavljaciSearchRequest, object, object>, DobavljaciService>();
             services.AddScoped<IArtikliService, ArtikliService>();
             services.AddScoped<IService<Model.Models.Obavijesti, object>, BaseService<Model.Models.Obavijesti, object, Model.Database.Obavijesti>>();
-            services.AddScoped<ICRUDService<Model.Models.Obavijesti, Model.Requests.ObavijestiSearchRequest, object, object>, ObavijestiService>();
+            services.AddScoped<ICRUDService<Model.Models.Obavijesti, Model.Requests.ObavijestiSearchRequest,Model.Requests.ObavijestInsertRequest, Model.Requests.ObavijestInsertRequest>, ObavijestiService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

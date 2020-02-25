@@ -37,11 +37,12 @@
             this.noviKorisnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nabavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledDetaljaNabavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.obavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaObavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.obavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaObavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postaviNovuObavijestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +113,22 @@
             this.pregledDetaljaNabavkeToolStripMenuItem.Text = "Pregled detalja nabavke";
             this.pregledDetaljaNabavkeToolStripMenuItem.Click += new System.EventHandler(this.PregledDetaljaNabavkeToolStripMenuItem_Click);
             // 
+            // obavijestiToolStripMenuItem
+            // 
+            this.obavijestiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaObavijestiToolStripMenuItem,
+            this.postaviNovuObavijestToolStripMenuItem});
+            this.obavijestiToolStripMenuItem.Name = "obavijestiToolStripMenuItem";
+            this.obavijestiToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.obavijestiToolStripMenuItem.Text = "Obavijesti";
+            // 
+            // listaObavijestiToolStripMenuItem
+            // 
+            this.listaObavijestiToolStripMenuItem.Name = "listaObavijestiToolStripMenuItem";
+            this.listaObavijestiToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.listaObavijestiToolStripMenuItem.Text = "Lista Obavijesti";
+            this.listaObavijestiToolStripMenuItem.Click += new System.EventHandler(this.ListaObavijestiToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -128,20 +145,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // obavijestiToolStripMenuItem
+            // postaviNovuObavijestToolStripMenuItem
             // 
-            this.obavijestiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaObavijestiToolStripMenuItem});
-            this.obavijestiToolStripMenuItem.Name = "obavijestiToolStripMenuItem";
-            this.obavijestiToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.obavijestiToolStripMenuItem.Text = "Obavijesti";
-            // 
-            // listaObavijestiToolStripMenuItem
-            // 
-            this.listaObavijestiToolStripMenuItem.Name = "listaObavijestiToolStripMenuItem";
-            this.listaObavijestiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listaObavijestiToolStripMenuItem.Text = "Lista Obavijesti";
-            this.listaObavijestiToolStripMenuItem.Click += new System.EventHandler(this.ListaObavijestiToolStripMenuItem_Click);
+            this.postaviNovuObavijestToolStripMenuItem.Name = "postaviNovuObavijestToolStripMenuItem";
+            this.postaviNovuObavijestToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.postaviNovuObavijestToolStripMenuItem.Text = "Postavi novu obavijest";
+            this.postaviNovuObavijestToolStripMenuItem.Click += new System.EventHandler(this.PostaviNovuObavijestToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -178,6 +187,7 @@
         private System.Windows.Forms.ToolStripMenuItem pregledDetaljaNabavkeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obavijestiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaObavijestiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem postaviNovuObavijestToolStripMenuItem;
     }
 }
 

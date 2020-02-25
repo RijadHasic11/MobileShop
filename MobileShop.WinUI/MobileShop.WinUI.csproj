@@ -47,6 +47,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -90,6 +91,8 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ByteToImage.cs" />
+    <Compile Include="Helper\SlikaHelper.cs" />
     <Compile Include="Korisnici\frmKorisnici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +116,12 @@
     </Compile>
     <Compile Include="Nabavke\frmNovaNabavka.Designer.cs">
       <DependentUpon>frmNovaNabavka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obavijesti\frmNovaObavijest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obavijesti\frmNovaObavijest.Designer.cs">
+      <DependentUpon>frmNovaObavijest.cs</DependentUpon>
     </Compile>
     <Compile Include="Obavijesti\frmObavijesti.cs">
       <SubType>Form</SubType>
@@ -175,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nabavke\frmNovaNabavka.resx">
       <DependentUpon>frmNovaNabavka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obavijesti\frmNovaObavijest.resx">
+      <DependentUpon>frmNovaObavijest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obavijesti\frmObavijesti.resx">
       <DependentUpon>frmObavijesti.cs</DependentUpon>

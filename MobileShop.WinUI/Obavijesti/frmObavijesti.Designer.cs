@@ -32,10 +32,11 @@
             this.btnPretraga = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvObavijesti = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naslov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNovaObavijest = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObavijesti)).BeginInit();
             this.SuspendLayout();
@@ -84,15 +85,6 @@
             this.dgvObavijesti.TabIndex = 0;
             this.dgvObavijesti.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvObavijesti_CellDoubleClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Pretraga po naslovu";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -117,11 +109,31 @@
             this.Text.ReadOnly = true;
             this.Text.Width = 200;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Pretraga po naslovu";
+            // 
+            // btnNovaObavijest
+            // 
+            this.btnNovaObavijest.Location = new System.Drawing.Point(16, 387);
+            this.btnNovaObavijest.Name = "btnNovaObavijest";
+            this.btnNovaObavijest.Size = new System.Drawing.Size(124, 23);
+            this.btnNovaObavijest.TabIndex = 4;
+            this.btnNovaObavijest.Text = "Nova obavijest";
+            this.btnNovaObavijest.UseVisualStyleBackColor = true;
+            this.btnNovaObavijest.Click += new System.EventHandler(this.BtnNovaObavijest_Click);
+            // 
             // frmObavijesti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 396);
+            this.ClientSize = new System.Drawing.Size(440, 422);
+            this.Controls.Add(this.btnNovaObavijest);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPretraga);
@@ -144,5 +156,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naslov;
         private System.Windows.Forms.DataGridViewTextBoxColumn Text;
+        private System.Windows.Forms.Button btnNovaObavijest;
     }
 }

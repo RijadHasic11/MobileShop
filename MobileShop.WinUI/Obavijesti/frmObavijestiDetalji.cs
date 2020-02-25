@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace MobileShop.WinUI.Obavijesti
 {
@@ -21,7 +24,7 @@ namespace MobileShop.WinUI.Obavijesti
             InitializeComponent();
             _id = id;
         }
-
+        
         private async void FrmObavijestiDetalji_Load(object sender, EventArgs e)
         {
 
@@ -33,6 +36,22 @@ namespace MobileShop.WinUI.Obavijesti
             rtxtText.Text = Obavijest.Text;
             txtKorisnik.Text = korisnik.KorisnickoIme;
 
+
+            if (Obavijest.Slika != null)
+            {
+                Image originalImage = Helper.ByteToImage.byteArrayToImage(Obavijest.Slika);
+
+                int resizedWidth = int.Parse(ConfigurationManager.AppSettings["resizedWidthObavijestiDetalji"]);
+                int resizedHeight = int.Parse(ConfigurationManager.AppSettings["resizedHeightObavijestiDetalji"]);
+
+                if (originalImage.Width > resizedWidth)
+                {
+                    Image resizedImage = Helper.SlikaHelper.ResizeImage(originalImage, new Size(resizedWidth, resizedHeight));
+
+                    pbSlika.Image = resizedImage;
+                }
+
+            }
 
 
         }

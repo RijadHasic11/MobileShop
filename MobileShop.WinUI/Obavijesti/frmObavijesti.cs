@@ -43,5 +43,11 @@ namespace MobileShop.WinUI.Obavijesti
             forma.Show();
 
         }
+
+        private void BtnNovaObavijest_Click(object sender, EventArgs e)
+        {
+            frmNovaObavijest frm = new frmNovaObavijest();
+            frm.Show();
+        }
     }
 }
