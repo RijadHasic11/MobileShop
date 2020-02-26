@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobileShop.WinUI.Obavijesti;
-
+using MobileShop.WinUI.Narudzbe;
 
 namespace MobileShop.WinUI
 {
@@ -151,6 +151,21 @@ namespace MobileShop.WinUI
         {
             frmNovaObavijest frm = new frmNovaObavijest();
             frm.Show();
+        }
+
+        private void NarudzbeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ListaNarudzbiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmNarudzbe frm = new frmNarudzbe();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+
         }
     }
 }

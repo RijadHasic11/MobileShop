@@ -39,10 +39,12 @@
             this.pregledDetaljaNabavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.obavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaObavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postaviNovuObavijestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.postaviNovuObavijestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.narudzbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaNarudzbiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +55,8 @@
             this.zahtjeviToolStripMenuItem,
             this.korisniciToolStripMenuItem,
             this.nabavkeToolStripMenuItem,
-            this.obavijestiToolStripMenuItem});
+            this.obavijestiToolStripMenuItem,
+            this.narudzbeToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -129,6 +132,13 @@
             this.listaObavijestiToolStripMenuItem.Text = "Lista Obavijesti";
             this.listaObavijestiToolStripMenuItem.Click += new System.EventHandler(this.ListaObavijestiToolStripMenuItem_Click);
             // 
+            // postaviNovuObavijestToolStripMenuItem
+            // 
+            this.postaviNovuObavijestToolStripMenuItem.Name = "postaviNovuObavijestToolStripMenuItem";
+            this.postaviNovuObavijestToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.postaviNovuObavijestToolStripMenuItem.Text = "Postavi novu obavijest";
+            this.postaviNovuObavijestToolStripMenuItem.Click += new System.EventHandler(this.PostaviNovuObavijestToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -145,12 +155,21 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // postaviNovuObavijestToolStripMenuItem
+            // narudzbeToolStripMenuItem
             // 
-            this.postaviNovuObavijestToolStripMenuItem.Name = "postaviNovuObavijestToolStripMenuItem";
-            this.postaviNovuObavijestToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.postaviNovuObavijestToolStripMenuItem.Text = "Postavi novu obavijest";
-            this.postaviNovuObavijestToolStripMenuItem.Click += new System.EventHandler(this.PostaviNovuObavijestToolStripMenuItem_Click);
+            this.narudzbeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaNarudzbiToolStripMenuItem});
+            this.narudzbeToolStripMenuItem.Name = "narudzbeToolStripMenuItem";
+            this.narudzbeToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.narudzbeToolStripMenuItem.Text = "Narudzbe";
+            this.narudzbeToolStripMenuItem.Click += new System.EventHandler(this.NarudzbeToolStripMenuItem_Click);
+            // 
+            // listaNarudzbiToolStripMenuItem
+            // 
+            this.listaNarudzbiToolStripMenuItem.Name = "listaNarudzbiToolStripMenuItem";
+            this.listaNarudzbiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaNarudzbiToolStripMenuItem.Text = "Lista Narudzbi";
+            this.listaNarudzbiToolStripMenuItem.Click += new System.EventHandler(this.ListaNarudzbiToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -188,6 +207,8 @@
         private System.Windows.Forms.ToolStripMenuItem obavijestiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaObavijestiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postaviNovuObavijestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem narudzbeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaNarudzbiToolStripMenuItem;
     }
 }
 

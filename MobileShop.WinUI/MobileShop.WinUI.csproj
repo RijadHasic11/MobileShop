@@ -117,6 +117,12 @@
     <Compile Include="Nabavke\frmNovaNabavka.Designer.cs">
       <DependentUpon>frmNovaNabavka.cs</DependentUpon>
     </Compile>
+    <Compile Include="Narudzbe\frmNarudzbe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Narudzbe\frmNarudzbe.Designer.cs">
+      <DependentUpon>frmNarudzbe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obavijesti\frmNovaObavijest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nabavke\frmNovaNabavka.resx">
       <DependentUpon>frmNovaNabavka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Narudzbe\frmNarudzbe.resx">
+      <DependentUpon>frmNarudzbe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obavijesti\frmNovaObavijest.resx">
       <DependentUpon>frmNovaObavijest.cs</DependentUpon>
