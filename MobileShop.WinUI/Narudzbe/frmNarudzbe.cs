@@ -38,5 +38,13 @@ namespace MobileShop.WinUI.Narudzbe
 
             dgvNarudzbe.DataSource = result;
         }
+
+        private void DgvNarudzbe_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var NarudzbaId = int.Parse(dgvNarudzbe.SelectedRows[0].Cells[0].Value.ToString());
+
+            frmNarudzbeDetalji forma = new frmNarudzbeDetalji(NarudzbaId);
+            forma.Show();
+        }
     }
 }

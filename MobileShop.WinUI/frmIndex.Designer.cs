@@ -40,11 +40,11 @@
             this.obavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaObavijestiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.postaviNovuObavijestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.narudzbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaNarudzbiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.narudzbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaNarudzbiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -139,22 +139,6 @@
             this.postaviNovuObavijestToolStripMenuItem.Text = "Postavi novu obavijest";
             this.postaviNovuObavijestToolStripMenuItem.Click += new System.EventHandler(this.PostaviNovuObavijestToolStripMenuItem_Click);
             // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel.Text = "Status";
-            // 
             // narudzbeToolStripMenuItem
             // 
             this.narudzbeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -170,6 +154,22 @@
             this.listaNarudzbiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaNarudzbiToolStripMenuItem.Text = "Lista Narudzbi";
             this.listaNarudzbiToolStripMenuItem.Click += new System.EventHandler(this.ListaNarudzbiToolStripMenuItem_Click);
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Text = "Status";
             // 
             // frmIndex
             // 

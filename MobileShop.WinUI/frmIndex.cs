@@ -167,5 +167,10 @@ namespace MobileShop.WinUI
             frm.Show();
 
         }
+
+        private void DetaljiNarudzbeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

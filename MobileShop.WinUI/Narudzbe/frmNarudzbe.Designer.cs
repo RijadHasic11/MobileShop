@@ -97,6 +97,7 @@
             this.dgvNarudzbe.ReadOnly = true;
             this.dgvNarudzbe.Size = new System.Drawing.Size(544, 213);
             this.dgvNarudzbe.TabIndex = 0;
+            this.dgvNarudzbe.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvNarudzbe_CellContentDoubleClick);
             // 
             // NarudzbaId
             // 
