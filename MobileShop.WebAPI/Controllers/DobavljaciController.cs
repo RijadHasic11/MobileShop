@@ -31,5 +31,17 @@ namespace MobileShop.WebAPI.Controllers
         {
             return _service.GetById(id);
         }
+
+        [HttpPost]
+        public void Insert(DobavljaciInsertRequest request)
+        {
+            _service.Insert(request);
+        }
+
+        [HttpPut("{id}")]
+        public void Update(int id, [FromBody]DobavljaciInsertRequest request)
+        {
+            _service.Update(id, request);
+        }
     }
 }

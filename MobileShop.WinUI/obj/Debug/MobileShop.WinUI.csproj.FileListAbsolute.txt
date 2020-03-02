@@ -76,7 +76,6 @@ C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\bin\Debug\MobileShop.Model.p
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\bin\Debug\Flurl.xml
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\bin\Debug\Flurl.Http.xml
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\bin\Debug\Newtonsoft.Json.xml
-C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csprojAssemblyReference.cache
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.exe.config
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndex.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmLogin.resources
@@ -105,3 +104,10 @@ C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\Mobile
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmNovaObavijest.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Narudzbe.frmNarudzbe.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Narudzbe.frmNarudzbeDetalji.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Narudzbe.frmNarudzbe.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Narudzbe.frmNarudzbeDetalji.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmNovaObavijest.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmObavijesti.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmObavijestiDetalji.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csprojAssemblyReference.cache
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Dobavljaci.frmDobavljaciDetalji.resources

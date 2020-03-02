@@ -85,6 +85,7 @@
             this.dgvKorisnici.Location = new System.Drawing.Point(3, 16);
             this.dgvKorisnici.Name = "dgvKorisnici";
             this.dgvKorisnici.ReadOnly = true;
+            this.dgvKorisnici.RowHeadersVisible = false;
             this.dgvKorisnici.Size = new System.Drawing.Size(571, 332);
             this.dgvKorisnici.TabIndex = 0;
             this.dgvKorisnici.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvKorisnici_CellDoubleClick_1);
@@ -113,11 +114,11 @@
             // 
             // Email
             // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Email.DataPropertyName = "Email";
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
-            this.Email.Width = 127;
             // 
             // Telefon
             // 

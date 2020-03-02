@@ -145,5 +145,11 @@ namespace MobileShop.WinUI
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void noviDobavljacToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDobavljaciDetalji frm = new frmDobavljaciDetalji();
+            frm.Show();
+        }
     }
 }
