@@ -1,4 +1,5 @@
-﻿using MobileShop.Model.Requests;
+﻿using Microsoft.AspNetCore.Mvc;
+using MobileShop.Model.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace MobileShop.WebAPI.Services
         List<Model.Models.Dobavljaci> Get(DobavljaciSearchRequest search);
 
         Model.Models.Dobavljaci GetById(int id);
-        //void Insert(DobavljaciInsertRequest request);
+        void Insert(DobavljaciInsertRequest request);
+        void Update(int id, [FromBody]DobavljaciInsertRequest request);
 
     }
 }

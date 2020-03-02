@@ -109,6 +109,7 @@
             this.Controls.Add(this.txtNaziv);
             this.Name = "frmSkladistaDetalji";
             this.Text = "frmSkladistaDetalji";
+            this.Load += new System.EventHandler(this.frmSkladistaDetalji_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

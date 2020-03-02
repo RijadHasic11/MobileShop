@@ -37,6 +37,11 @@ namespace MobileShop.WinUI.Skladista
             MessageBox.Show("Uspješno dodano skladište");
 
         }
+
+        private void frmSkladistaDetalji_Load(object sender, EventArgs e)
+        {
+
+        }
     }
   
 }

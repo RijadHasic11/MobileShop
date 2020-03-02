@@ -34,9 +34,10 @@ namespace MobileShop.WinUI.Korisnici
         }
         private void DgvKorisnici_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            var korisnikId = int.Parse(dgvKorisnici.SelectedRows[0].Cells[0].Value.ToString());
+            //var korisnikId = int.Parse(dgvKorisnici.SelectedRows[e.RowIndex].Cells[1].Value.ToString());
+            var korisnikId = dgvKorisnici.Rows[e.RowIndex].Cells[0].Value;
 
-            frmKorisniciDetalji frm = new frmKorisniciDetalji(korisnikId);
+            frmKorisniciDetalji frm = new frmKorisniciDetalji(int.Parse(korisnikId.ToString()));
             frm.Show();
         }
     }

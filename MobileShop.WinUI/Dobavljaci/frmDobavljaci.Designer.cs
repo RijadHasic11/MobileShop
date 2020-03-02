@@ -60,19 +60,19 @@
             this.dgvDobavljaci.Name = "dgvDobavljaci";
             this.dgvDobavljaci.ReadOnly = true;
             this.dgvDobavljaci.RowHeadersVisible = false;
-            this.dgvDobavljaci.Size = new System.Drawing.Size(797, 313);
+            this.dgvDobavljaci.Size = new System.Drawing.Size(616, 326);
             this.dgvDobavljaci.TabIndex = 0;
             // 
             // txtPretraga
             // 
-            this.txtPretraga.Location = new System.Drawing.Point(94, 22);
+            this.txtPretraga.Location = new System.Drawing.Point(45, 28);
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(381, 20);
             this.txtPretraga.TabIndex = 1;
             // 
             // btnPretraga
             // 
-            this.btnPretraga.Location = new System.Drawing.Point(489, 22);
+            this.btnPretraga.Location = new System.Drawing.Point(454, 28);
             this.btnPretraga.Name = "btnPretraga";
             this.btnPretraga.Size = new System.Drawing.Size(75, 23);
             this.btnPretraga.TabIndex = 2;
@@ -90,7 +90,6 @@
             // 
             // Naziv
             // 
-            this.Naziv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Naziv.DataPropertyName = "Naziv";
             this.Naziv.HeaderText = "Naziv";
             this.Naziv.Name = "Naziv";
@@ -142,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 373);
+            this.ClientSize = new System.Drawing.Size(630, 396);
             this.Controls.Add(this.btnPretraga);
             this.Controls.Add(this.txtPretraga);
             this.Controls.Add(this.dgvDobavljaci);
@@ -157,6 +156,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDobavljaci;
+        private System.Windows.Forms.TextBox txtPretraga;
+        private System.Windows.Forms.Button btnPretraga;
         private System.Windows.Forms.DataGridViewTextBoxColumn DobavljacId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn KontaktOsoba;
@@ -165,7 +166,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Web;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.TextBox txtPretraga;
-        private System.Windows.Forms.Button btnPretraga;
     }
 }

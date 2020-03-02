@@ -67,6 +67,12 @@
     <Compile Include="Dobavljaci\frmDobavljaci.Designer.cs">
       <DependentUpon>frmDobavljaci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dobavljaci\frmDobavljaciDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dobavljaci\frmDobavljaciDetalji.Designer.cs">
+      <DependentUpon>frmDobavljaciDetalji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </Compile>
     <EmbeddedResource Include="Dobavljaci\frmDobavljaci.resx">
       <DependentUpon>frmDobavljaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dobavljaci\frmDobavljaciDetalji.resx">
+      <DependentUpon>frmDobavljaciDetalji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIndexAdmin.resx">
       <DependentUpon>frmIndexAdmin.cs</DependentUpon>

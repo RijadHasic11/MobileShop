@@ -45,5 +45,40 @@ namespace MobileShop.WebAPI.Services
             return _mapper.Map<Model.Models.Dobavljaci>(entity);
 
         }
+
+        public void Insert(DobavljaciInsertRequest request)
+        {
+            Model.Database.Dobavljaci novo = new Model.Database.Dobavljaci();
+
+            novo.Naziv        = request.Naziv       ;
+            novo.KontaktOsoba = request.KontaktOsoba;
+            novo.Adresa       = request.Adresa      ;
+            novo.Telefon      = request.Telefon     ;
+            novo.Fax          = request.Fax         ;
+            novo.Web          = request.Web         ;
+            novo.Email        = request.Email       ;
+            novo.ZiroRacuni   = request.ZiroRacuni  ;
+            novo.Napomena     = request.Napomena    ;
+            novo.Status       = request.Status      ;
+         
+
+            _context.Dobavljaci.Add(novo);
+            _context.SaveChanges();
+        }
+
+        public void Update(int id, DobavljaciInsertRequest request)
+        {
+            var entity = _context.Dobavljaci.Find(id);
+            _context.Dobavljaci.Attach(entity);
+            _context.Dobavljaci.Update(entity);
+
+           
+
+            _mapper.Map(request, entity);
+
+            _context.SaveChanges();
+
+
+        }
     }
 }
