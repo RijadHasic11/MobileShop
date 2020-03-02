@@ -45,6 +45,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.izvjestajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledIzvjestajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,8 @@
             this.korisniciToolStripMenuItem,
             this.nabavkeToolStripMenuItem,
             this.obavijestiToolStripMenuItem,
-            this.narudzbeToolStripMenuItem});
+            this.narudzbeToolStripMenuItem,
+            this.izvjestajiToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -151,7 +154,7 @@
             // listaNarudzbiToolStripMenuItem
             // 
             this.listaNarudzbiToolStripMenuItem.Name = "listaNarudzbiToolStripMenuItem";
-            this.listaNarudzbiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaNarudzbiToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.listaNarudzbiToolStripMenuItem.Text = "Lista Narudzbi";
             this.listaNarudzbiToolStripMenuItem.Click += new System.EventHandler(this.ListaNarudzbiToolStripMenuItem_Click);
             // 
@@ -170,6 +173,21 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // izvjestajiToolStripMenuItem
+            // 
+            this.izvjestajiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregledIzvjestajaToolStripMenuItem});
+            this.izvjestajiToolStripMenuItem.Name = "izvjestajiToolStripMenuItem";
+            this.izvjestajiToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.izvjestajiToolStripMenuItem.Text = "Izvjestaji";
+            // 
+            // pregledIzvjestajaToolStripMenuItem
+            // 
+            this.pregledIzvjestajaToolStripMenuItem.Name = "pregledIzvjestajaToolStripMenuItem";
+            this.pregledIzvjestajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pregledIzvjestajaToolStripMenuItem.Text = "Pregled izvjestaja";
+            this.pregledIzvjestajaToolStripMenuItem.Click += new System.EventHandler(this.PregledIzvjestajaToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -209,6 +227,8 @@
         private System.Windows.Forms.ToolStripMenuItem postaviNovuObavijestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem narudzbeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaNarudzbiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem izvjestajiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregledIzvjestajaToolStripMenuItem;
     }
 }
 

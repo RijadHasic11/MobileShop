@@ -93,6 +93,12 @@
     </Compile>
     <Compile Include="Helper\ByteToImage.cs" />
     <Compile Include="Helper\SlikaHelper.cs" />
+    <Compile Include="Izvjestaji\frmIzvjestajiIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvjestaji\frmIzvjestajiIndex.Designer.cs">
+      <DependentUpon>frmIzvjestajiIndex.cs</DependentUpon>
+    </Compile>
     <Compile Include="Korisnici\frmKorisnici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izvjestaji\frmIzvjestajiIndex.resx">
+      <DependentUpon>frmIzvjestajiIndex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisnici.resx">
       <DependentUpon>frmKorisnici.cs</DependentUpon>

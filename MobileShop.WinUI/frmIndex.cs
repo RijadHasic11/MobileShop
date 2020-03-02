@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MobileShop.WinUI.Obavijesti;
 using MobileShop.WinUI.Narudzbe;
+using MobileShop.WinUI.Izvjestaji;
 
 namespace MobileShop.WinUI
 {
@@ -171,6 +172,14 @@ namespace MobileShop.WinUI
         private void DetaljiNarudzbeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void PregledIzvjestajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIzvjestajiIndex frm = new frmIzvjestajiIndex();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }
