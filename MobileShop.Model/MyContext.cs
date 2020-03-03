@@ -42,6 +42,7 @@ namespace MobileShop.Model
         public DbSet<Zahtjevi> Zahtjevi { get; set; }
         public DbSet<ZahtjeviStavke> ZahtjeviStavke { get; set; }
         public DbSet<Obavijesti> Obavijesti { get; set; }
+        public DbSet<PoslanaNarudzba> PoslanaNarudzba { get; set; }
 
 
 

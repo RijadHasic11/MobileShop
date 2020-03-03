@@ -68,5 +68,10 @@ namespace MobileShop.WinUI.Narudzbe
 
             dataGridView1.DataSource = result;
         }
+
+        private void BtnZakljuci_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

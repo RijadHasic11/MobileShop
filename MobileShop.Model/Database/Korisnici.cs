@@ -14,6 +14,7 @@ namespace MobileShop.Model.Database
             Nabavka = new HashSet<Nabavka>();
             ZahtjeviStavke = new HashSet<ZahtjeviStavke>();
             Obavijesti = new HashSet<Obavijesti>();
+            PoslanaNarudzba = new HashSet<PoslanaNarudzba>();
         }
 
         [Key]
@@ -32,5 +33,6 @@ namespace MobileShop.Model.Database
         public ICollection<KorisniciUloge> KorisniciUloge { get; set; }
         public ICollection<Nabavka> Nabavka { get; set; }
         public ICollection<Obavijesti> Obavijesti { get; set; }
+        public ICollection<PoslanaNarudzba> PoslanaNarudzba { get; set; }
     }
 }

@@ -32,17 +32,18 @@
             this.txtBrojNarudzbe = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
-            this.cbStatus = new System.Windows.Forms.CheckBox();
-            this.cbOtkazano = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIznosbezPdv = new System.Windows.Forms.TextBox();
-            this.txtIznossaPdv = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtKlijent = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnZakljuci = new System.Windows.Forms.Button();
             this.txtSkladiste = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtKlijent = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtIznossaPdv = new System.Windows.Forms.TextBox();
+            this.txtIznosbezPdv = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbOtkazano = new System.Windows.Forms.CheckBox();
+            this.cbStatus = new System.Windows.Forms.CheckBox();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.groupbox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NarudzbaStavkaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +85,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnZakljuci);
             this.groupBox1.Controls.Add(this.txtSkladiste);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtKlijent);
@@ -105,67 +107,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalji narudzbe";
             // 
-            // dtpDatum
+            // btnZakljuci
             // 
-            this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDatum.Location = new System.Drawing.Point(117, 53);
-            this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(157, 20);
-            this.dtpDatum.TabIndex = 3;
+            this.btnZakljuci.Location = new System.Drawing.Point(373, 128);
+            this.btnZakljuci.Name = "btnZakljuci";
+            this.btnZakljuci.Size = new System.Drawing.Size(157, 31);
+            this.btnZakljuci.TabIndex = 16;
+            this.btnZakljuci.Text = "Zakljuci narudzbu";
+            this.btnZakljuci.UseVisualStyleBackColor = true;
+            this.btnZakljuci.Click += new System.EventHandler(this.BtnZakljuci_Click);
             // 
-            // cbStatus
+            // txtSkladiste
             // 
-            this.cbStatus.AutoSize = true;
-            this.cbStatus.Location = new System.Drawing.Point(117, 85);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(56, 17);
-            this.cbStatus.TabIndex = 5;
-            this.cbStatus.Text = "Status";
-            this.cbStatus.UseVisualStyleBackColor = true;
+            this.txtSkladiste.Location = new System.Drawing.Point(373, 53);
+            this.txtSkladiste.Name = "txtSkladiste";
+            this.txtSkladiste.ReadOnly = true;
+            this.txtSkladiste.Size = new System.Drawing.Size(157, 20);
+            this.txtSkladiste.TabIndex = 15;
             // 
-            // cbOtkazano
+            // label6
             // 
-            this.cbOtkazano.AutoSize = true;
-            this.cbOtkazano.Location = new System.Drawing.Point(202, 85);
-            this.cbOtkazano.Name = "cbOtkazano";
-            this.cbOtkazano.Size = new System.Drawing.Size(72, 17);
-            this.cbOtkazano.TabIndex = 7;
-            this.cbOtkazano.Text = "Otkazano";
-            this.cbOtkazano.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Iznos sa PDV:";
-            // 
-            // txtIznosbezPdv
-            // 
-            this.txtIznosbezPdv.Location = new System.Drawing.Point(117, 113);
-            this.txtIznosbezPdv.Name = "txtIznosbezPdv";
-            this.txtIznosbezPdv.ReadOnly = true;
-            this.txtIznosbezPdv.Size = new System.Drawing.Size(157, 20);
-            this.txtIznosbezPdv.TabIndex = 9;
-            // 
-            // txtIznossaPdv
-            // 
-            this.txtIznossaPdv.Location = new System.Drawing.Point(117, 139);
-            this.txtIznossaPdv.Name = "txtIznossaPdv";
-            this.txtIznossaPdv.ReadOnly = true;
-            this.txtIznossaPdv.Size = new System.Drawing.Size(157, 20);
-            this.txtIznossaPdv.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 120);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Iznos bez PDV:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(305, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Skladiste:";
             // 
             // txtKlijent
             // 
@@ -184,22 +151,67 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Klijent:";
             // 
-            // txtSkladiste
+            // label4
             // 
-            this.txtSkladiste.Location = new System.Drawing.Point(373, 56);
-            this.txtSkladiste.Name = "txtSkladiste";
-            this.txtSkladiste.ReadOnly = true;
-            this.txtSkladiste.Size = new System.Drawing.Size(157, 20);
-            this.txtSkladiste.TabIndex = 15;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Iznos bez PDV:";
             // 
-            // label6
+            // txtIznossaPdv
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(305, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Skladiste:";
+            this.txtIznossaPdv.Location = new System.Drawing.Point(117, 139);
+            this.txtIznossaPdv.Name = "txtIznossaPdv";
+            this.txtIznossaPdv.ReadOnly = true;
+            this.txtIznossaPdv.Size = new System.Drawing.Size(157, 20);
+            this.txtIznossaPdv.TabIndex = 10;
+            // 
+            // txtIznosbezPdv
+            // 
+            this.txtIznosbezPdv.Location = new System.Drawing.Point(117, 113);
+            this.txtIznosbezPdv.Name = "txtIznosbezPdv";
+            this.txtIznosbezPdv.ReadOnly = true;
+            this.txtIznosbezPdv.Size = new System.Drawing.Size(157, 20);
+            this.txtIznosbezPdv.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Iznos sa PDV:";
+            // 
+            // cbOtkazano
+            // 
+            this.cbOtkazano.AutoSize = true;
+            this.cbOtkazano.Location = new System.Drawing.Point(202, 85);
+            this.cbOtkazano.Name = "cbOtkazano";
+            this.cbOtkazano.Size = new System.Drawing.Size(72, 17);
+            this.cbOtkazano.TabIndex = 7;
+            this.cbOtkazano.Text = "Otkazano";
+            this.cbOtkazano.UseVisualStyleBackColor = true;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.AutoSize = true;
+            this.cbStatus.Location = new System.Drawing.Point(117, 85);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(56, 17);
+            this.cbStatus.TabIndex = 5;
+            this.cbStatus.Text = "Status";
+            this.cbStatus.UseVisualStyleBackColor = true;
+            // 
+            // dtpDatum
+            // 
+            this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDatum.Location = new System.Drawing.Point(117, 53);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(157, 20);
+            this.dtpDatum.TabIndex = 3;
             // 
             // groupbox2
             // 
@@ -232,6 +244,7 @@
             // 
             // NarudzbaStavkaId
             // 
+            this.NarudzbaStavkaId.DataPropertyName = "NarudzbaStavkaId";
             this.NarudzbaStavkaId.HeaderText = "NarudzbaStavkaId";
             this.NarudzbaStavkaId.Name = "NarudzbaStavkaId";
             this.NarudzbaStavkaId.ReadOnly = true;
@@ -239,30 +252,35 @@
             // 
             // Artikal
             // 
+            this.Artikal.DataPropertyName = "Naziv";
             this.Artikal.HeaderText = "Naziv artikla";
             this.Artikal.Name = "Artikal";
             this.Artikal.ReadOnly = true;
             // 
             // Sifra
             // 
+            this.Sifra.DataPropertyName = "Sifra";
             this.Sifra.HeaderText = "Sifra artikla";
             this.Sifra.Name = "Sifra";
             this.Sifra.ReadOnly = true;
             // 
             // Cijena
             // 
+            this.Cijena.DataPropertyName = "Cijena";
             this.Cijena.HeaderText = "Cijena";
             this.Cijena.Name = "Cijena";
             this.Cijena.ReadOnly = true;
             // 
             // Kolicina
             // 
+            this.Kolicina.DataPropertyName = "Kolicina";
             this.Kolicina.HeaderText = "Kolicina";
             this.Kolicina.Name = "Kolicina";
             this.Kolicina.ReadOnly = true;
             // 
             // Popust
             // 
+            this.Popust.DataPropertyName = "Popust";
             this.Popust.HeaderText = "Popust";
             this.Popust.Name = "Popust";
             this.Popust.ReadOnly = true;
@@ -304,6 +322,7 @@
         private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.GroupBox groupbox2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnZakljuci;
         private System.Windows.Forms.DataGridViewTextBoxColumn NarudzbaStavkaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Artikal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sifra;

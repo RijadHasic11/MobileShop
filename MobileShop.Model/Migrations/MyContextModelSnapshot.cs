@@ -15,7 +15,7 @@ namespace MobileShop.Model.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -337,6 +337,33 @@ namespace MobileShop.Model.Migrations
                     b.ToTable("Ocjene");
                 });
 
+            modelBuilder.Entity("MobileShop.Model.Database.PoslanaNarudzba", b =>
+                {
+                    b.Property<int>("PoslanaNarudzbaId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Datum");
+
+                    b.Property<int>("KlijentId");
+
+                    b.Property<int>("KorisnikId");
+
+                    b.Property<int>("NarudzbaId");
+
+                    b.Property<bool>("Poslano");
+
+                    b.HasKey("PoslanaNarudzbaId");
+
+                    b.HasIndex("KlijentId");
+
+                    b.HasIndex("KorisnikId");
+
+                    b.HasIndex("NarudzbaId");
+
+                    b.ToTable("PoslanaNarudzba");
+                });
+
             modelBuilder.Entity("MobileShop.Model.Database.Skladista", b =>
                 {
                     b.Property<int>("SkladisteId")
@@ -510,6 +537,24 @@ namespace MobileShop.Model.Migrations
                     b.HasOne("MobileShop.Model.Database.Klijenti", "Klijent")
                         .WithMany("Ocjene")
                         .HasForeignKey("KlijentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MobileShop.Model.Database.PoslanaNarudzba", b =>
+                {
+                    b.HasOne("MobileShop.Model.Database.Klijenti", "Klijent")
+                        .WithMany("PoslanaNarudzba")
+                        .HasForeignKey("KlijentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MobileShop.Model.Database.Korisnici", "Korisnik")
+                        .WithMany("PoslanaNarudzba")
+                        .HasForeignKey("KorisnikId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MobileShop.Model.Database.Narudzba", "Narudzba")
+                        .WithMany("PoslanaNarudzba")
+                        .HasForeignKey("NarudzbaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
