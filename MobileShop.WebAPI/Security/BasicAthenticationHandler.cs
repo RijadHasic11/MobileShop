@@ -25,7 +25,10 @@ namespace MobileShop.WebAPI.Security
             IKorisniciService userService)
             : base(options, logger, encoder, clock)
         {
+
             _userService = userService;
+          
+          
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -33,7 +36,7 @@ namespace MobileShop.WebAPI.Security
             if (!Request.Headers.ContainsKey("Authorization"))
                 return AuthenticateResult.Fail("Missing Authorization Header");
 
-            Model.Models.Korisnici user;
+            Model.Models.Korisnici user=null;
             try
             {
                 var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);

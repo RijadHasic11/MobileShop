@@ -24,7 +24,7 @@ namespace MobileShop.WebAPI.Services
         }
         public Model.Models.Korisnici Authenticiraj(string username, string pass)
         {
-            var user = _context.Korisnici.Where(y => y.KorisnickoIme == username).Include(x => x.KorisniciUloge).FirstOrDefault();
+            var user = _context.Korisnici.FirstOrDefault(x=>x.KorisnickoIme==username);
 
             if (user != null)
             {

@@ -10,9 +10,7 @@ using MobileShop.WebAPI.Services;
 
 namespace MobileShop.WebAPI.Controllers
 {
-
-
-
+   
     [Route("api/[controller]")]
     [ApiController]
     public class KorisniciController : ControllerBase

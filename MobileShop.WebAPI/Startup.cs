@@ -18,7 +18,6 @@ using MobileShop.Model;
 using MobileShop.Model.Requests;
 using MobileShop.WebAPI.Security;
 using MobileShop.WebAPI.Services;
-using Swashbuckle.AspNetCore;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -68,7 +67,7 @@ namespace MobileShop.WebAPI
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
             services.AddScoped<IService<Model.Models.Klijenti,object>,BaseService<Model.Models.Klijenti,object,Model.Database.Klijenti>>();
             services.AddScoped<IService<Model.Models.Zahtjevi, object>, BaseService<Model.Models.Zahtjevi, object, Model.Database.Zahtjevi>>();
 
@@ -102,9 +101,8 @@ namespace MobileShop.WebAPI
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseMvc();
-            app.UseAuthentication();
+            //app.UseHttpsRedirection();
+            
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
@@ -115,6 +113,9 @@ namespace MobileShop.WebAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
+
+            app.UseMvc();
+            app.UseAuthentication();
         }
     }
 }

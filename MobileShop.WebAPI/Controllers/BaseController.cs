@@ -10,6 +10,7 @@ using MobileShop.WebAPI.Services;
 namespace MobileShop.WebAPI.Controllers
 {
  
+    
     [Route("api/[controller]")]
     [ApiController]
     public class BaseController<TModel,TSearch> : ControllerBase
