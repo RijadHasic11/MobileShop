@@ -14,6 +14,8 @@
             <Label Text="Artikli"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Label Text="Sifra artikla: "></Label>
+            <Entry x:Name="Sifra" ></Entry>
             <ListView ItemsSource="{Binding ArtikliList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

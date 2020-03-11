@@ -188,6 +188,7 @@ namespace MobileShop.WinUI
 
         private async void FrmIndex_Load(object sender, EventArgs e)
         {
+
             var lista = await _service.Get<List<Model.Models.PoslanaNarudzba>>(null);
             
 

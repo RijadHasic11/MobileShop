@@ -14,6 +14,8 @@ namespace MobileShop.Model.Models
         public byte[] SlikaThumb { get; set; }
         public bool? Status { get; set; }
         public int KarakteristikeId { get; set; }
+        public int ModelId { get; set; }
+        public int ProizvodjacId { get; set; }
 
 
     }

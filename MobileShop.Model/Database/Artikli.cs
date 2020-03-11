@@ -24,10 +24,13 @@ namespace MobileShop.Model.Database
         public byte[] SlikaThumb { get; set; }
         public bool? Status { get; set; }
         public int KarakteristikeId { get; set; }
+        public int ProizvodjacId { get; set; }
+        public int ModelId { get; set; }
 
 
-       
 
+        public Proizvodjaci Proizvodjaci { get; set; }
+        public Modeli Modeli { get; set; }
         public Karakteristike Karakteristike { get; set; }
         public ICollection<NarudzbaStavke> NarudzbaStavke { get; set; }
         public ICollection<Ocjene> Ocjene { get; set; }

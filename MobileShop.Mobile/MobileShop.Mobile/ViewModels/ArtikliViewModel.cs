@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace MobileShop.Mobile.ViewModels
 {
-    public class ArtikliViewModel
+    public class ArtikliViewModel:BaseViewModel
     {
         private readonly APIService _artikliService = new APIService("Artikli");
         public ArtikliViewModel()

@@ -29,7 +29,11 @@ namespace MobileShop.Model.Migrations
 
                     b.Property<int>("KarakteristikeId");
 
+                    b.Property<int>("ModelId");
+
                     b.Property<string>("Naziv");
+
+                    b.Property<int>("ProizvodjacId");
 
                     b.Property<string>("Sifra");
 
@@ -42,6 +46,10 @@ namespace MobileShop.Model.Migrations
                     b.HasKey("ArtikalId");
 
                     b.HasIndex("KarakteristikeId");
+
+                    b.HasIndex("ModelId");
+
+                    b.HasIndex("ProizvodjacId");
 
                     b.ToTable("Artikli");
                 });
@@ -87,15 +95,11 @@ namespace MobileShop.Model.Migrations
 
                     b.Property<decimal>("Memorija");
 
-                    b.Property<string>("Model");
-
                     b.Property<bool>("Novo");
 
                     b.Property<string>("OperativniSistem");
 
                     b.Property<decimal>("Procesor");
-
-                    b.Property<string>("Proizvodjac");
 
                     b.Property<decimal>("Ram");
 
@@ -175,6 +179,19 @@ namespace MobileShop.Model.Migrations
                     b.HasIndex("UlogaId");
 
                     b.ToTable("KorisniciUloge");
+                });
+
+            modelBuilder.Entity("MobileShop.Model.Database.Modeli", b =>
+                {
+                    b.Property<int>("ModelId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Naziv");
+
+                    b.HasKey("ModelId");
+
+                    b.ToTable("Modeli");
                 });
 
             modelBuilder.Entity("MobileShop.Model.Database.Nabavka", b =>
@@ -364,6 +381,19 @@ namespace MobileShop.Model.Migrations
                     b.ToTable("PoslanaNarudzba");
                 });
 
+            modelBuilder.Entity("MobileShop.Model.Database.Proizvodjaci", b =>
+                {
+                    b.Property<int>("ProizvodjacId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Naziv");
+
+                    b.HasKey("ProizvodjacId");
+
+                    b.ToTable("Proizvodjaci");
+                });
+
             modelBuilder.Entity("MobileShop.Model.Database.Skladista", b =>
                 {
                     b.Property<int>("SkladisteId")
@@ -443,6 +473,16 @@ namespace MobileShop.Model.Migrations
                     b.HasOne("MobileShop.Model.Database.Karakteristike", "Karakteristike")
                         .WithMany("Artikli")
                         .HasForeignKey("KarakteristikeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MobileShop.Model.Database.Modeli", "Modeli")
+                        .WithMany("Artikli")
+                        .HasForeignKey("ModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MobileShop.Model.Database.Proizvodjaci", "Proizvodjaci")
+                        .WithMany("Artikli")
+                        .HasForeignKey("ProizvodjacId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

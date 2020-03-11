@@ -26,7 +26,7 @@ namespace MobileShop.WebAPI.Services
             {
                 Model.Database.Artikli artikal = _context.Artikli
                     .Where(x => x.ArtikalId == item.ArtikalId)
-                    .Include(y => y.Karakteristike)
+                    .Include(y => y.Karakteristike).Include(p=>p.Modeli).Include(z=>z.Proizvodjaci)
                     .SingleOrDefault();
 
                 StavkeNabavke stavka = new StavkeNabavke();
@@ -37,8 +37,8 @@ namespace MobileShop.WebAPI.Services
                 stavka.Kolicina = item.Kolicina;
                 stavka.StavkeNabavkeId = item.NabavkaStavkeId;
                 stavka.Artikal = artikal.Naziv;
-                stavka.Model = artikal.Karakteristike.Model;
-                stavka.Proizvodjac = artikal.Karakteristike.Proizvodjac;
+                stavka.Model = artikal.Modeli.Naziv;
+                stavka.Proizvodjac = artikal.Proizvodjaci.Naziv;
                 stavka.Slika = artikal.Slika;
 
                 StavkeNabavkeList.Add(stavka);

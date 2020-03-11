@@ -30,6 +30,9 @@ namespace MobileShop.Model
         public DbSet<Klijenti> Klijenti { get; set; }
         public DbSet<Ocjene> Ocjene { get; set; }
         public DbSet<Artikli> Artikli { get; set; }
+        public DbSet<Proizvodjaci> Proizvodjaci { get; set; }
+        public DbSet<Modeli> Modeli { get; set; }
+        public DbSet<Karakteristike> Karakteristike { get; set; }
         public DbSet<Dobavljaci> Dobavljaci { get; set; }
         public DbSet<Korisnici> Korisnici { get; set; }
         public DbSet<KorisniciUloge> KorisniciUloge { get; set; }
