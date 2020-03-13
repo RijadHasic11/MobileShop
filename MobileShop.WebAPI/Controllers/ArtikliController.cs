@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MobileShop.Model.Requests;
 using MobileShop.WebAPI.Services;
 
 namespace MobileShop.WebAPI.Controllers
@@ -19,9 +20,9 @@ namespace MobileShop.WebAPI.Controllers
         }
 
         [HttpGet]
-        public List<Model.Models.Artikli> Get()
+        public List<Model.Models.Artikli> Get([FromQuery]ArtikliSearchRequest search)
         {
-            return _service.Get();
+            return _service.Get(search);
         }
         [HttpGet("{id}")]
         public Model.Models.Artikli GetById(int id)

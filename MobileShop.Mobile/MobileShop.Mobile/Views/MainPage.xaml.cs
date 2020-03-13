@@ -39,6 +39,9 @@ namespace MobileShop.Mobile.Views
                     case (int)MenuItemType.Artikli:
                         MenuPages.Add(id, new NavigationPage(new ArtikliPage()));
                         break;
+                    case (int)MenuItemType.Narudzba:
+                        MenuPages.Add(id, new NavigationPage(new NarudzbaPage()));
+                        break;
                 }
             }
 

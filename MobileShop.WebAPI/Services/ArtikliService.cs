@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MobileShop.Model;
-
+using MobileShop.Model.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +18,18 @@ namespace MobileShop.WebAPI.Services
             _mapper = mapper;
         }
 
-        public List<Model.Models.Artikli> Get()
+        public List<Model.Models.Artikli> Get(ArtikliSearchRequest search)
         {
+            var query = _context.Set<Model.Database.Artikli>().AsQueryable();
 
-            var list = _context.Artikli.ToList();
+            if (search?.ProizvodjacId.HasValue == true)
+            {
+                query = query.Where(x => x.ProizvodjacId == search.ProizvodjacId);
+            }
+            query = query.OrderBy(x => x.Naziv);
+
+
+            var list = query.ToList();
 
             return _mapper.Map<List<Model.Models.Artikli>>(list);
         }

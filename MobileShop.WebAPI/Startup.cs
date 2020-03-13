@@ -87,6 +87,8 @@ namespace MobileShop.WebAPI
             services.AddScoped<IStavkeNarudzbeService, StavkeNarudzbeService>();
             services.AddScoped<IService<Model.Models.PoslanaNarudzba,object>,BaseService<Model.Models.PoslanaNarudzba, object, Model.Database.PoslanaNarudzba>>();
             services.AddScoped<ICRUDService<Model.Models.PoslanaNarudzba, object, object, Model.Requests.PoslanaNarudzbaUpdateRequest>, IPoslanaNarudzba>();
+            services.AddScoped<IService<Model.Models.Proizvodjaci, object>, BaseService<Model.Models.Proizvodjaci, object, Model.Database.Proizvodjaci>>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

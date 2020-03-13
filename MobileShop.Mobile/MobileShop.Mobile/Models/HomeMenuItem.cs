@@ -8,7 +8,8 @@ namespace MobileShop.Mobile.Models
     {
         Browse,
         About,
-        Artikli
+        Artikli,
+        Narudzba
     }
     public class HomeMenuItem
     {
