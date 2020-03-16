@@ -23,5 +23,10 @@ namespace MobileShop.Mobile.Views
 
             InitializeComponent();
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            DisplayAlert("Uspjeh", "Uspjesno dodan artikal u korpu", "OK");
+        }
     }
 }

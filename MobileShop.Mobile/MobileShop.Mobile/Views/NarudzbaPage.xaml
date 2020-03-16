@@ -10,7 +10,8 @@
         <StackLayout>
             <Label Text="Trenutna narudzba"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="24" FontAttributes="Bold"/>
             <ListView ItemsSource="{Binding NarudzbaList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -20,23 +21,35 @@
                                     <Label Text="{Binding Artikal.Naziv}" 
                                            LineBreakMode="NoWrap" 
                                            Style="{DynamicResource ListItemTextStyle}" 
-                                           FontSize="16" />
-                                    <Label Text="{Binding Artikal.Cijena}" 
+                                           FontSize="16"  />
+                                    <Label Text="{Binding Artikal.Cijena,StringFormat='Cijena: {0} KM'}" 
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemDetailTextStyle}"
                                            FontSize="13" />
-                                    <Label Text="{Binding Kolicina}" 
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Kolicina}" 
                                            LineBreakMode="NoWrap"
                                            Style="{DynamicResource ListItemDetailTextStyle}"
                                            FontSize="13" />
-                                    <Button Text="Add" Command="{Binding PovecajKolicinuCommand}"></Button>
+                                        <Button Text="+" Command="{Binding PovecajKolicinuCommand}"></Button>
+
+                       
+                                    </StackLayout>
+                                    
                                 </StackLayout>
+                                
 
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <StackLayout Orientation="Vertical" Padding="10" Margin="0">
+                <Label Text="{Binding BrojArtikala,StringFormat='Broj artikala: {0}'}" FontSize="26" FontAttributes="Italic"></Label>
+                <Label Text="{Binding Iznos,StringFormat='Iznos: {0} KM'}" FontSize="26" FontAttributes="Italic"></Label>
+                <Button x:Name="Zakljuci" Text="Zakljuci narudzbu" Clicked="Zakljuci_Clicked" ></Button>
+                <Button x:Name="Otkazi" Text="Otkazi narudzbu" Clicked="Otkazi_Clicked" ></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

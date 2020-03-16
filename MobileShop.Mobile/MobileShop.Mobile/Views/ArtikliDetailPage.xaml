@@ -3,38 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:MobileShop.Mobile.Converters"
              mc:Ignorable="d"
              x:Class="MobileShop.Mobile.Views.ArtikliDetailPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+        <Grid  Padding="10" Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
+                
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackLayout Grid.Row="0" Grid.Column="0">
+                <Image Source="{Binding Artikal.SlikaThumb,Converter={StaticResource imgConv}}"></Image>
+
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1" Padding="10">
+
                 <Label Text="{Binding Artikal.Naziv}"></Label>
                 <Label Text="{Binding Artikal.Sifra}"></Label>
-                <Label Text="{Binding Artikal.Cijena, StringFormat='Cijena: {0:C}'}"></Label>
+                <Label Text="{Binding Artikal.Cijena, StringFormat='Cijena: {0} KM'}"></Label>
                 <StackLayout Orientation="Horizontal">
 
                     <Entry Text="{Binding Kolicina}" Keyboard="Numeric"></Entry>
                     <Button Text="+1" Command="{Binding PovecajKolicinuCommand}"></Button>
-                </StackLayout>
 
-            </StackLayout>
-            <StackLayout Grid.Row="1" Grid.Column="0">
+                   
+                </StackLayout>
                 <Image Source="Assets/cart.png">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding NaruciCommand}"></TapGestureRecognizer>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding NaruciCommand}"></TapGestureRecognizer>
                     </Image.GestureRecognizers>
                 </Image>
-                
-                
+
             </StackLayout>
-            
+
         </Grid>
        
     </ContentPage.Content>

@@ -17,7 +17,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Artikli"
+            <Label Text="Artikli" FontSize="24" FontAttributes="Bold"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Picker ItemsSource="{Binding ProizvodjaciList}" SelectedItem="{Binding SelectedProizvodjac}" ItemDisplayBinding="{Binding Naziv}"></Picker>
@@ -26,10 +26,10 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10" Orientation="Horizontal">
-                                <StackLayout>
+                                <StackLayout WidthRequest="200" HeightRequest="400">
                                     <Image Source="{Binding SlikaThumb,Converter={StaticResource imgConv}}"></Image>
                                 </StackLayout>
-                                <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Vertical" Padding="10">
                                     <Label Text="{Binding Naziv}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
@@ -40,7 +40,14 @@
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
+                                    <Label Text="{Binding Cijena,StringFormat='Cijena: {0} KM'}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                    
                                 </StackLayout>
+                               
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

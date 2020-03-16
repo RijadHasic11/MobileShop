@@ -34,6 +34,8 @@ namespace MobileShop.Mobile.ViewModels
                 CartService.Cart.Remove(Artikal.ArtikalId);
             }
             CartService.Cart.Add(Artikal.ArtikalId, this);
+            
+            
         }
     }
 }

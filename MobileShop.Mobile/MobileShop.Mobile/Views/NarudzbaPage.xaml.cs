@@ -24,6 +24,18 @@ namespace MobileShop.Mobile.Views
         {
             base.OnAppearing();
             model.Init();
+
+        }
+
+        private void Zakljuci_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Otkazi_Clicked(object sender, EventArgs e)
+        {
+            model.NarudzbaList.Clear();
+            CartService.Cart.Clear();
         }
     }
 }
