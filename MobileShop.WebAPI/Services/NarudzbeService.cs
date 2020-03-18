@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using MobileShop.Model;
 using MobileShop.Model.Models;
@@ -12,10 +13,12 @@ namespace MobileShop.WebAPI.Services
     public class NarudzbeService : INarudzbeService
     {
         private readonly MyContext _context;
+        
 
         public NarudzbeService(MyContext context)
         {
             _context = context;
+           
         }
         public List<Narudzbe> Get(NarudzbeSearchRequest search)
         {
@@ -86,6 +89,51 @@ namespace MobileShop.WebAPI.Services
             nova.Status = item.Status;
 
             return nova;
+        }
+
+        public void Insert(NarudzbeInsertRequest request)
+        {
+            
+            Model.Database.Narudzba nova = new Model.Database.Narudzba();
+
+            nova.BrojNarudzbe = request.BrojNarudzbe;
+            nova.Datum = request.Datum;
+
+            if (request.IznosBezPdv > 0)
+            {
+                nova.IznosBezPdv = request.IznosBezPdv;
+            }
+            if (request.IznosSaPdv > 0)
+            {
+                nova.IznosSaPdv = request.IznosSaPdv;
+            }
+            
+            nova.Otkazano = request.Otkazano;
+            nova.Status = request.Status;
+
+
+            nova.KorisnikId = request.KorisnikId;
+            nova.KlijentId = request.KlijentId;
+            nova.SkladisteId = request.SkladisteId;
+            
+
+            _context.Narudzba.Add(nova);
+            _context.SaveChanges();
+
+            foreach(var item in request.stavke)
+            {
+                
+                Model.Database.NarudzbaStavke stavka = new Model.Database.NarudzbaStavke();
+                stavka.NarudzbaId = nova.NarudzbaId;
+                stavka.Popust = item.Popust;
+                stavka.Kolicina = item.Kolicina;
+                stavka.Cijena = item.Cijena;
+                stavka.ArtikalId = item.ArtikalId;
+               
+
+                _context.NarudzbaStavke.Add(stavka);
+                _context.SaveChanges();
+            }
         }
     }
 }

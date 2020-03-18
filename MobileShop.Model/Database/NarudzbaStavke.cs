@@ -13,6 +13,7 @@ namespace MobileShop.Model.Database
         public int Kolicina { get; set; }
         public decimal Cijena { get; set; }
         public decimal? Popust { get; set; }
+        public int ArtikalId { get; set; }
 
         public Narudzba Narudzba { get; set; }
         public Artikli Artikal { get; set; }

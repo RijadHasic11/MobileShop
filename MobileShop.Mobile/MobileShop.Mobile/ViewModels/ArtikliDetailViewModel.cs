@@ -15,9 +15,9 @@ namespace MobileShop.Mobile.ViewModels
         }
         public Model.Models.Artikli Artikal { get; set; }
 
-        decimal _kolicina = 0;
+        int _kolicina = 0;
 
-        public decimal Kolicina
+        public int Kolicina
         {
             get { return _kolicina; }
             set { SetProperty(ref _kolicina, value); }

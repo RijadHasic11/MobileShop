@@ -25,10 +25,12 @@ namespace MobileShop.Model.Database
         public decimal IznosBezPdv { get; set; }
         public decimal IznosSaPdv { get; set; }
         public int SkladisteId { get; set; }
+        public int KorisnikId { get; set; }
 
         public Korisnici Korisnik { get; set; }
         public Klijenti Klijent { get; set; }
         public Skladista Skladiste { get; set; }
+
        
         public ICollection<NarudzbaStavke> NarudzbaStavke { get; set; }
         public ICollection<PoslanaNarudzba> PoslanaNarudzba { get; set; }

@@ -30,6 +30,10 @@ namespace MobileShop.WebAPI.Controllers
         {
             return _service.GetById(id);
         }
-        
+        [HttpPost]
+        public void Insert(NarudzbeInsertRequest request)
+        {
+            _service.Insert(request);
+        }
     }
 }
