@@ -7,10 +7,10 @@ namespace MobileShop.Mobile.Helper
     public class BrojNarudzbeHelper
     {
        
-        public static string GenerisiBrojNarudzbe()
+        public static string GenerisiBrojNarudzbe(int trenutnibroj)
         {
            
-            int trenutnibroj = 1;
+          
 
             string novi = "N";
 
@@ -27,7 +27,7 @@ namespace MobileShop.Mobile.Helper
                 novi += trenutnibroj;
             }
 
-            trenutnibroj++;
+         
           
             return novi;
         }

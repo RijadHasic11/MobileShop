@@ -34,10 +34,20 @@ namespace MobileShop.Mobile.Views
 
         private async void Zakljuci_Clicked(object sender, EventArgs e)
         {
-
-           
+            List<Model.Models.Narudzbe> list =await _service.Get<List<Model.Models.Narudzbe>>(null);
+            int najveci = int.MinValue;
+            foreach (var item in list)
+            {
+                
+                if (item.NarudzbaId > najveci)
+                {
+                    najveci = item.NarudzbaId;
+                }
+            }
+            int BrojNarudzbe = najveci + 1;
+            
           
-            string neki = BrojNarudzbeHelper.GenerisiBrojNarudzbe();
+            string neki = BrojNarudzbeHelper.GenerisiBrojNarudzbe(BrojNarudzbe);
             
 
             NarudzbeInsertRequest request = new NarudzbeInsertRequest();

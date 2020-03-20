@@ -9,7 +9,8 @@ namespace MobileShop.Mobile.Models
         Browse,
         About,
         Artikli,
-        Narudzba
+        Narudzba,
+        Placanje
     }
     public class HomeMenuItem
     {

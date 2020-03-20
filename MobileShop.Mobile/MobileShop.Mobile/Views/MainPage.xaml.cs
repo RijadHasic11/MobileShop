@@ -42,6 +42,9 @@ namespace MobileShop.Mobile.Views
                     case (int)MenuItemType.Narudzba:
                         MenuPages.Add(id, new NavigationPage(new NarudzbaPage()));
                         break;
+                    case (int)MenuItemType.Placanje:
+                        MenuPages.Add(id, new NavigationPage(new CreditCardPage()));
+                        break;
                 }
             }
 
