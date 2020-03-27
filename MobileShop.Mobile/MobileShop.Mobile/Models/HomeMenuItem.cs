@@ -10,7 +10,9 @@ namespace MobileShop.Mobile.Models
         About,
         Artikli,
         Narudzba,
-        Placanje
+        Placanje,
+        Obavijesti,
+        Zahtjevi
     }
     public class HomeMenuItem
     {

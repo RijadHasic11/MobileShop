@@ -36,7 +36,7 @@ namespace MobileShop.WebAPI.Security
             if (!Request.Headers.ContainsKey("Authorization"))
                 return AuthenticateResult.Fail("Missing Authorization Header");
 
-            Model.Models.Korisnici user=null;
+            Model.Models.Korisnici user = null;
             try
             {
                 var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
@@ -44,7 +44,7 @@ namespace MobileShop.WebAPI.Security
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(':');
                 var username = credentials[0];
                 var password = credentials[1];
-                user  =_userService.Authenticiraj(username, password);
+                user = _userService.Authenticiraj(username, password);
             }
             catch
             {
@@ -58,7 +58,10 @@ namespace MobileShop.WebAPI.Security
                 new Claim(ClaimTypes.NameIdentifier, user.KorisnickoIme),
                 new Claim(ClaimTypes.Name, user.Ime),
             };
-
+            foreach (var role in user.KorisniciUloge)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role.Uloga.Naziv));
+            }
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);

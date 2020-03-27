@@ -100,6 +100,7 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Helper\ByteToImage.cs" />
     <Compile Include="Helper\SlikaHelper.cs" />
     <Compile Include="Izvjestaji\frmIzvjestajiIndex.cs">

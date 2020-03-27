@@ -20,62 +20,63 @@ using MobileShop.WebAPI.Security;
 using MobileShop.WebAPI.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.Swagger;
-
+using Microsoft.OpenApi.Models;
 
 namespace MobileShop.WebAPI
 {
-    public class BasicAuthDocumentFilter : IDocumentFilter
-    {
-        public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
-        {
-            var securityRequirements = new Dictionary<string, IEnumerable<string>>()
-        {
-            { "basic", new string[] { } }  // in swagger you specify empty list unless using OAuth2 scopes
-        };
+    //public class BasicAuthDocumentFilter : IDocumentFilter
+    //{
+    //    public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
+    //    {
+    //        var securityRequirements = new Dictionary<string, IEnumerable<string>>()
+    //    {
+    //        { "basic", new string[] { } }  // in swagger you specify empty list unless using OAuth2 scopes
+    //    };
 
-            swaggerDoc.Security = new[] { securityRequirements };
-        }
+    //        swaggerDoc.Security = new[] { securityRequirements };
+    //    }
 
-    }
+    //}
 
     public class Startup
     {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+           
         }
 
         public IConfiguration Configuration { get; }
-
+       
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(x => x.Filters.Add<ErrorFilter>()).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<MyContext>(x => x.UseSqlServer(Configuration.GetConnectionString("localDB")));
 
-            services.AddAuthentication("BasicAuthentication")
-               .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+           
 
             services.AddAutoMapper(typeof(Startup));
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
-                c.AddSecurityDefinition("basic", new BasicAuthScheme() { Type = "basic" });
-                c.DocumentFilter<BasicAuthDocumentFilter>();
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Api info", Version = "v1" });
+                //c.AddSecurityDefinition("basic", new BasicAuthScheme() { Type = "basic" });
+                //c.DocumentFilter<BasicAuthDocumentFilter>();
 
             });
+            //services.AddAuthentication("BasicAuthentication")
+            //  .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
 
-            
             services.AddScoped<IService<Model.Models.Klijenti,object>,BaseService<Model.Models.Klijenti,object,Model.Database.Klijenti>>();
             services.AddScoped<IService<Model.Models.Zahtjevi, object>, BaseService<Model.Models.Zahtjevi, object, Model.Database.Zahtjevi>>();
 
-            services.AddScoped<ICRUDService<Model.Models.Zahtjevi, ZahtjeviSearchRequest, object, object>, ZahtjeviService>();
+            services.AddScoped<ICRUDService<Model.Models.Zahtjevi, ZahtjeviSearchRequest, ZahtjeviInsertRequest, object>, ZahtjeviService>();
             services.AddScoped<IKorisniciService, KorisniciService>();
             services.AddScoped<ISkladistaService, SkladistaService>();
             services.AddScoped<IDobavljaciService, DobavljaciService>();
-            services.AddScoped<IService<Model.Models.Uloge, object>, BaseService<Model.Models.Uloge, object, Model.Database.Uloge>>();
+            services.AddScoped<IUlogeService, UlogeService>();
             services.AddScoped<IStavkeNabavke, StavkeNabavkeService>();
             services.AddScoped<INabavkeService, NabavkeService>();
             services.AddScoped<IService<Model.Models.Dobavljaci, object>, BaseService<Model.Models.Dobavljaci, object, Model.Database.Dobavljaci>>();
@@ -116,8 +117,10 @@ namespace MobileShop.WebAPI
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
+            
+
             app.UseMvc();
-            app.UseAuthentication();
+            //app.UseAuthentication();
         }
     }
 }

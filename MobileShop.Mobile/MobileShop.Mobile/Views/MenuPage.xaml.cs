@@ -24,8 +24,10 @@ namespace MobileShop.Mobile.Views
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Artikli, Title="Artikli" },
                 new HomeMenuItem{Id=MenuItemType.Narudzba,Title="Narudzba"},
-                new HomeMenuItem{Id=MenuItemType.Placanje,Title="Placanje"}
-                
+                new HomeMenuItem{Id=MenuItemType.Placanje,Title="Placanje"},
+                new HomeMenuItem{Id=MenuItemType.Obavijesti,Title="Obavijesti"},
+                new HomeMenuItem{Id=MenuItemType.Zahtjevi,Title="Zahtjevi"}
+
             };
 
             ListViewMenu.ItemsSource = menuItems;

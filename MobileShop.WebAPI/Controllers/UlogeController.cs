@@ -8,12 +8,33 @@ using MobileShop.WebAPI.Services;
 
 namespace MobileShop.WebAPI.Controllers
 {
-    
-    public class UlogeController : BaseController<Model.Models.Uloge,object>
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UlogeController : ControllerBase
     {
-        public UlogeController(IService<Model.Models.Uloge,object> service):base(service)
-        {
+        private readonly IUlogeService _service;
 
+        public UlogeController(IUlogeService service)
+        {
+            _service = service;
+        }
+        
+        [HttpGet]
+        public List<Model.Models.Uloge> Get()
+        {
+            return _service.Get();
+        }
+        [HttpGet]
+        [Route("ProvjeriAdmin/{UlogaId}")]
+        public Model.Models.Uloge ProvjeriAdmin(int UlogaId)
+        {
+            return _service.ProvjeriAdmin(UlogaId);
+        }
+        [HttpGet]
+        [Route("ProvjeriProdavac/{UlogaId}")]
+        public Model.Models.Uloge ProvjeriProdavac(int UlogaId)
+        {
+            return _service.ProvjeriProdavac(UlogaId);
         }
     }
 }

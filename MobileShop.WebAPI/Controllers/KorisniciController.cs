@@ -11,6 +11,7 @@ using MobileShop.WebAPI.Services;
 namespace MobileShop.WebAPI.Controllers
 {
    
+    
     [Route("api/[controller]")]
     [ApiController]
     public class KorisniciController : ControllerBase
@@ -27,6 +28,12 @@ namespace MobileShop.WebAPI.Controllers
             return _service.Get(request);
         }
 
+        [HttpGet]
+        [Route("Authenticiraj/{username},{password}")]
+        public Model.Models.Korisnici Authenticiraj(string username,string password)
+        {
+            return _service.Authenticiraj(username, password);
+        }
 
 
         [HttpPost]

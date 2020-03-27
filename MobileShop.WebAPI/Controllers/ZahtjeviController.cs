@@ -10,9 +10,9 @@ using MobileShop.WebAPI.Services;
 namespace MobileShop.WebAPI.Controllers
 {
   
-    public class ZahtjeviController : BaseCRUDController<Model.Models.Zahtjevi,ZahtjeviSearchRequest,object,object>
+    public class ZahtjeviController : BaseCRUDController<Model.Models.Zahtjevi,ZahtjeviSearchRequest,ZahtjeviInsertRequest,object>
     {
-        public ZahtjeviController(ICRUDService<Model.Models.Zahtjevi,ZahtjeviSearchRequest,object,object> service) : base(service)
+        public ZahtjeviController(ICRUDService<Model.Models.Zahtjevi,ZahtjeviSearchRequest,ZahtjeviInsertRequest,object> service) : base(service)
         {
 
         }
