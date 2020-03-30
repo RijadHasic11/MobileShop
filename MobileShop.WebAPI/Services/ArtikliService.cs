@@ -33,8 +33,17 @@ namespace MobileShop.WebAPI.Services
 
             return _mapper.Map<List<Model.Models.Artikli>>(list);
         }
+        public void Insert(ArtikliInsertRequest request)
+        {
+            Model.Database.Artikli entity = _mapper.Map<Model.Database.Artikli>(request);
 
-        public Model.Models.Artikli GetById(int id)
+
+            _context.Artikli.Add(entity);
+            _context.SaveChanges();
+            
+        }
+
+        public Model.Models.Artikli GetById(int id) 
         {
             var entity = _context.Artikli.Find(id);
 
@@ -47,6 +56,6 @@ namespace MobileShop.WebAPI.Services
             return _mapper.Map<Model.Models.Artikli>(entity);
         }
 
-        
+
     }
 }

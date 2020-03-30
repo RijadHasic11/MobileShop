@@ -46,6 +46,8 @@
             this.btnSnimi = new System.Windows.Forms.Button();
             this.clbRole = new System.Windows.Forms.CheckedListBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,19 +152,17 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(160, 280);
+            this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Potvrda Passworda";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 16;
             // 
             // txtPotvrda
             // 
             this.txtPotvrda.Location = new System.Drawing.Point(163, 299);
             this.txtPotvrda.Name = "txtPotvrda";
             this.txtPotvrda.Size = new System.Drawing.Size(152, 20);
-            this.txtPotvrda.TabIndex = 12;
+            this.txtPotvrda.TabIndex = 16;
             // 
             // btnSnimi
             // 
@@ -186,11 +186,29 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(160, 280);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Potvrda passworda";
+            // 
             // frmKorisniciDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 463);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.clbRole);
             this.Controls.Add(this.btnSnimi);
             this.Controls.Add(this.label6);
@@ -235,5 +253,7 @@
         private System.Windows.Forms.Button btnSnimi;
         private System.Windows.Forms.CheckedListBox clbRole;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

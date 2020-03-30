@@ -72,7 +72,6 @@ C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.N
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmNovaObavijest.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmObavijesti.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Obavijesti.frmObavijestiDetalji.resources
-C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csprojAssemblyReference.cache
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Dobavljaci.frmDobavljaciDetalji.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\bin\Debug\MobileShop.WinUI.exe.config
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\bin\Debug\MobileShop.WinUI.exe
@@ -114,3 +113,9 @@ C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\Mobile
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.exe
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.pdb
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csprojAssemblyReference.cache
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Izvjestaji.frmIzvjestajiIndex.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csproj.CoreCompileInputs.cache
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Klijenti.frmKlijenti.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Klijenti.frmKlijentiDetalji.resources
+C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csprojAssemblyReference.cache

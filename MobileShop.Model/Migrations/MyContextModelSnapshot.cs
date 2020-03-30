@@ -15,7 +15,7 @@ namespace MobileShop.Model.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -266,7 +266,7 @@ namespace MobileShop.Model.Migrations
 
                     b.Property<int>("KlijentId");
 
-                    b.Property<int?>("KorisnikId");
+                    b.Property<int>("KorisnikId");
 
                     b.Property<bool?>("Otkazano");
 
@@ -291,7 +291,7 @@ namespace MobileShop.Model.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ArtikalId");
+                    b.Property<int>("ArtikalId");
 
                     b.Property<decimal>("Cijena");
 
@@ -539,7 +539,8 @@ namespace MobileShop.Model.Migrations
 
                     b.HasOne("MobileShop.Model.Database.Korisnici", "Korisnik")
                         .WithMany("Narudzba")
-                        .HasForeignKey("KorisnikId");
+                        .HasForeignKey("KorisnikId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MobileShop.Model.Database.Skladista", "Skladiste")
                         .WithMany()
@@ -551,7 +552,8 @@ namespace MobileShop.Model.Migrations
                 {
                     b.HasOne("MobileShop.Model.Database.Artikli", "Artikal")
                         .WithMany("NarudzbaStavke")
-                        .HasForeignKey("ArtikalId");
+                        .HasForeignKey("ArtikalId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MobileShop.Model.Database.Narudzba", "Narudzba")
                         .WithMany("NarudzbaStavke")

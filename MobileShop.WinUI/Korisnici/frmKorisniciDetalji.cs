@@ -109,11 +109,7 @@ namespace MobileShop.WinUI.Korisnici
             }
         }
 
-        //private async void BtnSnimi_MouseClick(object sender, MouseEventArgs e)
-        //{
-           
 
-        //}
 
         private void btnSnimi_Click(object sender, EventArgs e)
         {
