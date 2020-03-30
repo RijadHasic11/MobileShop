@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,7 +25,7 @@ namespace MobileShop.WebAPI.Services
         }
         public Model.Models.Korisnici Authenticiraj(string username, string pass)
         {
-            var user = _context.Korisnici.FirstOrDefault(x=>x.KorisnickoIme==username);
+            var user = _context.Korisnici.FirstOrDefault(x => x.KorisnickoIme == username);
 
             if (user != null)
             {
@@ -32,7 +33,30 @@ namespace MobileShop.WebAPI.Services
 
                 if (hashedPass == user.LozinkaHash)
                 {
-                    return _mapper.Map<Model.Models.Korisnici>(user);
+                    var uloge = _context.KorisniciUloge.Where(x => x.KorisnikId == user.KorisnikId);
+                    Model.Models.Korisnici novikorisnik = new Model.Models.Korisnici();
+                   
+                    foreach(var item in uloge)
+                    {
+                        
+                        novikorisnik.KorisniciUloge = new List<Model.Models.KorisniciUloge>();
+                        novikorisnik.KorisniciUloge.Add(new Model.Models.KorisniciUloge
+                        {
+                            DatumIzmjene = item.DatumIzmjene,
+                            KorisnikId = item.KorisnikId,
+                            UlogaId = item.UlogaId,
+                            KorisnikUlogaId = item.KorisnikUlogaId
+                        });
+                    }
+                    novikorisnik.Ime = user.Ime;
+                    novikorisnik.Prezime = user.Prezime;
+                    novikorisnik.KorisnickoIme = user.KorisnickoIme;
+                    novikorisnik.Email = user.Email;
+                    novikorisnik.KorisnikId = user.KorisnikId;
+                    novikorisnik.Telefon = user.Telefon;
+
+                    return novikorisnik;
+                    
                 }
             }
 
@@ -115,6 +139,9 @@ namespace MobileShop.WebAPI.Services
                 korisniciUloge.UlogaId = uloga;
                 korisniciUloge.DatumIzmjene = DateTime.Now;
                 _context.KorisniciUloge.Add(korisniciUloge);
+
+
+               
             }
 
             _context.SaveChanges();

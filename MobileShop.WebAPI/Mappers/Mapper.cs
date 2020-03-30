@@ -14,6 +14,7 @@ namespace MobileShop.WebAPI.Mappers
             CreateMap<Model.Database.Klijenti, Model.Requests.KlijentiInsertRequest>().ReverseMap();
 
             CreateMap<Model.Database.Zahtjevi, Model.Models.Zahtjevi>();
+            CreateMap<Model.Database.Zahtjevi, Model.Requests.ZahtjeviInsertRequest>().ReverseMap();
             CreateMap<Model.Database.Korisnici, Model.Requests.KorisniciInsertRequest>().ReverseMap();
             CreateMap<Model.Database.Korisnici, Model.Models.Korisnici>();
             

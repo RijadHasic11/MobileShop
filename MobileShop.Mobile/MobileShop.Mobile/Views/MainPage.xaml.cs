@@ -45,6 +45,12 @@ namespace MobileShop.Mobile.Views
                     case (int)MenuItemType.Placanje:
                         MenuPages.Add(id, new NavigationPage(new CreditCardPage()));
                         break;
+                    case (int)MenuItemType.Obavijesti:
+                        MenuPages.Add(id, new NavigationPage(new ObavijestiPage()));
+                        break;
+                    case (int)MenuItemType.Zahtjevi:
+                        MenuPages.Add(id, new NavigationPage(new ZahtjeviPage()));
+                        break;
                 }
             }
 

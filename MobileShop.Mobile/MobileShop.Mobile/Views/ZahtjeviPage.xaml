@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels1="clr-namespace:MobileShop.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="MobileShop.Mobile.Views.ZahtjeviPage">
+    <ContentPage.BindingContext>
+        <viewModels1:ZahtjeviViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="5" Margin="10">
+            <Label Text="Posalji novi zahtjev" FontSize="26" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+            
+                <Label Text="Naslov: "></Label>
+                <Entry  x:Name="Naslov" Text="{Binding Naslov}"></Entry>
+                <Label Text="Opis: "></Label>
+                <Entry Text="{Binding Opis}"></Entry>
+                <Button Command="{Binding PosaljiCommand}" HorizontalOptions="FillAndExpand" Text="Posalji"
+                        Clicked="Button_Clicked"></Button>
+            
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>
