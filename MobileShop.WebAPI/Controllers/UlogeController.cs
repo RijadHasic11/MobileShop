@@ -30,11 +30,6 @@ namespace MobileShop.WebAPI.Controllers
         {
             return _service.ProvjeriAdmin(UlogaId);
         }
-        [HttpGet]
-        [Route("ProvjeriProdavac/{UlogaId}")]
-        public Model.Models.Uloge ProvjeriProdavac(int UlogaId)
-        {
-            return _service.ProvjeriProdavac(UlogaId);
-        }
+       
     }
 }

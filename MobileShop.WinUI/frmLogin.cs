@@ -15,7 +15,7 @@ namespace MobileShop.WinUI
         private readonly APIService _service = new APIService("Korisnici");
         private readonly APIService _serviceuloge = new APIService("Uloge");
         Model.Models.Uloge admin = null;
-        Model.Models.Uloge prodavac = null;
+       
 
         public frmLogin()
         {
@@ -33,7 +33,7 @@ namespace MobileShop.WinUI
                
             Model.Models.Korisnici korisnik= await _service.Authenticiraj<Model.Models.Korisnici>(txtKorisnickoIme.Text, txtPassword.Text);
             int ulogaId1 = 0;
-            int ulogaId2 = 0;
+           
            
             
             if (korisnik != null)
@@ -43,11 +43,10 @@ namespace MobileShop.WinUI
                 foreach (var item in Global.PrijavljeniKorisnik.KorisniciUloge)
                 {
                     ulogaId1 = item.UlogaId;
-                    ulogaId2 = item.UlogaId;
-                                 
+                   
                 }
                 admin = await _serviceuloge.ProvjeriAdmin<Model.Models.Uloge>(ulogaId1);
-                prodavac = await _serviceuloge.ProvjeriProdavac<Model.Models.Uloge>(ulogaId2);
+               
 
                 if (admin != null)
                 {
@@ -55,17 +54,9 @@ namespace MobileShop.WinUI
                 }
                 else
                 {
-                    Global.Admin = false;
-                }
-                if (prodavac != null)
-                {
                     Global.Prodavac = true;
                 }
-                else
-                {
-                    Global.Prodavac = false;
-                }
-
+              
 
                 MessageBox.Show("Dobrodosli "+ korisnik.Ime + " " + korisnik.Prezime );
                 DialogResult = DialogResult.OK;

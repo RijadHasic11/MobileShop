@@ -28,17 +28,14 @@ namespace MobileShop.WinUI
             if(login.ShowDialog()==DialogResult.OK)
             {
                 
-                if (Global.Admin==true && Global.Prodavac==false)
+                if (Global.Admin==true)
                 {
                     Application.Run(new frmIndexAdmin());
                 }
-                else if(Global.Admin==false && Global.Prodavac==true)
-                {
-                    Application.Run(new frmIndex());
-                }
+             
                 else
                 {
-                    Application.Run(new frmIndexAdmin());
+                    Application.Run(new frmIndex());
                 }
 
 

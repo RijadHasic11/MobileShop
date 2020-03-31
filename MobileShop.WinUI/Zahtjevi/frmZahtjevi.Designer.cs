@@ -35,6 +35,7 @@
             this.btnPrikazi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvZahtjevi = new System.Windows.Forms.DataGridView();
+            this.ZahtjevId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KlijentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naslov = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +86,7 @@
             this.dgvZahtjevi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvZahtjevi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvZahtjevi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ZahtjevId,
             this.KlijentId,
             this.Datum,
             this.Naslov,
@@ -113,6 +115,14 @@
             this.dgvZahtjevi.Size = new System.Drawing.Size(588, 343);
             this.dgvZahtjevi.TabIndex = 0;
             this.dgvZahtjevi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvZahtjevi_CellContentClick);
+            // 
+            // ZahtjevId
+            // 
+            this.ZahtjevId.DataPropertyName = "Id";
+            this.ZahtjevId.HeaderText = "ZahtjevId";
+            this.ZahtjevId.Name = "ZahtjevId";
+            this.ZahtjevId.ReadOnly = true;
+            this.ZahtjevId.Visible = false;
             // 
             // KlijentId
             // 
@@ -179,6 +189,7 @@
         private System.Windows.Forms.Button btnPrikazi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvZahtjevi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ZahtjevId;
         private System.Windows.Forms.DataGridViewTextBoxColumn KlijentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naslov;

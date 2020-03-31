@@ -72,12 +72,7 @@ namespace MobileShop.WinUI
 
             return await url.GetJsonAsync<T>();
         }
-        public async Task<T> ProvjeriProdavac<T>(int UlogaId)
-        {
-            var url = $"{Properties.Settings.Default.APIUrl}/{_route}/ProvjeriAdmin/{UlogaId}";
-
-            return await url.GetJsonAsync<T>();
-        }
+       
 
         public async void Insert<T>(object request)
         {

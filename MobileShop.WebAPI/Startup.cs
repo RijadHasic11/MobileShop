@@ -88,7 +88,26 @@ namespace MobileShop.WebAPI
             services.AddScoped<IStavkeNarudzbeService, StavkeNarudzbeService>();
             services.AddScoped<IService<Model.Models.PoslanaNarudzba,object>,BaseService<Model.Models.PoslanaNarudzba, object, Model.Database.PoslanaNarudzba>>();
             services.AddScoped<ICRUDService<Model.Models.PoslanaNarudzba, object, object, Model.Requests.PoslanaNarudzbaUpdateRequest>, IPoslanaNarudzba>();
+
+            services.AddScoped<IService<Model.Models.ZahtjeviStavke, object>, BaseService<Model.Models.ZahtjeviStavke, object, Model.Database.ZahtjeviStavke>>();
+            services.AddScoped<ICRUDService<Model.Models.ZahtjeviStavke, object, ZahtjeviStavkeInsertRequest, object>, ZahtjeviStavkeService>();
+
+
+          
+
             services.AddScoped<IService<Model.Models.Proizvodjaci, object>, BaseService<Model.Models.Proizvodjaci, object, Model.Database.Proizvodjaci>>();
+            services.AddScoped<ICRUDService<Model.Models.Proizvodjaci, object, ProizvodjaciInsertRequest, object>, ProizvodjaciService>();
+
+            services.AddScoped<IService<Model.Models.Modeli, object>, BaseService<Model.Models.Modeli, object, Model.Database.Modeli>>();
+            services.AddScoped<ICRUDService<Model.Models.Modeli, object, ModeliInsertRequest, object>, ModeliService>();
+
+            services.AddScoped<IService<Model.Models.Karakteristike, object>, BaseService<Model.Models.Karakteristike, object, Model.Database.Karakteristike>>();
+            services.AddScoped<ICRUDService<Model.Models.Karakteristike, object, KarakteristikeInsertRequest, object>, KarakteristikeService>();
+
+           
+            services.AddScoped<IKlijentiService, KlijentiService>();
+           
+           
 
         }
 

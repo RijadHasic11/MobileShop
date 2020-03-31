@@ -57,27 +57,5 @@ namespace MobileShop.WebAPI.Services
             return null;
         }
 
-        public Model.Models.Uloge ProvjeriProdavac(int UlogaId)
-        {
-            var lista = _context.Uloge.ToList();
-            Model.Models.Uloge result = new Model.Models.Uloge();
-
-            foreach (var item in lista)
-            {
-                if (item.UlogaId == UlogaId)
-                {
-                    if (item.Naziv.Contains("Prodavac"))
-                    {
-                        result.Naziv = item.Naziv;
-                        result.Opis = item.Opis;
-                        result.UlogaId = item.UlogaId;
-
-                        return result;
-                    }
-
-                }
-            }
-            return null;
-        }
     }
 }

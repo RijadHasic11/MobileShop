@@ -6,6 +6,7 @@ namespace MobileShop.Model.Models
 {
     public class Zahtjevi
     {
+        public int Id { get; set; }
         public DateTime DatumZahtjeva { get; set; }
         public string Naslov { get; set; }
         public string Opis { get; set; }

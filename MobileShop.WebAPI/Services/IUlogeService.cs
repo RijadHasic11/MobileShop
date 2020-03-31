@@ -10,6 +10,6 @@ namespace MobileShop.WebAPI.Services
         List<Model.Models.Uloge> Get();
 
         Model.Models.Uloge ProvjeriAdmin(int UlogaId);
-        Model.Models.Uloge ProvjeriProdavac(int UlogaId);
+      
     }
 }

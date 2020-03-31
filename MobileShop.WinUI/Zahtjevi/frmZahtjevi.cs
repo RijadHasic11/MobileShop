@@ -38,10 +38,19 @@ namespace MobileShop.WinUI.Zahtjevi
             dgvZahtjevi.AutoGenerateColumns = false;
             
         }
+       
 
         private void DgvZahtjevi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            var senderGrid = (DataGridView)sender;
 
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int ZahtjevId= Convert.ToInt32(dgvZahtjevi.Rows[dgvZahtjevi.CurrentRow.Index].Cells[0].Value);
+                frmZahtjeviOdgovor frm = new frmZahtjeviOdgovor(ZahtjevId);
+                frm.Show();
+            }
         }
     }
 }
