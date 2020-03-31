@@ -109,6 +109,18 @@
     <Compile Include="Izvjestaji\frmIzvjestajiIndex.Designer.cs">
       <DependentUpon>frmIzvjestajiIndex.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klijenti\frmKlijenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klijenti\frmKlijenti.Designer.cs">
+      <DependentUpon>frmKlijenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klijenti\frmKlijentiDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klijenti\frmKlijentiDetalji.Designer.cs">
+      <DependentUpon>frmKlijentiDetalji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Korisnici\frmKorisnici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Izvjestaji\frmIzvjestajiIndex.resx">
       <DependentUpon>frmIzvjestajiIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klijenti\frmKlijenti.resx">
+      <DependentUpon>frmKlijenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klijenti\frmKlijentiDetalji.resx">
+      <DependentUpon>frmKlijentiDetalji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnici\frmKorisnici.resx">
       <DependentUpon>frmKorisnici.cs</DependentUpon>

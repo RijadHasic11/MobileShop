@@ -9,35 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MobileShop.WinUI.Korisnici
+namespace MobileShop.WinUI.Klijenti
 {
-    public partial class frmKorisniciDetalji : Form
+    public partial class frmKlijentiDetalji : Form
     {
-        APIService _service = new APIService("Korisnici");
-        APIService _ulogeService = new APIService("Uloge");
+        APIService _service = new APIService("Klijenti");
 
         private int? _id = null;
-        public frmKorisniciDetalji(int? id = null)
+
+        public frmKlijentiDetalji(int? id = null)
         {
             InitializeComponent();
             _id = id;
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void TextBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        
         private void txtIme_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtIme.Text))
@@ -90,13 +77,9 @@ namespace MobileShop.WinUI.Korisnici
             }
         }
 
-        private async void FrmKorisniciDetalji_Load_1(object sender, EventArgs e)
+
+        private async void FrmKlijentDetalji_Load_1(object sender, EventArgs e)
         {
-            var ulogeList = await _ulogeService.Get<List<Model.Models.Uloge>>(null);
-
-            clbRole.DataSource = ulogeList;
-            clbRole.DisplayMember = "Naziv";
-
 
             if (_id.HasValue)
             {
@@ -110,14 +93,12 @@ namespace MobileShop.WinUI.Korisnici
         }
 
 
-
-        private void btnSnimi_Click(object sender, EventArgs e)
+        private void btnSnimi_Click_1(object sender, EventArgs e)
         {
- if (ValidateChildren())
+            if (ValidateChildren())
             {
-                var roleList = clbRole.CheckedItems.Cast<Model.Models.Uloge>().Select(x => x.UlogaId).ToList();
-
-                var request = new KorisniciInsertRequest
+                
+                var request = new KlijentiInsertRequest
                 {
                     Email = txtEmail.Text,
                     Ime = txtIme.Text,
@@ -125,25 +106,24 @@ namespace MobileShop.WinUI.Korisnici
                     Password = txtPassword.Text,
                     PasswordPotvrda = txtPotvrda.Text,
                     Prezime = txtPrezime.Text,
-                    Telefon = txtTelefon.Text,
-                    Uloge = roleList
+                    Telefon = txtTelefon.Text
                 };
 
-                
+
                 if (!_id.HasValue)
                 {
-                    _service.Insert<Model.Models.Korisnici>(request);
-                    MessageBox.Show("Uspješno dodan korisnik");
+                    _service.Insert<Model.Models.Klijenti>(request);
+                    MessageBox.Show("Uspješno dodan klijent");
                 }
                 else
                 {
-                    _service.Update<Model.Models.Korisnici>(_id.Value, request);
-                    MessageBox.Show("Uspješno izmjenjeni podaci o korisniku");
+                    _service.Update<Model.Models.Klijenti>(_id.Value, request);
+                    MessageBox.Show("Uspješno izmjenjeni podaci o klijentu");
                 }
 
-                
 
-               
+
+
 
             }
         }

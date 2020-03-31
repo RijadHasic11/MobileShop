@@ -35,6 +35,11 @@ namespace MobileShop.WebAPI.Controllers
         {
             return _service.GetBySifra(sifra);
         }
-        
+        [HttpPost]
+        public void Insert(ArtikliInsertRequest request)
+        {
+            _service.Insert(request);
+        }
+
     }
 }

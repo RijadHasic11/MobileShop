@@ -30,5 +30,6 @@ namespace MobileShop.WebAPI.Services
 
             return _mapper.Map<TModel>(entity);
         }
+
     }
 }

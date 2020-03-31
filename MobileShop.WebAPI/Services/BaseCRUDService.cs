@@ -20,7 +20,7 @@ namespace MobileShop.WebAPI.Services
             _context.Set<TDatabase>().Add(entity);
             _context.SaveChanges();
 
-           
+
         }
 
         public virtual void Update(int id, TUpdate request)

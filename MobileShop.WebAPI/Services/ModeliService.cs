@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace MobileShop.WebAPI.Services
 {
-    public class ProizvodjaciService : BaseCRUDService<Model.Models.Proizvodjaci, object, Model.Database.Proizvodjaci, ProizvodjaciInsertRequest, object>
+    public class ModeliService : BaseCRUDService<Model.Models.Modeli, object, Model.Database.Modeli, ModeliInsertRequest, object>
     {
-        public ProizvodjaciService(MyContext context,IMapper mapper) : base(context, mapper)
+        public ModeliService(MyContext context, IMapper mapper) : base(context, mapper)
         {
 
         }
     }
-
 }

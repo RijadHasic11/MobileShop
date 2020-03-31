@@ -6,6 +6,8 @@ namespace MobileShop.Model.Models
 {
     public class Klijenti
     {
+        public int KlijentId { get; set; }
+
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string Email { get; set; }
