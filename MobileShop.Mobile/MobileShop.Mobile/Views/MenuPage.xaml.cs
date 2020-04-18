@@ -26,7 +26,8 @@ namespace MobileShop.Mobile.Views
                 new HomeMenuItem{Id=MenuItemType.Narudzba,Title="Narudzba"},
                 new HomeMenuItem{Id=MenuItemType.Placanje,Title="Placanje"},
                 new HomeMenuItem{Id=MenuItemType.Obavijesti,Title="Obavijesti"},
-                new HomeMenuItem{Id=MenuItemType.Zahtjevi,Title="Zahtjevi"}
+                new HomeMenuItem{Id=MenuItemType.Zahtjevi,Title="Novi zahtjev"},
+                new HomeMenuItem{Id=MenuItemType.HistorijaZahtjeva,Title="Historija zahtjeva"}
 
             };
 

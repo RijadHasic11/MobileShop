@@ -11700,7 +11700,7 @@
       ]
     },
     "System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "h4CEgOgv5PKVF/HwaHzJRiVboL2THYCou97zpmhjghx5frc7fIvlkY1jL+lnIQyChrJDMNEXS6r7byGif8Cy4w==",
+      "sha512": "vOYy7Jv9KsG3ld2hLt0GoERd82SZi4BelrbXLwI9yFBYX7kpbvUCWYo4eyevk47cuJXZ9ZLVAryANcc7iY71aA==",
       "type": "package",
       "path": "system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -12755,7 +12755,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -12922,25 +12922,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WhoAm1\\.nuget\\packages\\": {},
+    "C:\\Users\\hasic_000\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WhoAm1\\Desktop\\MobileShop\\MobileShop.WebAPI\\MobileShop.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\hasic_000\\Documents\\GitHub\\MobileShop\\MobileShop.WebAPI\\MobileShop.WebAPI.csproj",
       "projectName": "MobileShop.WebAPI",
-      "projectPath": "C:\\Users\\WhoAm1\\Desktop\\MobileShop\\MobileShop.WebAPI\\MobileShop.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\WhoAm1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WhoAm1\\Desktop\\MobileShop\\MobileShop.WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\hasic_000\\Documents\\GitHub\\MobileShop\\MobileShop.WebAPI\\MobileShop.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\hasic_000\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hasic_000\\Documents\\GitHub\\MobileShop\\MobileShop.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\WhoAm1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hasic_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -12954,8 +12954,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\WhoAm1\\Desktop\\MobileShop\\MobileShop.Model\\MobileShop.Model.csproj": {
-              "projectPath": "C:\\Users\\WhoAm1\\Desktop\\MobileShop\\MobileShop.Model\\MobileShop.Model.csproj"
+            "C:\\Users\\hasic_000\\Documents\\GitHub\\MobileShop\\MobileShop.Model\\MobileShop.Model.csproj": {
+              "projectPath": "C:\\Users\\hasic_000\\Documents\\GitHub\\MobileShop\\MobileShop.Model\\MobileShop.Model.csproj"
             }
           }
         }
@@ -13018,16 +13018,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

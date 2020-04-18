@@ -12,7 +12,7 @@ namespace MobileShop.WinUI
         public static Model.Models.Korisnici PrijavljeniKorisnik { get; set; }
        
         public static bool Admin { get; set; }
-        public static bool Prodavac { get; set; }
+        
 
         
     }
