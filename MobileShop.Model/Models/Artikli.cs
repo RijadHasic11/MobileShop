@@ -17,6 +17,7 @@ namespace MobileShop.Model.Models
         public int ModelId { get; set; }
         public int ProizvodjacId { get; set; }
 
-
+        public string Proizvodjac { get; set; }
+        public string Model { get; set; }
     }
 }

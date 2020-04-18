@@ -15,6 +15,7 @@ namespace MobileShop.WebAPI.Services
         Model.Models.Artikli GetBySifra(string sifra);
 
         void Insert(ArtikliInsertRequest request);
+        void Update(int id, ArtikliInsertRequest request);
 
 
 

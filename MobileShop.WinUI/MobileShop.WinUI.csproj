@@ -64,6 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIService.cs" />
+    <Compile Include="Artikli\frmArtikli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Artikli\frmArtikli.Designer.cs">
+      <DependentUpon>frmArtikli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Artikli\frmArtikliDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Artikli\frmArtikliDetalji.Designer.cs">
+      <DependentUpon>frmArtikliDetalji.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dobavljaci\frmDobavljaci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     <Compile Include="Zahtjevi\frmZahtjeviOdgovor.Designer.cs">
       <DependentUpon>frmZahtjeviOdgovor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Artikli\frmArtikli.resx">
+      <DependentUpon>frmArtikli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Artikli\frmArtikliDetalji.resx">
+      <DependentUpon>frmArtikliDetalji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dobavljaci\frmDobavljaci.resx">
       <DependentUpon>frmDobavljaci.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +314,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MobShop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MobShop1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MobShop2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

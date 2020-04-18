@@ -1,4 +1,6 @@
-﻿using MobileShop.WinUI.Dobavljaci;
+﻿using MobileShop.WinUI.Artikli;
+using MobileShop.WinUI.Dobavljaci;
+using MobileShop.WinUI.Izvjestaji;
 using MobileShop.WinUI.Klijenti;
 using MobileShop.WinUI.Korisnici;
 using MobileShop.WinUI.Nabavke;
@@ -165,6 +167,30 @@ namespace MobileShop.WinUI
         {
             frmKlijentiDetalji frm = new frmKlijentiDetalji();
             frm.Show();
+        }
+
+        private void noviArtikalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArtikliDetalji frm = new frmArtikliDetalji();
+            frm.Show();
+        }
+
+        private void listaArtikalaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArtikli frm = new frmArtikli();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+
+            frm.Show();
+        }
+
+        private void izvještajiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+                frmIzvjestajiIndex frm = new frmIzvjestajiIndex();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            
         }
     }
 }

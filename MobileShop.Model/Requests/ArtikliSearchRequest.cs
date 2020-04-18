@@ -6,6 +6,6 @@ namespace MobileShop.Model.Requests
 {
     public class ArtikliSearchRequest
     {
-        public int? ProizvodjacId { get; set; }
+        public string Naziv { get; set; }
     }
 }

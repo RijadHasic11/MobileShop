@@ -29,6 +29,7 @@ namespace MobileShop.Model.Database
 
 
 
+
         public Proizvodjaci Proizvodjaci { get; set; }
         public Modeli Modeli { get; set; }
         public Karakteristike Karakteristike { get; set; }

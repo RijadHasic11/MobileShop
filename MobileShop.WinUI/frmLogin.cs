@@ -52,10 +52,7 @@ namespace MobileShop.WinUI
                 {
                     Global.Admin = true;
                 }
-                else
-                {
-                    Global.Prodavac = true;
-                }
+ 
               
 
                 MessageBox.Show("Dobrodosli "+ korisnik.Ime + " " + korisnik.Prezime );
@@ -72,6 +69,26 @@ namespace MobileShop.WinUI
                 
 
             
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtKorisnickoIme_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

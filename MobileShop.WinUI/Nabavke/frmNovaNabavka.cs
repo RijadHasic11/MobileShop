@@ -77,7 +77,7 @@ namespace MobileShop.WinUI.Nabavke
 
         private async void BtnDodaj_Click(object sender, EventArgs e)
         {
-            Artikli artikal = await _serviceArtikli.GetBySifra<Artikli>(txtSifra.Text);
+            var artikal = await _serviceArtikli.GetBySifra<Model.Models.Artikli>(txtSifra.Text);
 
             if (artikal == null)
             {
