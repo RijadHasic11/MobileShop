@@ -119,3 +119,6 @@ C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.c
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Klijenti.frmKlijenti.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Klijenti.frmKlijentiDetalji.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csprojAssemblyReference.cache
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Klijenti.frmKlijenti.resources
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Klijenti.frmKlijentiDetalji.resources
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndexProdavac.resources

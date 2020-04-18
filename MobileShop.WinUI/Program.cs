@@ -35,7 +35,7 @@ namespace MobileShop.WinUI
              
                 else
                 {
-                    Application.Run(new frmIndex());
+                    Application.Run(new frmIndexProdavac());
                 }
 
 

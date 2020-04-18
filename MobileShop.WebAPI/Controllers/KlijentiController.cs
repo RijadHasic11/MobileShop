@@ -26,7 +26,12 @@ namespace MobileShop.WebAPI.Controllers
         {
             return _service.Get(request);
         }
-
+        [HttpGet]
+        [Route("Authenticiraj/{username},{password}")]
+        public Model.Models.Klijenti Authenticiraj(string username, string password)
+        {
+            return _service.Authenticiraj(username, password);
+        }
 
 
         [HttpPost]

@@ -51,6 +51,9 @@ namespace MobileShop.Mobile.Views
                     case (int)MenuItemType.Zahtjevi:
                         MenuPages.Add(id, new NavigationPage(new ZahtjeviPage()));
                         break;
+                    case (int)MenuItemType.HistorijaZahtjeva:
+                        MenuPages.Add(id, new NavigationPage(new HistorijaZahtjevaPage()));
+                        break;
                 }
             }
 

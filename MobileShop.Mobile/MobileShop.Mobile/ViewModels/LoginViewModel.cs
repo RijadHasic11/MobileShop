@@ -10,10 +10,11 @@ namespace MobileShop.Mobile.ViewModels
 {
     public class LoginViewModel :BaseViewModel
     {
-        private readonly APIService _service = new APIService("Korisnici");
+        private readonly APIService _service = new APIService("Klijenti");
         public LoginViewModel()
         {
             LoginCommand = new Command(async () => await Login());
+            
         }
         string _username = string.Empty;
         public string Username
@@ -30,24 +31,38 @@ namespace MobileShop.Mobile.ViewModels
         }
 
         public ICommand LoginCommand { get; set; }
-
+       
 
 
         async Task Login()
         {
             IsBusy = true;
-            APIService.Username = Username;
-            APIService.Password = Password;
+
 
             try
             {
-                await _service.Get<dynamic>(null);
-                Application.Current.MainPage = new MainPage();
-            }
-            catch (Exception ex)
-            {
                 
+                Model.Models.Klijenti klijent = await _service.Authenticiraj<Model.Models.Klijenti>(Username,Password);
+
+
+                if (klijent != null)
+                {
+                    Global.PrijavljeniKlijent = klijent;
+
+                    await Application.Current.MainPage.DisplayAlert("Uspjeh", "Dobrodosli " + klijent.Ime + " " + klijent.Prezime, "OK");
+                    Application.Current.MainPage = new MainPage();
+
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Greska", "Pogresno unesen username ili password", "OK");
+                }
             }
+            catch(Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Greska", ex.Message, "OK");
+            }
+           
         }
     }
 }

@@ -10,8 +10,8 @@ namespace MobileShop.Mobile
 {
     public class APIService
     {
-        public static string Username { get; set; }
-        public static string Password { get; set; }
+        //public static string Username { get; set; }
+        //public static string Password { get; set; }
 
         private readonly string _route;
 
@@ -39,7 +39,7 @@ namespace MobileShop.Mobile
                     url += await search.ToQueryString();
                 }
 
-                return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
+                return await url.GetJsonAsync<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -51,12 +51,17 @@ namespace MobileShop.Mobile
                 throw;
             }
         }
+        public async Task<T> Authenticiraj<T>(string username, string password)
+        {
+            var url = $"{_apiUrl}/{_route}/Authenticiraj/{username},{password}";
 
+            return await url.GetJsonAsync<T>();
+        }
         public async Task<T> GetById<T>(object id)
         {
             var url = $"{_apiUrl}/{_route}/{id}";
 
-            return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
+            return await url.GetJsonAsync<T>();
         }
 
         public async Task<T> Insert<T>(object request)
@@ -65,7 +70,7 @@ namespace MobileShop.Mobile
 
             try
             {
-                return await url.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
+                return await url.PostJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -89,7 +94,7 @@ namespace MobileShop.Mobile
             {
                 var url = $"{_apiUrl}/{_route}/{id}";
 
-                return await url.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
+                return await url.PutJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {

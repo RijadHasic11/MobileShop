@@ -40,6 +40,8 @@ namespace MobileShop.WebAPI.Mappers
             CreateMap<Model.Database.Karakteristike, Model.Models.Karakteristike>();
             CreateMap<Model.Database.Karakteristike, Model.Requests.KarakteristikeInsertRequest>().ReverseMap();
 
+            CreateMap<Model.Database.ZahtjeviStavke, Model.Models.ZahtjeviStavke>();
+
 
         }
     }

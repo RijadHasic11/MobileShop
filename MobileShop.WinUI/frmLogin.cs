@@ -33,42 +33,39 @@ namespace MobileShop.WinUI
                
             Model.Models.Korisnici korisnik= await _service.Authenticiraj<Model.Models.Korisnici>(txtKorisnickoIme.Text, txtPassword.Text);
             int ulogaId1 = 0;
-           
-           
+
+
             
-            if (korisnik != null)
-            {
-                Global.PrijavljeniKorisnik = korisnik;
-
-                foreach (var item in Global.PrijavljeniKorisnik.KorisniciUloge)
+                if (korisnik != null)
                 {
-                    ulogaId1 = item.UlogaId;
-                   
-                }
-                admin = await _serviceuloge.ProvjeriAdmin<Model.Models.Uloge>(ulogaId1);
-               
+                    Global.PrijavljeniKorisnik = korisnik;
 
-                if (admin != null)
-                {
-                    Global.Admin = true;
+                    foreach (var item in Global.PrijavljeniKorisnik.KorisniciUloge)
+                    {
+                        ulogaId1 = item.UlogaId;
+
+                    }
+                    admin = await _serviceuloge.ProvjeriAdmin<Model.Models.Uloge>(ulogaId1);
+
+
+                    if (admin != null)
+                    {
+                        Global.Admin = true;
+                    }
+        
+
+
+                    MessageBox.Show("Dobrodosli " + korisnik.Ime + " " + korisnik.Prezime);
+                    DialogResult = DialogResult.OK;
+                    Close();
                 }
+
+
                 else
                 {
-                    Global.Prodavac = true;
+                    MessageBox.Show("Pogresan username ili password", "Autentifikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-              
-
-                MessageBox.Show("Dobrodosli "+ korisnik.Ime + " " + korisnik.Prezime );
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-                   
-            else   
-            {
-                MessageBox.Show("Pogresan username ili password", "Autentifikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
+          
                 
 
             
