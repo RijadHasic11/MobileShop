@@ -11,9 +11,9 @@
         <viewModels1:LoginViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
-            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Prijava @ MobileShop"
+
+		<StackLayout VerticalOptions="CenterAndExpand" Padding="10">
+			<Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Prijava @ MobileShop"
                FontAttributes="Bold" FontSize="28"></Label>
             
             <Label Text="Korisnicko ime"></Label>
@@ -29,5 +29,6 @@
          
             <Label IsVisible="{Binding IsBusy}" Text="Working..."></Label>
         </StackLayout>
-    </ContentPage.Content>
+		
+	</ContentPage.Content>
 </ContentPage>

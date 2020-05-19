@@ -7,5 +7,7 @@ namespace MobileShop.Model.Requests
     public class ArtikliSearchRequest
     {
         public string Naziv { get; set; }
+        public int ProizvodjacId { get; set; }
+        
     }
 }

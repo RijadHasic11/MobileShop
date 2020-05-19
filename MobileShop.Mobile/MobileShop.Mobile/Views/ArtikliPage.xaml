@@ -26,7 +26,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10" Orientation="Horizontal">
-                                <StackLayout WidthRequest="200" HeightRequest="400">
+                                <StackLayout WidthRequest="200" HeightRequest="200">
                                     <Image Source="{Binding SlikaThumb,Converter={StaticResource imgConv}}"></Image>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" Padding="10">
@@ -45,7 +45,7 @@
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                                    
+									
                                 </StackLayout>
                                
                             </StackLayout>

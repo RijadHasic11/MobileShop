@@ -32,7 +32,10 @@ namespace MobileShop.WebAPI.Services
             {
                 query = query.Where(x => x.Naziv.StartsWith(search.Naziv));
             }
-
+            if ((!string.IsNullOrWhiteSpace((search?.ProizvodjacId).ToString())) && search?.ProizvodjacId!=0)
+            {
+                query = query.Where(x => x.ProizvodjacId == search.ProizvodjacId);
+            }
 
             var list = query.ToList();
             List<Artikli> result = new List<Artikli>();

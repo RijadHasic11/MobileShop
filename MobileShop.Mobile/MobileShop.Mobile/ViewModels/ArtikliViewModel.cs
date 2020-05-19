@@ -36,6 +36,16 @@ namespace MobileShop.Mobile.ViewModels
             }
         }
         public ICommand InitCommand { get; set; }
+        public async Task InitArtikle()
+        {
+            List<Model.Models.Artikli> lista = await _artikliService.Get<List<Model.Models.Artikli>>(null);
+
+            foreach (var item in lista)
+            {
+                ArtikliList.Add(item);
+            }
+
+        }
 
         public async Task Init()
         {
@@ -52,6 +62,7 @@ namespace MobileShop.Mobile.ViewModels
             {
                 ArtikliSearchRequest search = new ArtikliSearchRequest();
                 search.ProizvodjacId = SelectedProizvodjac.ProizvodjacId;
+
                 List<Model.Models.Artikli> lista = await _artikliService.Get<List<Model.Models.Artikli>>(search);
 
                 ArtikliList.Clear();

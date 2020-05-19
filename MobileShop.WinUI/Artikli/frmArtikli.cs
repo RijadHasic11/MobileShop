@@ -36,7 +36,7 @@ namespace MobileShop.WinUI.Artikli
         {
             var search = new ArtikliSearchRequest()
             {
-                Naziv = txtPretraga.Text,
+                Naziv = txtPretraga.Text
 
 
             };

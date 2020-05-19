@@ -14,22 +14,28 @@ namespace MobileShop.Mobile.Views
     public partial class ArtikliPage : ContentPage
     {
         ArtikliViewModel model = null;
+        private readonly APIService _karakteristikeService = new APIService("Karakteristike");
+        private readonly APIService _artikliService = new APIService("Artikli");
+
         public ArtikliPage()
         {
             InitializeComponent();
             BindingContext = model = new ArtikliViewModel();
-        }
-        protected async override void OnAppearing()
-        {
 
+        }
+        protected override async void OnAppearing()
+        {
             base.OnAppearing();
+            await model.InitArtikle();
             await model.Init();
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as Model.Models.Artikli;
-            await Navigation.PushAsync(new ArtikliDetailPage(item));
+            var artikal = e.SelectedItem as Model.Models.Artikli;
+            var karakteristike= await _karakteristikeService.GetById<Model.Models.Karakteristike>(artikal.KarakteristikeId);
+            await Navigation.PushAsync(new ArtikliDetailPage(artikal, karakteristike));
         }
+        
     }
 }

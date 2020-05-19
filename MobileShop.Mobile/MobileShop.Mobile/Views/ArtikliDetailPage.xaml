@@ -3,49 +3,110 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:converters="clr-namespace:MobileShop.Mobile.Converters"
-             mc:Ignorable="d"
+             xmlns:converters="clr-namespace:MobileShop.Mobile.Converters" xmlns:viewModels="clr-namespace:MobileShop.Mobile.ViewModels"
+			 mc:Ignorable="d"
              x:Class="MobileShop.Mobile.Views.ArtikliDetailPage">
-    <ContentPage.Resources>
+
+	<ContentPage.Resources>
         <ResourceDictionary>
             <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid  Padding="10" Margin="10">
+        <Grid  Padding="10" Margin="10" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                
-            </Grid.RowDefinitions>
+				<RowDefinition Height="300" ></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+
+			</Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="200" ></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackLayout Grid.Row="0" Grid.Column="0">
-                <Image Source="{Binding Artikal.SlikaThumb,Converter={StaticResource imgConv}}"></Image>
+			
+				<StackLayout Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  >
+					<Image Margin="0, 30, 0, 0" HorizontalOptions="Fill" Source="{Binding Artikal.Slika,Converter={StaticResource imgConv}}" ></Image>
 
-            </StackLayout>
-            <StackLayout Grid.Row="0" Grid.Column="1" Padding="10">
+				</StackLayout>
+			
+            <StackLayout Grid.Row="0" Grid.Column="1"  >
 
-                <Label Text="{Binding Artikal.Naziv}"></Label>
-                <Label Text="{Binding Artikal.Sifra}"></Label>
-                <Label Text="{Binding Artikal.Cijena, StringFormat='Cijena: {0} KM'}"></Label>
-                <StackLayout Orientation="Horizontal">
-
-                    <Entry Text="{Binding Kolicina}" Keyboard="Numeric"></Entry>
+				<Label FontAttributes="Bold" FontSize="Large" Text="{Binding Artikal.Naziv}"></Label>
+				<Label Text="{Binding Artikal.Sifra}"></Label>
+				<Label TextColor="Green" Text="{Binding Artikal.Cijena, StringFormat='Cijena: {0} KM'}"></Label>
+                <StackLayout Orientation="Vertical">
+					<Button Text="-1" Command="{Binding SmanjiKolicinuCommand}"></Button>
+					<Entry Text="{Binding Kolicina}" Placeholder="1" HorizontalTextAlignment="Center" Keyboard="Numeric"></Entry>
                     <Button Text="+1" Command="{Binding PovecajKolicinuCommand}"></Button>
-
+					
                    
                 </StackLayout>
-                <Image Source="Assets/cart.png">
+				<Image Source="Assets/cart.png" BackgroundColor="LightGreen" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding NaruciCommand}"></TapGestureRecognizer>
                     </Image.GestureRecognizers>
                 </Image>
-
+				
             </StackLayout>
 
-        </Grid>
-       
-    </ContentPage.Content>
+
+			<StackLayout BackgroundColor="Gray" Padding="3" Grid.Row="1" Grid.Column="1" >
+				<Label   TextColor="White" HorizontalTextAlignment="Center" FontSize="Body">Polovno</Label>
+			</StackLayout>
+			<StackLayout BackgroundColor="Goldenrod" Padding="3" Grid.Row="1" Grid.Column="1" IsVisible="{Binding Karakteristika.Novo}" >
+				<Label  TextColor="White"  HorizontalTextAlignment="Center" FontSize="Body">Novo</Label>
+			</StackLayout>
+			
+
+			<StackLayout BackgroundColor="Red" Padding="1" Grid.Row="1" Grid.Column="0" IsVisible="{Binding NijeNaStanju_IsVisible}">
+				<Label   TextColor="White" HorizontalTextAlignment="Center" FontSize="Body">Nema na stanju</Label>
+			</StackLayout>
+			<StackLayout BackgroundColor="Green" Grid.Row="1" Grid.Column="0" IsVisible="{Binding NaStanju_IsVisible}" >
+				<Label  TextColor="White"  HorizontalTextAlignment="Center" FontSize="Body">Ima na stanju</Label>
+			</StackLayout>
+
+
+			<StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White">
+				<Grid  Padding="10" Margin="20,30,0,0" RowSpacing="20"  >
+					<Grid.RowDefinitions >
+						<RowDefinition Height="*" ></RowDefinition>
+						<RowDefinition Height="*"></RowDefinition>
+						<RowDefinition Height="*"></RowDefinition>
+						<RowDefinition Height="*"></RowDefinition>
+						<RowDefinition Height="*"></RowDefinition>
+
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" ></ColumnDefinition>
+						<ColumnDefinition Width="*"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<BoxView Margin="110,0,0,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="7"  BackgroundColor="Gray" WidthRequest="3" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" 	/>
+					<Label Grid.Row="0" Grid.Column="0">Proizvođać</Label>				<Label Grid.Row="0" Grid.Column="1" Text="{Binding Artikal.Proizvodjac}"  ></Label>
+					<Label Grid.Row="1" Grid.Column="0">Model</Label>					<Label Grid.Row="1" Grid.Column="1" Text="{Binding Artikal.Model}"  ></Label>
+					<Label Grid.Row="2" Grid.Column="0">Operativni sistem</Label>		<Label Grid.Row="2" Grid.Column="1" Text="{Binding Karakteristika.OperativniSistem}"  ></Label>
+					<Label Grid.Row="3" Grid.Column="0">Kamera</Label>					<Label Grid.Row="3" Grid.Column="1" Text="{Binding Karakteristika.Kamera, StringFormat='{0} MP'}"  ></Label>
+					<Label Grid.Row="4" Grid.Column="0">Ram</Label>						<Label Grid.Row="4" Grid.Column="1"	Text="{Binding Karakteristika.Ram, StringFormat='{0} GB'}"></Label>
+					<Label Grid.Row="5" Grid.Column="0">Procesor</Label>				<Label Grid.Row="5" Grid.Column="1" Text="{Binding Karakteristika.Procesor, StringFormat='{0} GHz'}"  ></Label>
+					<Label Grid.Row="6" Grid.Column="0">Memorija</Label>				<Label Grid.Row="6" Grid.Column="1" Text="{Binding Karakteristika.Memorija, StringFormat='{0} GB'}"  ></Label>
+				</Grid>
+				
+			</StackLayout>
+
+			<StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="10">
+				<Label FontAttributes="Bold" FontSize="20">Uporedi sa:</Label>
+				<Picker BackgroundColor="LightGray"
+					ItemsSource="{Binding ArtikliList}" 
+					SelectedItem="{Binding SelectedArtikal}" 					
+					ItemDisplayBinding="{Binding Naziv}">
+			</Picker>
+				<Button Command="{Binding UporediDvaArtiklaCommand}" BackgroundColor="LightGreen" Text="Uporedi"></Button>
+			</StackLayout>
+
+
+
+		</Grid>
+
+	</ContentPage.Content>
 </ContentPage>
