@@ -40,5 +40,7 @@ namespace MobileShop.WinUI.Korisnici
             frmKorisniciDetalji frm = new frmKorisniciDetalji(int.Parse(korisnikId.ToString()));
             frm.Show();
         }
+
+
     }
 }

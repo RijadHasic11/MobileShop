@@ -40,6 +40,10 @@ namespace MobileShop.WebAPI.Controllers
         {
             _service.Insert(request);
         }
-
+        [HttpPut("{id}")]
+        public void Update(int id, [FromBody]ArtikliInsertRequest request)
+        {
+            _service.Update(id, request);
+        }
     }
 }

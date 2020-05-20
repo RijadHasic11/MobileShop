@@ -33,42 +33,62 @@ namespace MobileShop.WinUI
                
             Model.Models.Korisnici korisnik= await _service.Authenticiraj<Model.Models.Korisnici>(txtKorisnickoIme.Text, txtPassword.Text);
             int ulogaId1 = 0;
-
-
+           
+           
             
-                if (korisnik != null)
+            if (korisnik != null)
+            {
+                Global.PrijavljeniKorisnik = korisnik;
+
+                foreach (var item in Global.PrijavljeniKorisnik.KorisniciUloge)
                 {
-                    Global.PrijavljeniKorisnik = korisnik;
-
-                    foreach (var item in Global.PrijavljeniKorisnik.KorisniciUloge)
-                    {
-                        ulogaId1 = item.UlogaId;
-
-                    }
-                    admin = await _serviceuloge.ProvjeriAdmin<Model.Models.Uloge>(ulogaId1);
-
-
-                    if (admin != null)
-                    {
-                        Global.Admin = true;
-                    }
-        
-
-
-                    MessageBox.Show("Dobrodosli " + korisnik.Ime + " " + korisnik.Prezime);
-                    DialogResult = DialogResult.OK;
-                    Close();
+                    ulogaId1 = item.UlogaId;
+                   
                 }
+                admin = await _serviceuloge.ProvjeriAdmin<Model.Models.Uloge>(ulogaId1);
+               
 
-
-                else
+                if (admin != null)
                 {
-                    MessageBox.Show("Pogresan username ili password", "Autentifikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Global.Admin = true;
                 }
-          
+ 
+              
+
+                MessageBox.Show("Dobrodosli "+ korisnik.Ime + " " + korisnik.Prezime );
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+                   
+            else   
+            {
+                MessageBox.Show("Pogresan username ili password", "Autentifikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
                 
 
             
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtKorisnickoIme_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

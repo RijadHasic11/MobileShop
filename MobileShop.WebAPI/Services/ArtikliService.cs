@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using MobileShop.Model;
+using MobileShop.Model.Models;
 using MobileShop.Model.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MobileShop.WebAPI.Services
 {
@@ -18,20 +21,46 @@ namespace MobileShop.WebAPI.Services
             _mapper = mapper;
         }
 
-        public List<Model.Models.Artikli> Get(ArtikliSearchRequest search)
+        public List<Artikli> Get(ArtikliSearchRequest search)
         {
-            var query = _context.Set<Model.Database.Artikli>().AsQueryable();
 
-            if (search?.ProizvodjacId.HasValue == true)
+            var query = _context.Artikli.Include(y => y.Proizvodjaci).Include(z => z.Modeli).AsQueryable();
+
+
+
+            if (!string.IsNullOrWhiteSpace(search?.Naziv))
+            {
+                query = query.Where(x => x.Naziv.StartsWith(search.Naziv));
+            }
+            if ((!string.IsNullOrWhiteSpace((search?.ProizvodjacId).ToString())) && search?.ProizvodjacId!=0)
             {
                 query = query.Where(x => x.ProizvodjacId == search.ProizvodjacId);
             }
-            query = query.OrderBy(x => x.Naziv);
-
 
             var list = query.ToList();
+            List<Artikli> result = new List<Artikli>();
 
-            return _mapper.Map<List<Model.Models.Artikli>>(list);
+            foreach (var item in list)
+            {
+
+                Artikli nova = new Artikli();
+
+                nova.ArtikalId = item.ArtikalId;
+                nova.Cijena = item.Cijena;
+                nova.KarakteristikeId = item.KarakteristikeId;
+                nova.ModelId = item.ModelId;
+                nova.Naziv = item.Naziv;
+                nova.ProizvodjacId = item.ProizvodjacId;
+                nova.Sifra = item.Sifra;
+                nova.Slika = item.Slika;
+                nova.SlikaThumb= item.SlikaThumb;
+                nova.Status = item.Status;
+                nova.Model = item.Modeli.Naziv;
+                nova.Proizvodjac = item.Proizvodjaci.Naziv;
+
+                result.Add(nova);
+            }
+            return result;
         }
         public void Insert(ArtikliInsertRequest request)
         {
@@ -56,6 +85,20 @@ namespace MobileShop.WebAPI.Services
             return _mapper.Map<Model.Models.Artikli>(entity);
         }
 
+        public void Update(int id, ArtikliInsertRequest request)
+        {
+            var entity = _context.Artikli.Find(id);
+            _context.Artikli.Attach(entity);
+            _context.Artikli.Update(entity);
 
+
+
+            _mapper.Map(request, entity);
+
+            _context.SaveChanges();
+
+
+        }
+    
     }
 }
