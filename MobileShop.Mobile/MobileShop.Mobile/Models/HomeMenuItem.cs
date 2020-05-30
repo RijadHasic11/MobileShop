@@ -7,13 +7,14 @@ namespace MobileShop.Mobile.Models
     public enum MenuItemType
     {
         Browse,
-        About,
+        Kontakt,
         Artikli,
         Narudzba,
         Placanje,
         Obavijesti,
         Zahtjevi,
-        HistorijaZahtjeva
+        HistorijaZahtjeva,
+        HistorijaNarudzbi
     }
     public class HomeMenuItem
     {

@@ -102,9 +102,12 @@ namespace MobileShop.WebAPI
             services.AddScoped<ICRUDService<Model.Models.Modeli, object, ModeliInsertRequest, object>, ModeliService>();
 
             services.AddScoped<IService<Model.Models.Karakteristike, object>, BaseService<Model.Models.Karakteristike, object, Model.Database.Karakteristike>>();
-            services.AddScoped<ICRUDService<Model.Models.Karakteristike, object, KarakteristikeInsertRequest, object>, KarakteristikeService>();
+            services.AddScoped<ICRUDService<Model.Models.Karakteristike, object, KarakteristikeInsertRequest, object>, KarakteristikeService>(); 
+            
+            services.AddScoped<IService<Model.Models.Ocjene, object>, BaseService<Model.Models.Ocjene, object, Model.Database.Ocjene>>();
+            services.AddScoped<ICRUDService<Model.Models.Ocjene, object, OcjeneInsertRequest, object>, OcjeneService>();
 
-           
+
             services.AddScoped<IKlijentiService, KlijentiService>();
            
            

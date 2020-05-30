@@ -22,7 +22,6 @@ namespace MobileShop.Mobile.Views
                 Karakteristika=karakteristike
             
             };
-            
             InitializeComponent();
         }
        

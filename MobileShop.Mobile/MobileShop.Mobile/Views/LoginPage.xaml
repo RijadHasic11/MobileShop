@@ -6,20 +6,20 @@
              
              xmlns:viewModels1="clr-namespace:MobileShop.Mobile.ViewModels"
              mc:Ignorable="d"
-             x:Class="MobileShop.Mobile.Views.LoginPage">
+             x:Class="MobileShop.Mobile.Views.LoginPage"
+			 BackgroundImage="MobShop.png">
     <ContentPage.BindingContext>
         <viewModels1:LoginViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
 
-		<StackLayout VerticalOptions="CenterAndExpand" Padding="10">
-			<Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Prijava @ MobileShop"
-               FontAttributes="Bold" FontSize="28"></Label>
+		<StackLayout VerticalOptions="End" Padding="10" Margin="0,0,0,60" BackgroundColor="#33ffffff">
+			
             
-            <Label Text="Korisnicko ime"></Label>
-            <Entry  x:Name="KorisnickoIme" Text="{Binding Username}"></Entry>
-            <Label Text="Password"></Label>
-            <Entry Text="{Binding Password}" IsPassword="True"></Entry>
+            <Label Margin="35,0,50,0" FontSize="Large" Text="Korisničko ime"></Label>
+			<Entry Margin="30,0,0,0" FontSize="Large" Placeholder="username" x:Name="KorisnickoIme" Text="{Binding Username}"></Entry>
+			<Label Margin="35,0,50,0" FontSize="Large" Text="Password"></Label>
+			<Entry Margin="30,0,0,0" FontSize="Large" Placeholder="*********" Text="{Binding Password}" IsPassword="True"></Entry>
             <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                 
                 <Button Text="Registracija" Clicked="Button_Clicked"></Button>

@@ -20,8 +20,8 @@ namespace MobileShop.Mobile.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="Traži" },
+                new HomeMenuItem {Id = MenuItemType.Kontakt, Title="Kontakt" },
                 new HomeMenuItem {Id = MenuItemType.Artikli, Title="Artikli" },
                 new HomeMenuItem{Id=MenuItemType.Narudzba,Title="Narudzba"},
                 new HomeMenuItem{Id=MenuItemType.Placanje,Title="Placanje"},

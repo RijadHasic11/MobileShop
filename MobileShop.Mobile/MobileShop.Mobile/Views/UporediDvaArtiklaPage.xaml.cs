@@ -32,5 +32,14 @@ namespace MobileShop.Mobile.Views
             };
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+
+            base.OnAppearing();
+            model.NovoPrvi_IsVisible = model.Karakteristika1.Novo;
+            model.PolovnoPrvi_IsVisible = !model.Karakteristika1.Novo;
+            model.NovoDrugi_IsVisible = model.Karakteristika2.Novo;
+            model.PolovnoDrugi_IsVisible = !model.Karakteristika2.Novo;
+        }
     }
 }

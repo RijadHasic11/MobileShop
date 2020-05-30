@@ -28,6 +28,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\KontaktPage.xaml.cs">
+      <DependentUpon>KontaktPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\HistorijaZahtjevaPage.xaml.cs">
       <DependentUpon>HistorijaZahtjevaPage.xaml</DependentUpon>
     </Compile>
