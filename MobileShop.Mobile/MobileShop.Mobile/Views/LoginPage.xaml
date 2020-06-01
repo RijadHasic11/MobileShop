@@ -7,7 +7,7 @@
              xmlns:viewModels1="clr-namespace:MobileShop.Mobile.ViewModels"
              mc:Ignorable="d"
              x:Class="MobileShop.Mobile.Views.LoginPage"
-			 BackgroundImage="MobShop.png">
+			 BackgroundImage="Assets/MobShop.png">
     <ContentPage.BindingContext>
         <viewModels1:LoginViewModel/>
     </ContentPage.BindingContext>
