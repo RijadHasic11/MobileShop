@@ -57,7 +57,7 @@ namespace MobileShop.Mobile.Views
             request.KlijentId = Global.PrijavljeniKlijent.KlijentId;
             request.Status = true;
             request.Otkazano = false;
-            request.SkladisteId = 1;
+            request.SkladisteId = 2;
             request.KorisnikId = 1;
 
             foreach(var item in model.NarudzbaList)

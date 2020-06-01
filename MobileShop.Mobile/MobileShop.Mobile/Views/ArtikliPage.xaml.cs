@@ -34,6 +34,7 @@ namespace MobileShop.Mobile.Views
         {
             var artikal = e.SelectedItem as Model.Models.Artikli;
             var karakteristike= await _karakteristikeService.GetById<Model.Models.Karakteristike>(artikal.KarakteristikeId);
+            model.ArtikliList.Clear();
             await Navigation.PushAsync(new ArtikliDetailPage(artikal, karakteristike));
         }
         

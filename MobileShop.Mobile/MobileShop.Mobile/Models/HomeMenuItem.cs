@@ -7,7 +7,7 @@ namespace MobileShop.Mobile.Models
     public enum MenuItemType
     {
         Browse,
-        About,
+        Kontakt,
         Artikli,
         Narudzba,
         Obavijesti,

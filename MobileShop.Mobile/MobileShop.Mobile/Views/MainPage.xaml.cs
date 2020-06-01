@@ -33,8 +33,8 @@ namespace MobileShop.Mobile.Views
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                    case (int)MenuItemType.Kontakt:
+                        MenuPages.Add(id, new NavigationPage(new KontaktPage()));
                         break;
                     case (int)MenuItemType.Artikli:
                         MenuPages.Add(id, new NavigationPage(new ArtikliPage()));

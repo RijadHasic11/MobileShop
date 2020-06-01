@@ -13,7 +13,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid  Padding="10" Margin="10" >
+		<ScrollView>
+        <Grid  Padding="10" Margin="10" HorizontalOptions="End">
             <Grid.RowDefinitions>
 				<RowDefinition Height="300" ></RowDefinition>
 				<RowDefinition Height="Auto"></RowDefinition>
@@ -67,8 +68,36 @@
 				<Label  TextColor="White"  HorizontalTextAlignment="Center" FontSize="Body">Ima na stanju</Label>
 			</StackLayout>
 
+			<StackLayout IsVisible="{Binding Ocijenjeno}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+					<Label  HorizontalOptions="Center" Text="{Binding ProsjecnaOcjena, StringFormat='Prosječna ocjena: {0:F2} '}"></Label>
+				</StackLayout>
 
-			<StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White">
+				<StackLayout IsVisible="{Binding NijeOcijenjeno}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+
+				<Label  HorizontalOptions="Center">Ocijeni artikal:</Label>
+				<Grid HorizontalOptions="Center" VerticalOptions="Center">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="35" ></RowDefinition>
+
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="40"></ColumnDefinition>
+						<ColumnDefinition Width="40"></ColumnDefinition>
+						<ColumnDefinition Width="40"></ColumnDefinition>
+						<ColumnDefinition Width="40"></ColumnDefinition>
+						<ColumnDefinition Width="40"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Button Command="{Binding OcijeniSa1Command}" Grid.Row="0" Grid.Column="0" FontSize="Micro" Text="1" WidthRequest="30" HeightRequest="30" BorderRadius="100" BackgroundColor="Wheat"></Button>
+					<Button Command="{Binding OcijeniSa2Command}" Grid.Row="0" Grid.Column="1" FontSize="Micro" Text="2" WidthRequest="30" HeightRequest="30" BorderRadius="100" BackgroundColor="Wheat"></Button>
+					<Button Command="{Binding OcijeniSa3Command}" Grid.Row="0" Grid.Column="2" FontSize="Micro" Text="3" WidthRequest="30" HeightRequest="30" BorderRadius="100" BackgroundColor="Wheat"></Button>
+					<Button Command="{Binding OcijeniSa4Command}" Grid.Row="0" Grid.Column="3" FontSize="Micro" Text="4" WidthRequest="30" HeightRequest="30" BorderRadius="100" BackgroundColor="Wheat"></Button>
+					<Button Command="{Binding OcijeniSa5Command}" Grid.Row="0" Grid.Column="4" FontSize="Micro" Text="5" WidthRequest="30" HeightRequest="30" BorderRadius="100" BackgroundColor="Wheat"></Button>
+					
+				</Grid>
+			</StackLayout>
+			
+			
+			<StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White">
 				<Grid  Padding="10" Margin="20,30,0,0" RowSpacing="20"  >
 					<Grid.RowDefinitions >
 						<RowDefinition Height="*" ></RowDefinition>
@@ -94,7 +123,7 @@
 				
 			</StackLayout>
 
-			<StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="10">
+			<StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="10">
 				<Label FontAttributes="Bold" FontSize="20">Uporedi sa:</Label>
 				<Picker BackgroundColor="LightGray"
 					ItemsSource="{Binding ArtikliList}" 
@@ -107,6 +136,6 @@
 
 
 		</Grid>
-
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
