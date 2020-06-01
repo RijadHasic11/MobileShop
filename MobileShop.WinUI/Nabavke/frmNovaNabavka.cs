@@ -1,5 +1,6 @@
 ﻿using MobileShop.Model.Models;
 using MobileShop.Model.Requests;
+using MobileShop.WinUI.Artikli;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace MobileShop.WinUI.Nabavke
     public partial class frmNovaNabavka : Form
     {
         private readonly APIService _serviceDobavljaci = new APIService("Dobavljaci");
-        private readonly APIService _serviceKorisnici = new APIService("Korisnici");
+       
         private readonly APIService _serviceSkladista = new APIService("Skladista");
         private readonly APIService _serviceArtikli = new APIService("Artikli");
         private readonly APIService _serviceNabavke = new APIService("Nabavke");
@@ -57,12 +58,6 @@ namespace MobileShop.WinUI.Nabavke
             cmbDobavljaci.DisplayMember = "Naziv";
             cmbDobavljaci.ValueMember = "DobavljacId";
 
-            List<Model.Models.Korisnici> korisnici_result = await _serviceKorisnici.Get<List<Model.Models.Korisnici>>(null);
-
-            korisnici_result.Insert(0, new Model.Models.Korisnici());
-            cmbKorisnici.DataSource = korisnici_result;
-            cmbKorisnici.DisplayMember = "KorisnickoIme";
-            cmbKorisnici.ValueMember = "KorisnikId";
 
             List<Model.Models.Skladista> skladista_result = await _serviceSkladista.Get<List<Model.Models.Skladista>>(null);
 
@@ -102,7 +97,7 @@ namespace MobileShop.WinUI.Nabavke
                     stavka.Artikal = artikal.Naziv;
                     stavka.Sifra = artikal.Sifra;
                     stavka.Kolicina = int.Parse(txtKolicina.Text);
-                    stavka.Cijena = decimal.Parse(txtCijena.Text);
+                    stavka.Cijena = artikal.Cijena;
 
                     
                     Iznos += stavka.Cijena * stavka.Kolicina;
@@ -129,7 +124,7 @@ namespace MobileShop.WinUI.Nabavke
             request.BrojNabavke = txtBrojNabavke.Text;
             request.Datum = dtpDatum.Value;
             request.DobavljacId = int.Parse(cmbDobavljaci.SelectedValue.ToString());
-            request.KorisnikId = int.Parse(cmbKorisnici.SelectedValue.ToString());
+            request.KorisnikId = Global.PrijavljeniKorisnik.KorisnikId;
             request.Napomena = txtNapomena.Text;
             request.SkladisteId = int.Parse(cmbSkladista.SelectedValue.ToString());
             request.IznosRacuna = Iznos + IznosPdv;
@@ -142,6 +137,12 @@ namespace MobileShop.WinUI.Nabavke
 
 
 
+        }
+
+        private void BtnListaArtikala_Click(object sender, EventArgs e)
+        {
+            frmArtikli forma = new frmArtikli();
+            forma.Show();
         }
     }
 }

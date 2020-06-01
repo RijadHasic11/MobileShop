@@ -13,5 +13,7 @@ namespace MobileShop.WebAPI.Services
         Model.Models.Narudzbe GetById(int id);
 
         void Insert(NarudzbeInsertRequest request);
+
+        void Update(int id, NarudzbeInsertRequest request);
     }
 }

@@ -16,7 +16,7 @@ namespace MobileShop.WinUI.Obavijesti
     public partial class frmNovaObavijest : Form
     {
         private readonly APIService _service = new APIService("Obavijesti");
-        private readonly APIService _serviceKorisnici = new APIService("Korisnici");
+      
 
         ObavijestInsertRequest request = new ObavijestInsertRequest();
         public frmNovaObavijest()
@@ -26,13 +26,7 @@ namespace MobileShop.WinUI.Obavijesti
 
         private async void FrmNovaObavijest_Load(object sender, EventArgs e)
         {
-            List<Model.Models.Korisnici> result = await _serviceKorisnici.Get<List<Model.Models.Korisnici>>(null);
-
-            result.Insert(0, new Model.Models.Korisnici());
-            cmbKorisnici.DisplayMember = "KorisnickoIme";
-            cmbKorisnici.ValueMember = "KorisnikId";
-            cmbKorisnici.DataSource = result;
-
+           
 
         }
 
@@ -73,7 +67,7 @@ namespace MobileShop.WinUI.Obavijesti
         {
             if (request.Slika != null)
             {
-                request.KorisnikId = int.Parse(cmbKorisnici.SelectedValue.ToString());
+                request.KorisnikId = Global.PrijavljeniKorisnik.KorisnikId;
                 request.Naslov = txtNaslov.Text;
                 request.Text = rtxtTekst.Text;
 

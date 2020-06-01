@@ -35,5 +35,10 @@ namespace MobileShop.WebAPI.Controllers
         {
             _service.Insert(request);
         }
+        [HttpPut("{id}")]
+        public void Update(int id,NarudzbeInsertRequest request)
+        {
+            _service.Update(id,request);
+        }
     }
 }

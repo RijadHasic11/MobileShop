@@ -54,7 +54,7 @@ namespace MobileShop.Mobile.Views
 
             request.BrojNarudzbe = neki;
             request.Datum = DateTime.Now;
-            request.KlijentId = 1;
+            request.KlijentId = Global.PrijavljeniKlijent.KlijentId;
             request.Status = true;
             request.Otkazano = false;
             request.SkladisteId = 1;
@@ -70,8 +70,8 @@ namespace MobileShop.Mobile.Views
                 stavka.Popust = 0;
 
                 
-                request.IznosBezPdv = stavka.Cijena * stavka.Kolicina;
-                request.IznosSaPdv = request.IznosBezPdv + request.IznosBezPdv * PDV;
+                request.IznosBezPdv += stavka.Cijena * stavka.Kolicina;
+                request.IznosSaPdv += request.IznosBezPdv + request.IznosBezPdv * PDV;
 
 
                 request.stavke.Add(stavka);
@@ -80,6 +80,7 @@ namespace MobileShop.Mobile.Views
             
 
             await _service.Insert<Model.Models.Narudzbe>(request);
+           
 
             await DisplayAlert("Uspjeh", "Uspjesno ste napravili novu narudzbu", "OK");
             model.NarudzbaList.Clear();
@@ -87,6 +88,7 @@ namespace MobileShop.Mobile.Views
             lblBrojArtikala.Text = "Broj artikala: 0";
             lblIznos.Text = "Iznos: 0 KM";
 
+            await Navigation.PushAsync(new StripePaymentGatwayPage(model.Iznos));
            
         }
 

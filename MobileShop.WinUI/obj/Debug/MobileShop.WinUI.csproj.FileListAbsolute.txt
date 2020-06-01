@@ -125,3 +125,5 @@ C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\Mobile
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndexProdavac.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndexProdavac.resources
 C:\Users\WhoAm1\Desktop\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.csprojAssemblyReference.cache
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Artikli.frmArtikli.resources
+C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Artikli.frmArtikliDetalji.resources

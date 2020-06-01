@@ -59,5 +59,15 @@ namespace MobileShop.Mobile.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] CreditCard {
+            get {
+                object obj = ResourceManager.GetObject("CreditCard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

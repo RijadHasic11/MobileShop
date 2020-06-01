@@ -35,7 +35,7 @@ namespace MobileShop.Mobile.ViewModels
             foreach(var item in CartService.Cart.Values)
             {
                 NarudzbaList.Add(item);
-                Iznos = item.Kolicina * item.Artikal.Cijena;
+                Iznos+= item.Kolicina * item.Artikal.Cijena;
                
             }
 

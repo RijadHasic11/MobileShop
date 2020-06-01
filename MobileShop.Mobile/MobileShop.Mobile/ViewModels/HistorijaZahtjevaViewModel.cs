@@ -27,10 +27,10 @@ namespace MobileShop.Mobile.ViewModels
             ListaZahtjeva.Clear();
             foreach(var item in lista)
             {
-                //if(item.KlijentId == Global.PrijavljeniKlijent.KlijentId)
-                //{
+                if (item.KlijentId == Global.PrijavljeniKlijent.KlijentId)
+                {
                     ListaZahtjeva.Add(item);
-                //}
+                }
             }
 
 

@@ -188,6 +188,7 @@
             // cbOtkazano
             // 
             this.cbOtkazano.AutoSize = true;
+            this.cbOtkazano.Enabled = false;
             this.cbOtkazano.Location = new System.Drawing.Point(202, 85);
             this.cbOtkazano.Name = "cbOtkazano";
             this.cbOtkazano.Size = new System.Drawing.Size(72, 17);
@@ -198,6 +199,7 @@
             // cbStatus
             // 
             this.cbStatus.AutoSize = true;
+            this.cbStatus.Enabled = false;
             this.cbStatus.Location = new System.Drawing.Point(117, 85);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(56, 17);
@@ -207,6 +209,7 @@
             // 
             // dtpDatum
             // 
+            this.dtpDatum.Enabled = false;
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDatum.Location = new System.Drawing.Point(117, 53);
             this.dtpDatum.Name = "dtpDatum";

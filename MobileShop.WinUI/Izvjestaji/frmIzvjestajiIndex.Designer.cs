@@ -40,13 +40,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPretraga
             // 
-            this.txtPretraga.Location = new System.Drawing.Point(515, 43);
+            this.txtPretraga.Location = new System.Drawing.Point(515, 69);
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(201, 20);
             this.txtPretraga.TabIndex = 0;
@@ -87,7 +88,7 @@
             // 
             // btnPretraga
             // 
-            this.btnPretraga.Location = new System.Drawing.Point(732, 40);
+            this.btnPretraga.Location = new System.Drawing.Point(732, 66);
             this.btnPretraga.Name = "btnPretraga";
             this.btnPretraga.Size = new System.Drawing.Size(75, 23);
             this.btnPretraga.TabIndex = 5;
@@ -155,11 +156,21 @@
             this.button1.Text = "Printaj";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(512, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(222, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Pretraga po naslovu obavijesti,broju narudzbe";
+            // 
             // frmIzvjestajiIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 481);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNarudzbe);
@@ -194,5 +205,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 }

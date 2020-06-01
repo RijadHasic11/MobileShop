@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileShop.Model.Requests;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,9 +70,28 @@ namespace MobileShop.WinUI.Narudzbe
             dataGridView1.DataSource = result;
         }
 
-        private void BtnZakljuci_Click(object sender, EventArgs e)
+        private async void BtnZakljuci_Click(object sender, EventArgs e)
         {
+            Model.Models.Narudzbe narudzba = await _serviceNarudzbe.GetById<Model.Models.Narudzbe>(_id);
 
+            var request = new NarudzbeInsertRequest()
+            {
+                BrojNarudzbe = narudzba.BrojNarudzbe,
+                Datum = narudzba.Datum,
+                IznosBezPdv = narudzba.IznosBezPdv,
+                IznosSaPdv = narudzba.IznosSaPdv,
+                KlijentId = narudzba.KlijentId,
+                KorisnikId = Global.PrijavljeniKorisnik.KorisnikId,
+                Otkazano = narudzba.Otkazano,
+                SkladisteId = narudzba.SkladisteId,
+                Status = narudzba.Status
+            };
+
+            _serviceNarudzbe.Update<Model.Models.Narudzbe>(_id, request);
+
+            MessageBox.Show("Uspjesno zakljucena narudzba");
+
+            
         }
     }
 }

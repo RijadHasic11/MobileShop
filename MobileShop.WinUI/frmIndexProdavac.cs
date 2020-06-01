@@ -12,11 +12,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace MobileShop.WinUI
 {
     public partial class frmIndexProdavac : Form
     {
+        private readonly APIService _service = new APIService("PoslanaNarudzba");
+        private readonly APIService _serviceNarudzba = new APIService("Narudzbe");
+
+        private int Id = 0;
         public frmIndexProdavac()
         {
             InitializeComponent();
@@ -145,6 +150,78 @@ namespace MobileShop.WinUI
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void FrmIndexProdavac_Load(object sender, EventArgs e)
+        {
+            
+
+            var lista = await _service.Get<List<Model.Models.PoslanaNarudzba>>(null);
+
+
+            List<Model.Models.PoslanaNarudzba> result = new List<Model.Models.PoslanaNarudzba>();
+
+
+            foreach (var item in lista)
+            {
+                if (item.KorisnikId == Global.PrijavljeniKorisnik.KorisnikId)
+                {
+                    if (item.Poslano == false)
+                    {
+                        result.Add(item);
+
+                        var search = new Model.Requests.PoslanaNarudzbaUpdateRequest()
+                        {
+                            Poslano = true
+                           
+                        };
+
+                        _service.Update<Model.Models.PoslanaNarudzba>(item.PoslanaNarudzbaId, search);
+
+                    }
+                }
+
+            }
+
+            foreach (var notifikacija in result)
+            {
+                if (notifikacija.KorisnikId == Global.PrijavljeniKorisnik.KorisnikId)
+                {
+                    Model.Models.Narudzbe Narudzba = await _serviceNarudzba.GetById<Model.Models.Narudzbe>(notifikacija.NarudzbaId);
+
+                    Id = Narudzba.NarudzbaId;
+
+                    PopupNotifier popup = new PopupNotifier();
+                    popup.AnimationDuration = 6000;
+                    popup.Image = Properties.Resources.Info;
+                    popup.TitleText = "Notifikacija o narudzbi                         " + notifikacija.Datum.ToShortDateString();
+                    popup.ContentText = "Narudzba sa brojem narudzbe '" + Narudzba.BrojNarudzbe + "' je pristigla na odrediste!";
+                    popup.ShowOptionsButton = true;
+                    popup.OptionsMenu = options;
+                    popup.ShowCloseButton = true;
+
+
+                    popup.Popup();
+
+                }
+            }
+
+
+        }
+
+        private void DetaljiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Id != 0)
+            {
+                frmNarudzbeDetalji frm = new frmNarudzbeDetalji(Id);
+                frm.Show();
+            }
+
+        }
+
+        private void OKToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

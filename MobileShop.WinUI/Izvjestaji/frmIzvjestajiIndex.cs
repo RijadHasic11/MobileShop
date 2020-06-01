@@ -69,6 +69,10 @@ namespace MobileShop.WinUI.Izvjestaji
 
             txtPretraga.Enabled = true;
             btnPretraga.Enabled = true;
+
+            dataGridView1.DataSource = null;
+
+            txtPretraga.Text = "";
          
 
         }
@@ -135,6 +139,9 @@ namespace MobileShop.WinUI.Izvjestaji
             txtPretraga.Enabled = true;
             btnPretraga.Enabled = true;
 
+            dataGridView1.DataSource = null;
+
+            txtPretraga.Text = "";
 
         }
     }

@@ -87,7 +87,7 @@ namespace MobileShop.WebAPI
             services.AddScoped<INarudzbeService, NarudzbeService>();
             services.AddScoped<IStavkeNarudzbeService, StavkeNarudzbeService>();
             services.AddScoped<IService<Model.Models.PoslanaNarudzba,object>,BaseService<Model.Models.PoslanaNarudzba, object, Model.Database.PoslanaNarudzba>>();
-            services.AddScoped<ICRUDService<Model.Models.PoslanaNarudzba, object, object, Model.Requests.PoslanaNarudzbaUpdateRequest>, IPoslanaNarudzba>();
+            services.AddScoped<ICRUDService<Model.Models.PoslanaNarudzba, object, Model.Requests.PoslanaNarduzbaInsertRequest, Model.Requests.PoslanaNarudzbaUpdateRequest>, IPoslanaNarudzba>();
 
             services.AddScoped<IService<Model.Models.ZahtjeviStavke, object>, BaseService<Model.Models.ZahtjeviStavke, object, Model.Database.ZahtjeviStavke>>();
             services.AddScoped<ICRUDService<Model.Models.ZahtjeviStavke, object, ZahtjeviStavkeInsertRequest, object>, ZahtjeviStavkeService>();

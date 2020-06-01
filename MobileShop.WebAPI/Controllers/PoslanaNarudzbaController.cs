@@ -9,9 +9,9 @@ using MobileShop.WebAPI.Services;
 namespace MobileShop.WebAPI.Controllers
 {
     
-    public class PoslanaNarudzbaController : BaseCRUDController<Model.Models.PoslanaNarudzba,object,object,Model.Requests.PoslanaNarudzbaUpdateRequest>
+    public class PoslanaNarudzbaController : BaseCRUDController<Model.Models.PoslanaNarudzba,object,Model.Requests.PoslanaNarduzbaInsertRequest,Model.Requests.PoslanaNarudzbaUpdateRequest>
     {
-        public PoslanaNarudzbaController(ICRUDService<Model.Models.PoslanaNarudzba,object,object,Model.Requests.PoslanaNarudzbaUpdateRequest> service) : base(service)
+        public PoslanaNarudzbaController(ICRUDService<Model.Models.PoslanaNarudzba,object,Model.Requests.PoslanaNarduzbaInsertRequest,Model.Requests.PoslanaNarudzbaUpdateRequest> service) : base(service)
         {
 
         }

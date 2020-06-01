@@ -69,7 +69,7 @@ namespace MobileShop.WinUI.Nabavke
                 txtBrojNabavke.Text = nova.BrojNabavke;
                 dtpDatum.Value = nova.Datum;
                 txtIznosRacuna.Text = nova.IznosRacuna.ToString() + " KM";
-                txtPDV.Text = nova.Pdv.ToString() + "%";
+                txtPDV.Text = nova.Pdv.ToString() + " KM";
                 txtNapomena.Text = nova.Napomena;
                 txtNazivDobavljaca.Text = nova.NazivDobavljaca;
                 txtKontaktOsoba.Text = nova.KontaktOsoba;
@@ -118,6 +118,9 @@ namespace MobileShop.WinUI.Nabavke
                 txtNazivDobavljaca.Text = "";
                 txtKontaktOsoba.Text = "";
                 txtTelefon.Text = "";
+
+                dgvStavkeNabavke.DataSource = null;
+
             }
         }
 

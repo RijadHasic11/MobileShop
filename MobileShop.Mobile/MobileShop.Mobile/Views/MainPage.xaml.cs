@@ -42,9 +42,6 @@ namespace MobileShop.Mobile.Views
                     case (int)MenuItemType.Narudzba:
                         MenuPages.Add(id, new NavigationPage(new NarudzbaPage()));
                         break;
-                    case (int)MenuItemType.Placanje:
-                        MenuPages.Add(id, new NavigationPage(new CreditCardPage()));
-                        break;
                     case (int)MenuItemType.Obavijesti:
                         MenuPages.Add(id, new NavigationPage(new ObavijestiPage()));
                         break;
@@ -53,6 +50,9 @@ namespace MobileShop.Mobile.Views
                         break;
                     case (int)MenuItemType.HistorijaZahtjeva:
                         MenuPages.Add(id, new NavigationPage(new HistorijaZahtjevaPage()));
+                        break;
+                    case (int)MenuItemType.HistorijaNarudzbi:
+                        MenuPages.Add(id, new NavigationPage(new HistorijaNarudzbi()));
                         break;
                 }
             }
