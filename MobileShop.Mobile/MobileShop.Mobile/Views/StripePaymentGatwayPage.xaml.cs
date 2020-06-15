@@ -165,6 +165,9 @@ namespace MobileShop.Mobile.Views
             return text;
         }
 
-     
+        private void Submit_Button_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new MainPage();
+        }
     }
 }

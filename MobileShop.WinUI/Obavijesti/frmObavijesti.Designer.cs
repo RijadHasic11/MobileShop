@@ -72,6 +72,7 @@
             // 
             this.dgvObavijesti.AllowUserToAddRows = false;
             this.dgvObavijesti.AllowUserToDeleteRows = false;
+            this.dgvObavijesti.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObavijesti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObavijesti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -99,7 +100,6 @@
             this.Naslov.HeaderText = "Naslov";
             this.Naslov.Name = "Naslov";
             this.Naslov.ReadOnly = true;
-            this.Naslov.Width = 150;
             // 
             // Text
             // 
@@ -107,7 +107,6 @@
             this.Text.HeaderText = "Text";
             this.Text.Name = "Text";
             this.Text.ReadOnly = true;
-            this.Text.Width = 200;
             // 
             // label1
             // 

@@ -14,7 +14,7 @@
             <Label Text="Pregled historije narudzbi"
                 HorizontalTextAlignment="Center" FontAttributes="Bold"
                        FontSize="28" />
-            <ListView ItemsSource="{Binding ListaNarudzbi}">
+            <ListView ItemsSource="{Binding ListaNarudzbi}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -66,9 +66,12 @@
                                 d:Text="Item descripton"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                                    <Button Text="Potvrdi da je ova narudzba primljena " Clicked="Button_Clicked" ></Button>
+                                    
 
-                                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="Gray"></BoxView>
+                                       
+                                </StackLayout>
+                                <StackLayout Grid.Row="4" Grid.ColumnSpan="2">
+                                    <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="5" Color="Gray"></BoxView>
                                 </StackLayout>
 
 

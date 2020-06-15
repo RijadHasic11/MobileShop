@@ -28,49 +28,12 @@ namespace MobileShop.Mobile.Views
             base.OnAppearing();
             await model.Init();
         }
-
-        private async void Button_Clicked(object sender, EventArgs e)
+           
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (model.KorisnikId > 1)
-            {
-                int NarudzbaPostoji = 0;
-                var lista = await service.Get<List<Model.Models.PoslanaNarudzba>>(null);
-                foreach(var item in lista)
-                {
-                    if (item.NarudzbaId == model.NarudzbaId)
-                    {
-                        NarudzbaPostoji = model.NarudzbaId;
-                    }
-                }
-                if (NarudzbaPostoji != 0)
-                {
-                    await DisplayAlert("Upozorenje", "Narudzba je zavrsena", "OK");
-                }
-                else
-                {
-                    PoslanaNarduzbaInsertRequest request = new PoslanaNarduzbaInsertRequest
-                    {
-                        Datum = DateTime.Now,
-                        KlijentId = Global.PrijavljeniKlijent.KlijentId,
-                        Poslano = false,
-                        NarudzbaId = model.NarudzbaId,
-                        KorisnikId = model.KorisnikId
+            var item = e.SelectedItem as Model.Models.Narudzbe;
 
-                    };
-
-                    await service.Insert<Model.Models.PoslanaNarudzba>(request);
-                    await DisplayAlert("Uspjeh", "Potvrdjena narudzba", "OK");
-                }
-
-            }
-
-            else
-            {
-                await DisplayAlert("Upozorenje", "Ova narudzba nije zakljucena od strane prodavaca", "OK");
-            }
-
-            
-
+            await Navigation.PushAsync(new HistorijaNarudzbiDetailPage(item));
         }
     }
 }

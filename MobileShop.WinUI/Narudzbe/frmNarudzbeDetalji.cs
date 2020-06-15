@@ -15,6 +15,7 @@ namespace MobileShop.WinUI.Narudzbe
     {
         private readonly APIService _serviceNarudzbe = new APIService("Narudzbe");
         private readonly APIService _serviceStavke = new APIService("StavkeNarudzbe");
+        private readonly APIService _serviceSkladiste = new APIService("Skladista");
         private int _id;
         public frmNarudzbeDetalji(int id)
         {
@@ -42,7 +43,13 @@ namespace MobileShop.WinUI.Narudzbe
             txtIznossaPdv.Text = narudzba.IznosSaPdv.ToString();
 
             txtKlijent.Text = narudzba.KlijentKorisnickoIme;
-            txtSkladiste.Text = narudzba.NazivSkladista;
+
+            List<Model.Models.Skladista> skladista_result = await _serviceSkladiste.Get<List<Model.Models.Skladista>>(null);
+
+            skladista_result.Insert(0, new Model.Models.Skladista());
+            cmbSkladista.DataSource = skladista_result;
+            cmbSkladista.DisplayMember = "Naziv";
+            cmbSkladista.ValueMember = "SkladisteId";
 
 
             List<Model.Models.StavkeNarudzbe> listastavki = await _serviceStavke.Get<List<Model.Models.StavkeNarudzbe>>(null);
@@ -72,26 +79,40 @@ namespace MobileShop.WinUI.Narudzbe
 
         private async void BtnZakljuci_Click(object sender, EventArgs e)
         {
+            
             Model.Models.Narudzbe narudzba = await _serviceNarudzbe.GetById<Model.Models.Narudzbe>(_id);
 
-            var request = new NarudzbeInsertRequest()
+            if (narudzba.SkladisteId == 1 || narudzba.KorisnikId == 1)
             {
-                BrojNarudzbe = narudzba.BrojNarudzbe,
-                Datum = narudzba.Datum,
-                IznosBezPdv = narudzba.IznosBezPdv,
-                IznosSaPdv = narudzba.IznosSaPdv,
-                KlijentId = narudzba.KlijentId,
-                KorisnikId = Global.PrijavljeniKorisnik.KorisnikId,
-                Otkazano = narudzba.Otkazano,
-                SkladisteId = narudzba.SkladisteId,
-                Status = narudzba.Status
-            };
+                var request = new NarudzbeInsertRequest()
+                {
+                    BrojNarudzbe = narudzba.BrojNarudzbe,
+                    Datum = narudzba.Datum,
+                    IznosBezPdv = narudzba.IznosBezPdv,
+                    IznosSaPdv = narudzba.IznosSaPdv,
+                    KlijentId = narudzba.KlijentId,
+                    KorisnikId = Global.PrijavljeniKorisnik.KorisnikId,
+                    Otkazano = narudzba.Otkazano,
+                    SkladisteId = int.Parse(cmbSkladista.SelectedValue.ToString()),
+                    Status = narudzba.Status
+                };
 
-            _serviceNarudzbe.Update<Model.Models.Narudzbe>(_id, request);
 
-            MessageBox.Show("Uspjesno zakljucena narudzba");
+                _serviceNarudzbe.Update<Model.Models.Narudzbe>(_id, request);
+
+                MessageBox.Show("Uspjesno zakljucena narudzba");
+            }
+            else
+            {
+                MessageBox.Show("Narudzba je vec zakljucena");
+            }
 
             
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -159,6 +159,7 @@
             // 
             this.txtSkladiste.Location = new System.Drawing.Point(95, 21);
             this.txtSkladiste.Name = "txtSkladiste";
+            this.txtSkladiste.ReadOnly = true;
             this.txtSkladiste.Size = new System.Drawing.Size(178, 20);
             this.txtSkladiste.TabIndex = 13;
             // 
@@ -166,6 +167,7 @@
             // 
             this.txtNapomena.Location = new System.Drawing.Point(95, 137);
             this.txtNapomena.Name = "txtNapomena";
+            this.txtNapomena.ReadOnly = true;
             this.txtNapomena.Size = new System.Drawing.Size(178, 20);
             this.txtNapomena.TabIndex = 12;
             // 
@@ -191,6 +193,7 @@
             // 
             this.txtPDV.Location = new System.Drawing.Point(208, 106);
             this.txtPDV.Name = "txtPDV";
+            this.txtPDV.ReadOnly = true;
             this.txtPDV.Size = new System.Drawing.Size(65, 20);
             this.txtPDV.TabIndex = 9;
             // 
@@ -207,6 +210,7 @@
             // 
             this.txtIznosRacuna.Location = new System.Drawing.Point(95, 106);
             this.txtIznosRacuna.Name = "txtIznosRacuna";
+            this.txtIznosRacuna.ReadOnly = true;
             this.txtIznosRacuna.Size = new System.Drawing.Size(69, 20);
             this.txtIznosRacuna.TabIndex = 7;
             // 
@@ -214,11 +218,13 @@
             // 
             this.txtBrojNabavke.Location = new System.Drawing.Point(95, 51);
             this.txtBrojNabavke.Name = "txtBrojNabavke";
+            this.txtBrojNabavke.ReadOnly = true;
             this.txtBrojNabavke.Size = new System.Drawing.Size(178, 20);
             this.txtBrojNabavke.TabIndex = 6;
             // 
             // dtpDatum
             // 
+            this.dtpDatum.Enabled = false;
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDatum.Location = new System.Drawing.Point(95, 77);
             this.dtpDatum.Name = "dtpDatum";
@@ -281,6 +287,7 @@
             // 
             this.txtTelefon.Location = new System.Drawing.Point(88, 95);
             this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.ReadOnly = true;
             this.txtTelefon.Size = new System.Drawing.Size(161, 20);
             this.txtTelefon.TabIndex = 4;
             // 
@@ -297,6 +304,7 @@
             // 
             this.txtKontaktOsoba.Location = new System.Drawing.Point(88, 59);
             this.txtKontaktOsoba.Name = "txtKontaktOsoba";
+            this.txtKontaktOsoba.ReadOnly = true;
             this.txtKontaktOsoba.Size = new System.Drawing.Size(161, 20);
             this.txtKontaktOsoba.TabIndex = 2;
             // 
@@ -313,6 +321,7 @@
             // 
             this.txtNazivDobavljaca.Location = new System.Drawing.Point(87, 23);
             this.txtNazivDobavljaca.Name = "txtNazivDobavljaca";
+            this.txtNazivDobavljaca.ReadOnly = true;
             this.txtNazivDobavljaca.Size = new System.Drawing.Size(162, 20);
             this.txtNazivDobavljaca.TabIndex = 0;
             // 
@@ -330,6 +339,7 @@
             // 
             this.dgvStavkeNabavke.AllowUserToAddRows = false;
             this.dgvStavkeNabavke.AllowUserToDeleteRows = false;
+            this.dgvStavkeNabavke.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStavkeNabavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeNabavke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StavkeNabavkeId,
@@ -380,7 +390,6 @@
             this.Cijena.HeaderText = "Cijena";
             this.Cijena.Name = "Cijena";
             this.Cijena.ReadOnly = true;
-            this.Cijena.Width = 85;
             // 
             // Kolicina
             // 
@@ -388,7 +397,6 @@
             this.Kolicina.HeaderText = "Kolicina";
             this.Kolicina.Name = "Kolicina";
             this.Kolicina.ReadOnly = true;
-            this.Kolicina.Width = 83;
             // 
             // Slika
             // 

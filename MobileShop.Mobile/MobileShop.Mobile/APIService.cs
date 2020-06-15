@@ -26,7 +26,12 @@ namespace MobileShop.Mobile
         {
             _route = route;
         }
+        public async Task<T> GetSlicneArtikle<T>(int id)
+        {
+            var url = $"{_apiUrl}/{_route}/GetSlicneArtikle/{id}";
 
+            return await url.GetJsonAsync<T>();
+        }
         public async Task<T> Get<T>(object search)
         {
             var url = $"{_apiUrl}/{_route}";

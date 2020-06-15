@@ -18,6 +18,14 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -30,28 +38,36 @@
 
                 <Label Text="Ime: " Grid.Row="1" FontSize="18" VerticalTextAlignment="Center"></Label>
                 <Entry Grid.Row="1" Grid.Column="1" x:Name="inputIme" Text="{Binding Ime}" ></Entry>
+                <Label Grid.Row="2" Grid.ColumnSpan="2"  x:Name="imeError" TextColor="Red" IsVisible="True"></Label>
 
-                <Label Text="Prezime: " Grid.Row="2" FontSize="18" VerticalTextAlignment="Center"></Label>
-                <Entry Grid.Row="2" Grid.Column="1" x:Name="inputPrezime" Text="{Binding Prezime}"></Entry>
+                <Label Text="Prezime: " Grid.Row="3" FontSize="18" VerticalTextAlignment="Center"></Label>
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="inputPrezime" Text="{Binding Prezime}"></Entry>
+                <Label Grid.Row="4" Grid.ColumnSpan="2" x:Name="prezimeError" TextColor="Red" IsVisible="True"></Label>
 
 
-                <Label Text="Email: " Grid.Row="3" FontSize="18" VerticalTextAlignment="Center"></Label>
-                <Entry Grid.Row="3" Grid.Column="1" x:Name="inputEmail" Text="{Binding Email}"></Entry>
+                <Label Text="Email: " Grid.Row="5" FontSize="18" VerticalTextAlignment="Center"></Label>
+                <Entry Grid.Row="5" Grid.Column="1" x:Name="inputEmail" Text="{Binding Email}"></Entry>
+                <Label Grid.Row="6" Grid.ColumnSpan="2" x:Name="emailError" TextColor="Red" IsVisible="True"></Label>
 
-                <Label Text="Telefon: " Grid.Row="4" FontSize="18" VerticalTextAlignment="Center"></Label>
-                <Entry Grid.Row="4" Grid.Column="1" x:Name="inputTelefon" Text="{Binding Telefon}"></Entry>
+                <Label Text="Telefon: " Grid.Row="7" FontSize="18" VerticalTextAlignment="Center"></Label>
+                <Entry Grid.Row="7" Grid.Column="1" x:Name="inputTelefon" Text="{Binding Telefon}"></Entry>
+                <Label Grid.Row="8" Grid.ColumnSpan="2" x:Name="telefonError" TextColor="Red" IsVisible="True"></Label>
 
-                <Label Text="Korisnicko ime: " Grid.Row="5" FontSize="18" VerticalTextAlignment="Center"></Label>
-                <Entry Grid.Row="5" Grid.Column="1" x:Name="inputKorisnickoIme" Text="{Binding KorisnickoIme}"></Entry>
 
-                <Label Text="Password: " Grid.Row="6" FontSize="18" VerticalTextAlignment="Center"></Label>
-                <Entry Grid.Row="6" Grid.Column="1" x:Name="inputPassword" IsPassword="True" Text="{Binding Password}"></Entry>
+                <Label Text="Korisnicko ime: " Grid.Row="9" FontSize="18" VerticalTextAlignment="Center"></Label>
+                <Entry Grid.Row="9" Grid.Column="1" x:Name="inputKorisnickoIme" Text="{Binding KorisnickoIme}"></Entry>
+                <Label Grid.Row="10" Grid.ColumnSpan="2" x:Name="korisnickoImeError" TextColor="Red" IsVisible="True"></Label>
 
-                <Label Text="Potvrda pass: " Grid.Row="7" FontSize="18" VerticalTextAlignment="Center"></Label>
-                <Entry Grid.Row="7" Grid.Column="1" x:Name="inputPotvrda" IsPassword="True" Text="{Binding Potvrda}"></Entry>
+                <Label Text="Password: " Grid.Row="11" FontSize="18" VerticalTextAlignment="Center"></Label>
+                <Entry Grid.Row="11" Grid.Column="1" x:Name="inputPassword" IsPassword="True" Text="{Binding Password}"></Entry>
+                <Label Grid.Row="12" Grid.ColumnSpan="2" x:Name="lozinkaError" TextColor="Red" IsVisible="True"></Label>
 
-                <Button x:Name="ButtonRegistracija" Grid.Row="8" Grid.Column="1" Text="Registracija" BackgroundColor="Gray"
-                        Command="{Binding RegistracijaCommand}"></Button>
+                <Label Text="Potvrda pass: " Grid.Row="13" FontSize="18" VerticalTextAlignment="Center"></Label>
+                <Entry Grid.Row="13" Grid.Column="1" x:Name="inputPotvrda" IsPassword="True" Text="{Binding Potvrda}"></Entry>
+                <Label Grid.Row="14" Grid.ColumnSpan="2" x:Name="potvrdalozinkaError" TextColor="Red" IsVisible="True"></Label>
+
+                <Button x:Name="ButtonRegistracija" Grid.Row="15" Grid.Column="1" Text="Registracija" BackgroundColor="Gray"
+                       Clicked="ButtonRegistracija_Clicked"></Button>
             </Grid>
 
            

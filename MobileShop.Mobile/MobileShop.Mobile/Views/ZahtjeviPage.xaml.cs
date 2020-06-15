@@ -24,6 +24,8 @@ namespace MobileShop.Mobile.Views
         private void Button_Clicked(object sender, EventArgs e)
         {
 
+            Opis.Text = "";
+            Naslov.Text = "";
             DisplayAlert("Uspjeh", "Uspjesno ste poslali novi zahtjev", "OK");
         }
     }

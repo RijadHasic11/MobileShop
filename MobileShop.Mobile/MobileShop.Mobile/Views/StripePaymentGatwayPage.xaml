@@ -67,7 +67,7 @@
             
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="End" >
                 <Label x:Name="lblIznos" Text="{Binding Iznos,StringFormat='Ukupno za platiti: {0} KM'}" FontSize="20" FontAttributes="Italic"></Label>
-                <Button x:Name="Submit_Button" BorderRadius="0"  Text="Submit" Command="{Binding SubmitCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
+                <Button x:Name="Submit_Button" BorderRadius="0"  Text="Submit" Command="{Binding SubmitCommand}" Clicked="Submit_Button_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ContentView>

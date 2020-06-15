@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNaslov = new System.Windows.Forms.TextBox();
             this.rtxtTekst = new System.Windows.Forms.RichTextBox();
@@ -38,8 +39,12 @@
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -57,6 +62,7 @@
             this.txtNaslov.Name = "txtNaslov";
             this.txtNaslov.Size = new System.Drawing.Size(192, 20);
             this.txtNaslov.TabIndex = 3;
+            this.txtNaslov.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNaslov_Validating);
             // 
             // rtxtTekst
             // 
@@ -126,6 +132,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Slika";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmNovaObavijest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,10 +155,11 @@
             this.Controls.Add(this.label2);
             this.Name = "frmNovaObavijest";
             this.Text = "frmNovaObavijest";
-            this.Load += new System.EventHandler(this.FrmNovaObavijest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +176,7 @@
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -58,6 +58,7 @@ namespace MobileShop.WebAPI.Services
                 nova.Model = item.Modeli.Naziv;
                 nova.Proizvodjac = item.Proizvodjaci.Naziv;
 
+
                 result.Add(nova);
             }
             return result;

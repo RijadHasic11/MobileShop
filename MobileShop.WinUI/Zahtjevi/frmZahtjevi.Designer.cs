@@ -77,6 +77,7 @@
             // 
             this.dgvZahtjevi.AllowUserToAddRows = false;
             this.dgvZahtjevi.AllowUserToDeleteRows = false;
+            this.dgvZahtjevi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -131,7 +132,6 @@
             this.KlijentId.HeaderText = "KlijentId";
             this.KlijentId.Name = "KlijentId";
             this.KlijentId.ReadOnly = true;
-            this.KlijentId.Width = 50;
             // 
             // Datum
             // 
@@ -139,7 +139,6 @@
             this.Datum.HeaderText = "Datum zahtjeva";
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
-            this.Datum.Width = 95;
             // 
             // Naslov
             // 
@@ -147,7 +146,6 @@
             this.Naslov.HeaderText = "Naslov";
             this.Naslov.Name = "Naslov";
             this.Naslov.ReadOnly = true;
-            this.Naslov.Width = 120;
             // 
             // Opis
             // 
@@ -155,7 +153,6 @@
             this.Opis.HeaderText = "Opis";
             this.Opis.Name = "Opis";
             this.Opis.ReadOnly = true;
-            this.Opis.Width = 200;
             // 
             // Akcija
             // 
@@ -165,7 +162,6 @@
             this.Akcija.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Akcija.Text = "Odgovori";
             this.Akcija.UseColumnTextForButtonValue = true;
-            this.Akcija.Width = 80;
             // 
             // label1
             // 

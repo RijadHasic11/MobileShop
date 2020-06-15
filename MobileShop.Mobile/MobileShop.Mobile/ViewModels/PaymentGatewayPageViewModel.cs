@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MobileShop.Mobile.Views;
 using MobileShop.Model.Models;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -122,6 +123,7 @@ namespace MobileShop.Mobile.ViewModels
                     Console.Write("Payment Gateway" + "Payment Successful ");
                     UserDialogs.Instance.Alert("Your payment was successfull", "Payment success", "OK");
                     UserDialogs.Instance.HideLoading();
+                    
                 }
                 else
                 {

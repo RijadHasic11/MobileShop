@@ -32,6 +32,12 @@ namespace MobileShop.Mobile.ViewModels
             get { return _narudzbaId; }
             set { SetProperty(ref _narudzbaId, value); }
         }
+        bool _izabran = false;
+        public bool Izabran
+        {
+            get { return _izabran; }
+            set { SetProperty(ref _izabran, value); }
+        }
         public async Task Init()
         {
             List<Model.Models.Narudzbe> lista = await _service.Get<List<Model.Models.Narudzbe>>(null);
@@ -41,12 +47,8 @@ namespace MobileShop.Mobile.ViewModels
                 
                 if (item.KlijentId == Global.PrijavljeniKlijent.KlijentId)
                 {
-                    
-                        KorisnikId = item.KorisnikId;
-                        NarudzbaId = item.NarudzbaId;
                         ListaNarudzbi.Add(item);
                     
-
                 }
             }
 

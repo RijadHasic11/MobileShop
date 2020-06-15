@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnZakljuci = new System.Windows.Forms.Button();
             this.txtPDV = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnListaArtikala = new System.Windows.Forms.Button();
             this.txtSifra = new System.Windows.Forms.TextBox();
             this.dgvStavkeNabavke = new System.Windows.Forms.DataGridView();
             this.NabavkaStavkeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,10 +61,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBrojNabavke = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnListaArtikala = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeNabavke)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -151,25 +154,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stavke nabavke";
             // 
+            // btnListaArtikala
+            // 
+            this.btnListaArtikala.Location = new System.Drawing.Point(267, 27);
+            this.btnListaArtikala.Name = "btnListaArtikala";
+            this.btnListaArtikala.Size = new System.Drawing.Size(210, 23);
+            this.btnListaArtikala.TabIndex = 25;
+            this.btnListaArtikala.Text = "Uvid u listu artikala";
+            this.btnListaArtikala.UseVisualStyleBackColor = true;
+            this.btnListaArtikala.Click += new System.EventHandler(this.BtnListaArtikala_Click);
+            // 
             // txtSifra
             // 
             this.txtSifra.Location = new System.Drawing.Point(82, 30);
             this.txtSifra.Name = "txtSifra";
             this.txtSifra.Size = new System.Drawing.Size(129, 20);
             this.txtSifra.TabIndex = 24;
+            this.txtSifra.Validating += new System.ComponentModel.CancelEventHandler(this.TxtSifra_Validating);
             // 
             // dgvStavkeNabavke
             // 
             this.dgvStavkeNabavke.AllowUserToAddRows = false;
             this.dgvStavkeNabavke.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStavkeNabavke.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvStavkeNabavke.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStavkeNabavke.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvStavkeNabavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeNabavke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NabavkaStavkeId,
@@ -177,25 +192,25 @@
             this.Sifra,
             this.Kolicina,
             this.Cijena});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStavkeNabavke.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStavkeNabavke.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvStavkeNabavke.Location = new System.Drawing.Point(23, 94);
             this.dgvStavkeNabavke.Name = "dgvStavkeNabavke";
             this.dgvStavkeNabavke.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStavkeNabavke.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStavkeNabavke.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvStavkeNabavke.Size = new System.Drawing.Size(454, 151);
             this.dgvStavkeNabavke.TabIndex = 23;
             // 
@@ -212,7 +227,6 @@
             this.Artikal.HeaderText = "Artikal";
             this.Artikal.Name = "Artikal";
             this.Artikal.ReadOnly = true;
-            this.Artikal.Width = 110;
             // 
             // Sifra
             // 
@@ -251,6 +265,7 @@
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(129, 20);
             this.txtKolicina.TabIndex = 21;
+            this.txtKolicina.Validating += new System.ComponentModel.CancelEventHandler(this.TxtKolicina_Validating);
             // 
             // label11
             // 
@@ -277,6 +292,7 @@
             this.cmbSkladista.Name = "cmbSkladista";
             this.cmbSkladista.Size = new System.Drawing.Size(179, 21);
             this.cmbSkladista.TabIndex = 11;
+            this.cmbSkladista.Validating += new System.ComponentModel.CancelEventHandler(this.CmbSkladista_Validating);
             // 
             // cmbDobavljaci
             // 
@@ -285,6 +301,7 @@
             this.cmbDobavljaci.Name = "cmbDobavljaci";
             this.cmbDobavljaci.Size = new System.Drawing.Size(179, 21);
             this.cmbDobavljaci.TabIndex = 10;
+            this.cmbDobavljaci.Validating += new System.ComponentModel.CancelEventHandler(this.CmbDobavljaci_Validating);
             // 
             // label6
             // 
@@ -310,6 +327,7 @@
             this.txtNapomena.Name = "txtNapomena";
             this.txtNapomena.Size = new System.Drawing.Size(200, 20);
             this.txtNapomena.TabIndex = 5;
+            this.txtNapomena.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNapomena_Validating);
             // 
             // label3
             // 
@@ -326,6 +344,7 @@
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(200, 20);
             this.dtpDatum.TabIndex = 3;
+            this.dtpDatum.Validating += new System.ComponentModel.CancelEventHandler(this.DtpDatum_Validating);
             // 
             // label2
             // 
@@ -343,6 +362,7 @@
             this.txtBrojNabavke.Size = new System.Drawing.Size(67, 20);
             this.txtBrojNabavke.TabIndex = 1;
             this.txtBrojNabavke.TextChanged += new System.EventHandler(this.TxtBrojNabavke_TextChanged);
+            this.txtBrojNabavke.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBrojNabavke_Validating);
             // 
             // label1
             // 
@@ -353,15 +373,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Broj nabavke:";
             // 
-            // btnListaArtikala
+            // errorProvider
             // 
-            this.btnListaArtikala.Location = new System.Drawing.Point(267, 27);
-            this.btnListaArtikala.Name = "btnListaArtikala";
-            this.btnListaArtikala.Size = new System.Drawing.Size(210, 23);
-            this.btnListaArtikala.TabIndex = 25;
-            this.btnListaArtikala.Text = "Uvid u listu artikala";
-            this.btnListaArtikala.UseVisualStyleBackColor = true;
-            this.btnListaArtikala.Click += new System.EventHandler(this.BtnListaArtikala_Click);
+            this.errorProvider.ContainerControl = this;
             // 
             // frmNovaNabavka
             // 
@@ -377,6 +391,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeNabavke)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,5 +427,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cijena;
         private System.Windows.Forms.Button btnListaArtikala;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

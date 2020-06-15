@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MobileShop.Mobile.ViewModels
 {
     public class NarudzbaViewModel :BaseViewModel
     {
+      
         public ObservableCollection<ArtikliDetailViewModel> NarudzbaList { get; set; } = new ObservableCollection<ArtikliDetailViewModel>();
-
+      
        
         decimal _brojartikala = 0;
 
@@ -25,22 +29,34 @@ namespace MobileShop.Mobile.ViewModels
             get { return _iznos; }
             set { SetProperty(ref _iznos, value); }
         }
+      
         public void Init()
         {
-           
             
-            NarudzbaList.Clear();
-
-
-            foreach(var item in CartService.Cart.Values)
+           
+            foreach (var item in CartService.Cart.Values)
             {
-                NarudzbaList.Add(item);
-                Iznos+= item.Kolicina * item.Artikal.Cijena;
                
+                NarudzbaList.Add(item);
+                //Iznos+= item.Kolicina * item.Artikal.Cijena;
+
+               
+                
+                
+            }
+            Iznos = 0;
+            foreach(var item in NarudzbaList)
+            {
+               
+                Iznos += item.Kolicina * item.Artikal.Cijena;
             }
 
             BrojArtikala = NarudzbaList.Count();
+
+
             
+            CartService.Cart.Clear();
+
         }
     }
 }

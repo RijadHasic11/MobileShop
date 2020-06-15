@@ -83,6 +83,7 @@
             // 
             this.dgvNarudzbe.AllowUserToAddRows = false;
             this.dgvNarudzbe.AllowUserToDeleteRows = false;
+            this.dgvNarudzbe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNarudzbe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNarudzbe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NarudzbaId,
