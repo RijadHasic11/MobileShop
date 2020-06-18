@@ -24,20 +24,6 @@ using Microsoft.OpenApi.Models;
 
 namespace MobileShop.WebAPI
 {
-    //public class BasicAuthDocumentFilter : IDocumentFilter
-    //{
-    //    public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
-    //    {
-    //        var securityRequirements = new Dictionary<string, IEnumerable<string>>()
-    //    {
-    //        { "basic", new string[] { } }  // in swagger you specify empty list unless using OAuth2 scopes
-    //    };
-
-    //        swaggerDoc.Security = new[] { securityRequirements };
-    //    }
-
-    //}
-
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -61,12 +47,10 @@ namespace MobileShop.WebAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Api info", Version = "v1" });
-                //c.AddSecurityDefinition("basic", new BasicAuthScheme() { Type = "basic" });
-                //c.DocumentFilter<BasicAuthDocumentFilter>();
+                
 
             });
-            //services.AddAuthentication("BasicAuthentication")
-            //  .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+           
 
 
             services.AddScoped<IService<Model.Models.Klijenti,object>,BaseService<Model.Models.Klijenti,object,Model.Database.Klijenti>>();
@@ -87,7 +71,7 @@ namespace MobileShop.WebAPI
             services.AddScoped<INarudzbeService, NarudzbeService>();
             services.AddScoped<IStavkeNarudzbeService, StavkeNarudzbeService>();
             services.AddScoped<IService<Model.Models.PoslanaNarudzba,object>,BaseService<Model.Models.PoslanaNarudzba, object, Model.Database.PoslanaNarudzba>>();
-            services.AddScoped<ICRUDService<Model.Models.PoslanaNarudzba, object, object, Model.Requests.PoslanaNarudzbaUpdateRequest>, IPoslanaNarudzba>();
+            services.AddScoped<ICRUDService<Model.Models.PoslanaNarudzba, object, Model.Requests.PoslanaNarduzbaInsertRequest, Model.Requests.PoslanaNarudzbaUpdateRequest>, IPoslanaNarudzba>();
 
             services.AddScoped<IService<Model.Models.ZahtjeviStavke, object>, BaseService<Model.Models.ZahtjeviStavke, object, Model.Database.ZahtjeviStavke>>();
             services.AddScoped<ICRUDService<Model.Models.ZahtjeviStavke, object, ZahtjeviStavkeInsertRequest, object>, ZahtjeviStavkeService>();
@@ -109,6 +93,7 @@ namespace MobileShop.WebAPI
 
 
             services.AddScoped<IKlijentiService, KlijentiService>();
+            services.AddScoped<IRecommender, RecommenderService>();
            
            
 
@@ -126,8 +111,7 @@ namespace MobileShop.WebAPI
                 app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
-            
+          
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
@@ -142,7 +126,7 @@ namespace MobileShop.WebAPI
             
 
             app.UseMvc();
-            //app.UseAuthentication();
+            
         }
     }
 }

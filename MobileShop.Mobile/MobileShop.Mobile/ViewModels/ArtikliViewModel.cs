@@ -13,12 +13,17 @@ namespace MobileShop.Mobile.ViewModels
     {
         private readonly APIService _artikliService = new APIService("Artikli");
         private readonly APIService _proizvodjaciService = new APIService("Proizvodjaci");
+       
+        
         public ArtikliViewModel()
         {
             InitCommand = new Command(async () => await  Init());
         }
         public ObservableCollection<Model.Models.Artikli> ArtikliList { get; set; } = new ObservableCollection<Model.Models.Artikli>();
         public ObservableCollection<Model.Models.Proizvodjaci> ProizvodjaciList { get; set; } = new ObservableCollection<Model.Models.Proizvodjaci>();
+
+      
+
 
 
         Model.Models.Proizvodjaci _SelectedProizvodjac = null;
@@ -36,16 +41,8 @@ namespace MobileShop.Mobile.ViewModels
             }
         }
         public ICommand InitCommand { get; set; }
-        public async Task InitArtikle()
-        {
-            List<Model.Models.Artikli> lista = await _artikliService.Get<List<Model.Models.Artikli>>(null);
-
-            foreach (var item in lista)
-            {
-                ArtikliList.Add(item);
-            }
-
-        }
+       
+       
 
         public async Task Init()
         {
@@ -67,6 +64,19 @@ namespace MobileShop.Mobile.ViewModels
 
                 ArtikliList.Clear();
 
+
+                foreach (var item in lista)
+                {
+                    ArtikliList.Add(item);
+                }
+            }
+            else
+            {
+                List<Model.Models.Artikli> lista = await _artikliService.Get<List<Model.Models.Artikli>>(null);
+
+                ArtikliList.Clear();
+
+
                 foreach (var item in lista)
                 {
                     ArtikliList.Add(item);
@@ -75,5 +85,6 @@ namespace MobileShop.Mobile.ViewModels
 
             
         }
+       
     }
 }

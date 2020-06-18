@@ -39,7 +39,7 @@ namespace MobileShop.WebAPI.Services
                 stavka.Artikal = artikal.Naziv;
                 stavka.Model = artikal.Modeli.Naziv;
                 stavka.Proizvodjac = artikal.Proizvodjaci.Naziv;
-                stavka.Slika = artikal.Slika;
+                stavka.Slika = artikal.SlikaThumb;
 
                 StavkeNabavkeList.Add(stavka);
                 

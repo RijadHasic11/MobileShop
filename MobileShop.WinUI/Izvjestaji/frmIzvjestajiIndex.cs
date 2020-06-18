@@ -42,15 +42,30 @@ namespace MobileShop.WinUI.Izvjestaji
                 {
                     if (item1.ArtikalId == item2.ArtikalId)
                     {
-                        prodani.Add(new Model.Models.ProdaniArtikli
+
+                        Model.Models.ProdaniArtikli novi = new Model.Models.ProdaniArtikli
                         {
-                            
+
                             Cijena = item1.Cijena,
                             Kolicina = item1.Kolicina,
                             Naziv = item2.Naziv,
                             Sifra = item2.Sifra,
                             Ukupno = item1.Kolicina * item1.Cijena
-                        });
+                        };
+                        var postoji = false;
+                        foreach(var item3 in prodani)
+                        {
+                            if (item3.Naziv.Equals(novi.Naziv))
+                            {
+                                postoji = true;
+                                item3.Kolicina += novi.Kolicina;
+                                item3.Ukupno += item3.Cijena * novi.Kolicina;
+                            }
+                        }
+                        if (postoji == false)
+                        {
+                            prodani.Add(novi);
+                        }
                     }
                    
                 }
@@ -69,6 +84,10 @@ namespace MobileShop.WinUI.Izvjestaji
 
             txtPretraga.Enabled = true;
             btnPretraga.Enabled = true;
+
+            dataGridView1.DataSource = null;
+
+            txtPretraga.Text = "";
          
 
         }
@@ -135,7 +154,26 @@ namespace MobileShop.WinUI.Izvjestaji
             txtPretraga.Enabled = true;
             btnPretraga.Enabled = true;
 
+            dataGridView1.DataSource = null;
 
+            txtPretraga.Text = "";
+
+        }
+
+        private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
+        Bitmap bmp;
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            int height = dataGridView1.Height;
+            dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height * 2;
+            bmp = new Bitmap(dataGridView1.Width, dataGridView1.Height);
+            dataGridView1.DrawToBitmap(bmp, new Rectangle(0, 0, dataGridView1.Width, dataGridView1.Height));
+            dataGridView1.Height = height;
+            printPreviewDialog1.ShowDialog();
+         
         }
     }
 }

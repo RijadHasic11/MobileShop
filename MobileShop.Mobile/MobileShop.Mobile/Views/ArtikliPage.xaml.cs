@@ -26,7 +26,6 @@ namespace MobileShop.Mobile.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await model.InitArtikle();
             await model.Init();
         }
 

@@ -107,7 +107,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(401, 27);
+            this.btnLoad.Location = new System.Drawing.Point(259, 63);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 4;
@@ -159,6 +159,7 @@
             // 
             this.txtSkladiste.Location = new System.Drawing.Point(95, 21);
             this.txtSkladiste.Name = "txtSkladiste";
+            this.txtSkladiste.ReadOnly = true;
             this.txtSkladiste.Size = new System.Drawing.Size(178, 20);
             this.txtSkladiste.TabIndex = 13;
             // 
@@ -166,6 +167,7 @@
             // 
             this.txtNapomena.Location = new System.Drawing.Point(95, 137);
             this.txtNapomena.Name = "txtNapomena";
+            this.txtNapomena.ReadOnly = true;
             this.txtNapomena.Size = new System.Drawing.Size(178, 20);
             this.txtNapomena.TabIndex = 12;
             // 
@@ -181,7 +183,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(170, 113);
+            this.label8.Location = new System.Drawing.Point(170, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 10;
@@ -191,13 +193,14 @@
             // 
             this.txtPDV.Location = new System.Drawing.Point(208, 106);
             this.txtPDV.Name = "txtPDV";
+            this.txtPDV.ReadOnly = true;
             this.txtPDV.Size = new System.Drawing.Size(65, 20);
             this.txtPDV.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 113);
+            this.label7.Location = new System.Drawing.Point(18, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 8;
@@ -207,6 +210,7 @@
             // 
             this.txtIznosRacuna.Location = new System.Drawing.Point(95, 106);
             this.txtIznosRacuna.Name = "txtIznosRacuna";
+            this.txtIznosRacuna.ReadOnly = true;
             this.txtIznosRacuna.Size = new System.Drawing.Size(69, 20);
             this.txtIznosRacuna.TabIndex = 7;
             // 
@@ -214,11 +218,13 @@
             // 
             this.txtBrojNabavke.Location = new System.Drawing.Point(95, 51);
             this.txtBrojNabavke.Name = "txtBrojNabavke";
+            this.txtBrojNabavke.ReadOnly = true;
             this.txtBrojNabavke.Size = new System.Drawing.Size(178, 20);
             this.txtBrojNabavke.TabIndex = 6;
             // 
             // dtpDatum
             // 
+            this.dtpDatum.Enabled = false;
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDatum.Location = new System.Drawing.Point(95, 77);
             this.dtpDatum.Name = "dtpDatum";
@@ -228,7 +234,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 84);
+            this.label6.Location = new System.Drawing.Point(18, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 4;
@@ -237,7 +243,7 @@
             // BrojNabavke
             // 
             this.BrojNabavke.AutoSize = true;
-            this.BrojNabavke.Location = new System.Drawing.Point(18, 58);
+            this.BrojNabavke.Location = new System.Drawing.Point(18, 54);
             this.BrojNabavke.Name = "BrojNabavke";
             this.BrojNabavke.Size = new System.Drawing.Size(73, 13);
             this.BrojNabavke.TabIndex = 3;
@@ -246,7 +252,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 29);
+            this.label5.Location = new System.Drawing.Point(18, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 1;
@@ -281,6 +287,7 @@
             // 
             this.txtTelefon.Location = new System.Drawing.Point(88, 95);
             this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.ReadOnly = true;
             this.txtTelefon.Size = new System.Drawing.Size(161, 20);
             this.txtTelefon.TabIndex = 4;
             // 
@@ -297,6 +304,7 @@
             // 
             this.txtKontaktOsoba.Location = new System.Drawing.Point(88, 59);
             this.txtKontaktOsoba.Name = "txtKontaktOsoba";
+            this.txtKontaktOsoba.ReadOnly = true;
             this.txtKontaktOsoba.Size = new System.Drawing.Size(161, 20);
             this.txtKontaktOsoba.TabIndex = 2;
             // 
@@ -313,6 +321,7 @@
             // 
             this.txtNazivDobavljaca.Location = new System.Drawing.Point(87, 23);
             this.txtNazivDobavljaca.Name = "txtNazivDobavljaca";
+            this.txtNazivDobavljaca.ReadOnly = true;
             this.txtNazivDobavljaca.Size = new System.Drawing.Size(162, 20);
             this.txtNazivDobavljaca.TabIndex = 0;
             // 
@@ -330,6 +339,7 @@
             // 
             this.dgvStavkeNabavke.AllowUserToAddRows = false;
             this.dgvStavkeNabavke.AllowUserToDeleteRows = false;
+            this.dgvStavkeNabavke.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStavkeNabavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeNabavke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StavkeNabavkeId,
@@ -380,7 +390,6 @@
             this.Cijena.HeaderText = "Cijena";
             this.Cijena.Name = "Cijena";
             this.Cijena.ReadOnly = true;
-            this.Cijena.Width = 85;
             // 
             // Kolicina
             // 
@@ -388,7 +397,6 @@
             this.Kolicina.HeaderText = "Kolicina";
             this.Kolicina.Name = "Kolicina";
             this.Kolicina.ReadOnly = true;
-            this.Kolicina.Width = 83;
             // 
             // Slika
             // 

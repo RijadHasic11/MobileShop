@@ -37,11 +37,13 @@ namespace MobileShop.WinUI.Obavijesti
 
         private void DgvObavijesti_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var ObavijestId = int.Parse(dgvObavijesti.SelectedRows[0].Cells[0].Value.ToString());
 
-            frmObavijestiDetalji forma = new frmObavijestiDetalji(ObavijestId);
-            forma.Show();
-
+            if (e.RowIndex >= 0)
+            {
+                int ObavijestId = Convert.ToInt32(dgvObavijesti.Rows[dgvObavijesti.CurrentRow.Index].Cells[0].Value);
+                frmObavijestiDetalji frm = new frmObavijestiDetalji(ObavijestId);
+                frm.Show();
+            }
         }
 
         private void BtnNovaObavijest_Click(object sender, EventArgs e)

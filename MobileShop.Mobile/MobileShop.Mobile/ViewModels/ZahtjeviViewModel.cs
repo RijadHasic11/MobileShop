@@ -39,7 +39,7 @@ namespace MobileShop.Mobile.ViewModels
             ZahtjeviInsertRequest request = new ZahtjeviInsertRequest();
 
             request.DatumZahtjeva = DateTime.Now;
-            request.KlijentId = 1;
+            request.KlijentId = Global.PrijavljeniKlijent.KlijentId;
             request.Naslov = Naslov;
             request.Opis = Opis;
 

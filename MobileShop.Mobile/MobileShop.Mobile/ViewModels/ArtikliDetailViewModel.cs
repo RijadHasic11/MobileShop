@@ -21,6 +21,7 @@ namespace MobileShop.Mobile.ViewModels
         private readonly APIService _karakteristikeService = new APIService("Karakteristike");
         private readonly APIService _artikliService = new APIService("Artikli");
         private readonly APIService _ocjeneService = new APIService("Ocjene");
+        private readonly APIService _recommenderService = new APIService("Recommender");
         public ArtikliDetailViewModel()
         {
             PovecajKolicinuCommand = new Command(() => Kolicina += 1);
@@ -42,11 +43,49 @@ namespace MobileShop.Mobile.ViewModels
             });
             NaruciCommand = new Command(Naruci);
             InitCommand = new Command(async () => await  Init());
+            RecommenderCommand = new Command(async () => await Recommender());
             OcijeniSa1Command = new Command(async () => await  Ocijeni(1));
             OcijeniSa2Command = new Command(async () => await  Ocijeni(2));
             OcijeniSa3Command = new Command(async () => await  Ocijeni(3));
             OcijeniSa4Command = new Command(async () => await  Ocijeni(4));
             OcijeniSa5Command = new Command(async () => await  Ocijeni(5));
+
+        }
+        public async Task Recommender()
+        {
+            RecommenderList.Clear();
+            List<Model.Models.Artikli> lista = new List<Model.Models.Artikli>();
+            lista = await _recommenderService.GetSlicneArtikle<List<Model.Models.Artikli>>(Artikal.ArtikalId);
+
+            List<Model.Models.Ocjene> listaocjena = new List<Model.Models.Ocjene>();
+            listaocjena = await _ocjeneService.Get<List<Model.Models.Ocjene>>(null);
+
+           
+
+            foreach (var item in lista)
+            {
+                int ukupno = 0;
+                decimal iznos = 0;
+
+                foreach (var item2 in listaocjena)
+                {
+                    if (item2.ArtikalId == item.ArtikalId)
+                    {
+                        iznos += item2.Ocjena;
+                        ukupno++;
+                    }
+                }
+
+                item.ProsjecnaOcjena = iznos / ukupno;
+
+
+                RecommenderList.Add(item);
+
+            }
+
+           
+          
+
 
         }
         public async Task Ocijeni(int ocjena)
@@ -81,6 +120,8 @@ namespace MobileShop.Mobile.ViewModels
         public Model.Models.Karakteristike SelectedKarakteristika { get; set; } = new Model.Models.Karakteristike();
         public ObservableCollection<Model.Models.Artikli> ArtikliList { get; set; } = new ObservableCollection<Model.Models.Artikli>();
         public ObservableCollection<Model.Models.Ocjene> OcjeneArtiklaList { get; set; } = new ObservableCollection<Model.Models.Ocjene>();
+
+        public ObservableCollection<Model.Models.Artikli> RecommenderList { get; set; } = new ObservableCollection<Artikli>();
         
 
         public async Task Init()
@@ -145,6 +186,8 @@ namespace MobileShop.Mobile.ViewModels
 
         public ICommand NaruciCommand { get; set; }
         public ICommand InitCommand { get; set; }
+
+        public ICommand RecommenderCommand { get; set; }
         private async void UcitajKaratkeristiku()
         {
             var karakteristike = await _karakteristikeService.GetById<Model.Models.Karakteristike>(_SelectedArtikal.KarakteristikeId);
@@ -152,11 +195,18 @@ namespace MobileShop.Mobile.ViewModels
         }
         private void Naruci()
         {
-            if (CartService.Cart.ContainsKey(Artikal.ArtikalId))
+            if (Kolicina > 0)
             {
-                CartService.Cart.Remove(Artikal.ArtikalId);
+                if (CartService.Cart.ContainsKey(Artikal.ArtikalId))
+                {
+                    CartService.Cart.Remove(Artikal.ArtikalId);
+                }
+                CartService.Cart.Add(Artikal.ArtikalId, this);
             }
-            CartService.Cart.Add(Artikal.ArtikalId, this);
+            else
+            {
+                App.Current.MainPage.DisplayAlert("Kolicina ne moze biti 0,povecaj kolicinu", "", "OK");
+            }
 
         }
 

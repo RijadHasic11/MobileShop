@@ -16,24 +16,12 @@ namespace MobileShop.WinUI.Obavijesti
     public partial class frmNovaObavijest : Form
     {
         private readonly APIService _service = new APIService("Obavijesti");
-        private readonly APIService _serviceKorisnici = new APIService("Korisnici");
+      
 
         ObavijestInsertRequest request = new ObavijestInsertRequest();
         public frmNovaObavijest()
         {
             InitializeComponent();
-        }
-
-        private async void FrmNovaObavijest_Load(object sender, EventArgs e)
-        {
-            List<Model.Models.Korisnici> result = await _serviceKorisnici.Get<List<Model.Models.Korisnici>>(null);
-
-            result.Insert(0, new Model.Models.Korisnici());
-            cmbKorisnici.DisplayMember = "KorisnickoIme";
-            cmbKorisnici.ValueMember = "KorisnikId";
-            cmbKorisnici.DataSource = result;
-
-
         }
 
         private void BtnSlikaDodaj_Click(object sender, EventArgs e)
@@ -71,22 +59,52 @@ namespace MobileShop.WinUI.Obavijesti
 
         private void BtnSacuvaj_Click(object sender, EventArgs e)
         {
-            if (request.Slika != null)
+            if (this.ValidateChildren())
             {
-                request.KorisnikId = int.Parse(cmbKorisnici.SelectedValue.ToString());
-                request.Naslov = txtNaslov.Text;
-                request.Text = rtxtTekst.Text;
+                if (request.Slika != null)
+                {
+                    request.KorisnikId = Global.PrijavljeniKorisnik.KorisnikId;
+                    request.Naslov = txtNaslov.Text;
+                    request.Text = rtxtTekst.Text;
 
 
-                _service.Insert<Model.Models.Obavijesti>(request);
-                MessageBox.Show("Uspjesno objavljena nova obavijest!");
+                    _service.Insert<Model.Models.Obavijesti>(request);
+                    MessageBox.Show("Uspjesno objavljena nova obavijest!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Potrebno unijeti sliku!");
+                }
+            }
+        }
+
+        private void TxtNaslov_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNaslov.Text))
+            {
+                errorProvider.SetError(txtNaslov, "Obavezno polje");
+                e.Cancel = true;
 
             }
             else
             {
-                MessageBox.Show("Potrebno unijeti sliku!");
+                errorProvider.SetError(txtNaslov, null);
             }
+        }
 
+        private void RtxtTekst_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(rtxtTekst.Text) || rtxtTekst.Text.Length < 20)
+            {
+                errorProvider.SetError(rtxtTekst, "Minimalno 20 karaktera");
+                e.Cancel = true;
+
+            }
+            else
+            {
+                errorProvider.SetError(rtxtTekst, null);
+            }
         }
     }
 

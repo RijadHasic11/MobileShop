@@ -1,9 +1,12 @@
-﻿using MobileShop.Mobile.ViewModels;
+﻿
+using MobileShop.Mobile.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,6 +17,8 @@ namespace MobileShop.Mobile.Views
     public partial class ArtikliDetailPage : ContentPage
     {
         private ArtikliDetailViewModel model = null;
+        private readonly APIService _karakteristikeService = new APIService("Karakteristike");
+
         public ArtikliDetailPage(Model.Models.Artikli artikal, Model.Models.Karakteristike karakteristike)
         {
             BindingContext = model = new ArtikliDetailViewModel
@@ -23,11 +28,17 @@ namespace MobileShop.Mobile.Views
             
             };
             InitializeComponent();
+
+           
         }
        
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            DisplayAlert("Uspjeh", "Uspjesno dodan artikal u korpu", "OK");
+            if (model.Kolicina > 0)
+            {
+                DisplayAlert("Uspjeh", "Uspjesno dodan artikal u korpu", "OK");
+            }
+           
         }
 
         protected  override async void  OnAppearing()
@@ -37,6 +48,10 @@ namespace MobileShop.Mobile.Views
             model.NaStanju_IsVisible = model.Artikal.Status.Value;
             model.NijeNaStanju_IsVisible = !model.Artikal.Status.Value;
             await model.Init();
+            await model.Recommender();
+
+
+
         }
         //private async void UporediDvaArtikla(Model.Models.Artikli artikal1, Model.Models.Karakteristike karakteristika1, Model.Models.Artikli artikal2, Model.Models.Karakteristike karakteristika2)
         //{
@@ -46,8 +61,14 @@ namespace MobileShop.Mobile.Views
         //    //Navigation.PushAsync(new DvaArtiklaPage(artikal1, karakteristika1, artikal2, karakteristika2));
 
         //}
-     
 
+        private async void preporuceniProizvodiList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var artikal1 = e.SelectedItem as Model.Models.Artikli;
+            var karakteristike = await _karakteristikeService.GetById<Model.Models.Karakteristike>(artikal1.KarakteristikeId);
+
+            await Navigation.PushAsync(new ArtikliDetailPage(artikal1,karakteristike));
+        }
 
     }
 }

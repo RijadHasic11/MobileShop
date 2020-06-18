@@ -10,7 +10,6 @@ namespace MobileShop.Mobile.Models
         Kontakt,
         Artikli,
         Narudzba,
-        Placanje,
         Obavijesti,
         Zahtjevi,
         HistorijaZahtjeva,

@@ -116,7 +116,7 @@ namespace MobileShop.WinUI
                 }
 
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
 
         }

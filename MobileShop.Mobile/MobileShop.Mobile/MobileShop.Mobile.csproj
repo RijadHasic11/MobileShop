@@ -10,8 +10,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\CreditCard.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CreditCard.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.442" />
     <PackageReference Include="Flurl" Version="2.8.2" />
     <PackageReference Include="Flurl.Http" Version="2.4.2" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
+    <PackageReference Include="Stripe.net" Version="37.4.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.778454" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />  
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.1.0.778454" />  
@@ -50,10 +61,10 @@
     <EmbeddedResource Update="Views\ArtikliPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CreditCardDisplayView.xaml">
+    <EmbeddedResource Update="Views\HistorijaNarudzbi.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CreditCardPage.xaml">
+    <EmbeddedResource Update="Views\HistorijaNarudzbiDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\HistorijaZahtjevaPage.xaml">
@@ -69,6 +80,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RegistracijaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\StripePaymentGatwayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\UporediDvaArtiklaPage.xaml">

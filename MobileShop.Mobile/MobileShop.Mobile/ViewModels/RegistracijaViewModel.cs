@@ -13,7 +13,7 @@ namespace MobileShop.Mobile.ViewModels
         private readonly APIService _service = new APIService("Klijenti");
         public RegistracijaViewModel()
         {
-            RegistracijaCommand = new Command(async () => await Registracija());
+          
 
         }
         string _ime = string.Empty;
@@ -59,9 +59,9 @@ namespace MobileShop.Mobile.ViewModels
             set { SetProperty(ref _potvrda, value); }
         }
 
-        public ICommand RegistracijaCommand { get; set; }
+        
 
-        async Task Registracija()
+        public async Task Registracija()
         {
             KlijentiInsertRequest request = new KlijentiInsertRequest();
             request.DatumRegistracije = DateTime.Now;
@@ -83,5 +83,6 @@ namespace MobileShop.Mobile.ViewModels
 
 
         }
+
     }
 }

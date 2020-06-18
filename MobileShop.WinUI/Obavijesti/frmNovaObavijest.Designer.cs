@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbKorisnici = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNaslov = new System.Windows.Forms.TextBox();
             this.rtxtTekst = new System.Windows.Forms.RichTextBox();
@@ -40,31 +39,18 @@
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Korisnik:";
-            // 
-            // cmbKorisnici
-            // 
-            this.cmbKorisnici.FormattingEnabled = true;
-            this.cmbKorisnici.Location = new System.Drawing.Point(83, 22);
-            this.cmbKorisnici.Name = "cmbKorisnici";
-            this.cmbKorisnici.Size = new System.Drawing.Size(192, 21);
-            this.cmbKorisnici.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 60);
+            this.label2.Location = new System.Drawing.Point(30, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 2;
@@ -72,23 +58,24 @@
             // 
             // txtNaslov
             // 
-            this.txtNaslov.Location = new System.Drawing.Point(83, 53);
+            this.txtNaslov.Location = new System.Drawing.Point(83, 26);
             this.txtNaslov.Name = "txtNaslov";
             this.txtNaslov.Size = new System.Drawing.Size(192, 20);
             this.txtNaslov.TabIndex = 3;
+            this.txtNaslov.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNaslov_Validating);
             // 
             // rtxtTekst
             // 
-            this.rtxtTekst.Location = new System.Drawing.Point(33, 129);
+            this.rtxtTekst.Location = new System.Drawing.Point(33, 76);
             this.rtxtTekst.Name = "rtxtTekst";
-            this.rtxtTekst.Size = new System.Drawing.Size(242, 181);
+            this.rtxtTekst.Size = new System.Drawing.Size(242, 234);
             this.rtxtTekst.TabIndex = 4;
             this.rtxtTekst.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 101);
+            this.label3.Location = new System.Drawing.Point(30, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 5;
@@ -106,14 +93,14 @@
             // 
             // txtSlikaInput
             // 
-            this.txtSlikaInput.Location = new System.Drawing.Point(318, 22);
+            this.txtSlikaInput.Location = new System.Drawing.Point(318, 26);
             this.txtSlikaInput.Name = "txtSlikaInput";
             this.txtSlikaInput.Size = new System.Drawing.Size(223, 20);
             this.txtSlikaInput.TabIndex = 7;
             // 
             // btnSlikaDodaj
             // 
-            this.btnSlikaDodaj.Location = new System.Drawing.Point(561, 20);
+            this.btnSlikaDodaj.Location = new System.Drawing.Point(571, 24);
             this.btnSlikaDodaj.Name = "btnSlikaDodaj";
             this.btnSlikaDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnSlikaDodaj.TabIndex = 8;
@@ -145,6 +132,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Slika";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmNovaObavijest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,23 +153,19 @@
             this.Controls.Add(this.rtxtTekst);
             this.Controls.Add(this.txtNaslov);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbKorisnici);
-            this.Controls.Add(this.label1);
             this.Name = "frmNovaObavijest";
             this.Text = "frmNovaObavijest";
-            this.Load += new System.EventHandler(this.FrmNovaObavijest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbKorisnici;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNaslov;
         private System.Windows.Forms.RichTextBox rtxtTekst;
@@ -185,5 +176,7 @@
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

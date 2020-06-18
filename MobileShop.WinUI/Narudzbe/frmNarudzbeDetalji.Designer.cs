@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnZakljuci = new System.Windows.Forms.Button();
-            this.txtSkladiste = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtKlijent = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Popust = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbSkladista = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupbox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,8 +85,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbSkladista);
             this.groupBox1.Controls.Add(this.btnZakljuci);
-            this.groupBox1.Controls.Add(this.txtSkladiste);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtKlijent);
             this.groupBox1.Controls.Add(this.label5);
@@ -106,6 +106,7 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalji narudzbe";
+            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
             // btnZakljuci
             // 
@@ -116,14 +117,6 @@
             this.btnZakljuci.Text = "Zakljuci narudzbu";
             this.btnZakljuci.UseVisualStyleBackColor = true;
             this.btnZakljuci.Click += new System.EventHandler(this.BtnZakljuci_Click);
-            // 
-            // txtSkladiste
-            // 
-            this.txtSkladiste.Location = new System.Drawing.Point(373, 53);
-            this.txtSkladiste.Name = "txtSkladiste";
-            this.txtSkladiste.ReadOnly = true;
-            this.txtSkladiste.Size = new System.Drawing.Size(157, 20);
-            this.txtSkladiste.TabIndex = 15;
             // 
             // label6
             // 
@@ -188,6 +181,7 @@
             // cbOtkazano
             // 
             this.cbOtkazano.AutoSize = true;
+            this.cbOtkazano.Enabled = false;
             this.cbOtkazano.Location = new System.Drawing.Point(202, 85);
             this.cbOtkazano.Name = "cbOtkazano";
             this.cbOtkazano.Size = new System.Drawing.Size(72, 17);
@@ -198,6 +192,7 @@
             // cbStatus
             // 
             this.cbStatus.AutoSize = true;
+            this.cbStatus.Enabled = false;
             this.cbStatus.Location = new System.Drawing.Point(117, 85);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(56, 17);
@@ -207,6 +202,7 @@
             // 
             // dtpDatum
             // 
+            this.dtpDatum.Enabled = false;
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDatum.Location = new System.Drawing.Point(117, 53);
             this.dtpDatum.Name = "dtpDatum";
@@ -285,6 +281,14 @@
             this.Popust.Name = "Popust";
             this.Popust.ReadOnly = true;
             // 
+            // cmbSkladista
+            // 
+            this.cmbSkladista.FormattingEnabled = true;
+            this.cmbSkladista.Location = new System.Drawing.Point(373, 52);
+            this.cmbSkladista.Name = "cmbSkladista";
+            this.cmbSkladista.Size = new System.Drawing.Size(157, 21);
+            this.cmbSkladista.TabIndex = 17;
+            // 
             // frmNarudzbeDetalji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,7 +313,6 @@
         private System.Windows.Forms.TextBox txtBrojNarudzbe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtSkladiste;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtKlijent;
         private System.Windows.Forms.Label label5;
@@ -329,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cijena;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Popust;
+        private System.Windows.Forms.ComboBox cmbSkladista;
     }
 }

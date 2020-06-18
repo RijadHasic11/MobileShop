@@ -135,5 +135,40 @@ namespace MobileShop.WebAPI.Services
                 _context.SaveChanges();
             }
         }
+        public void Update(int id,NarudzbeInsertRequest request)
+        {
+            //Model.Database.Narudzba nova = new Model.Database.Narudzba();
+
+            Model.Database.Narudzba nova=_context.Narudzba.Where(x=>x.NarudzbaId==id).Include(x => x.Klijent).Include(y => y.Korisnik).Include(p => p.Skladiste)
+                .SingleOrDefault();
+
+            nova.BrojNarudzbe = request.BrojNarudzbe;
+            nova.Datum = request.Datum;
+
+            if (request.IznosBezPdv > 0)
+            {
+                nova.IznosBezPdv = request.IznosBezPdv;
+            }
+            if (request.IznosSaPdv > 0)
+            {
+                nova.IznosSaPdv = request.IznosSaPdv;
+            }
+
+            nova.Otkazano = request.Otkazano;
+            nova.Status = request.Status;
+
+
+            nova.KorisnikId = request.KorisnikId;
+            nova.KlijentId = request.KlijentId;
+            nova.SkladisteId = request.SkladisteId;
+
+            _context.Narudzba.Attach(nova);
+            _context.Narudzba.Update(nova);
+
+            
+            _context.SaveChanges();
+
+           
+        }
     }
 }

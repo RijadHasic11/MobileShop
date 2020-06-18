@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIndexProdavac));
             this.SideMenuPanel = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -52,6 +53,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.options = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detaljiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SideMenuPanel.SuspendLayout();
             this.IzvjestajiSubMenuPanel.SuspendLayout();
             this.NarudzbeSubMenuPanel.SuspendLayout();
@@ -62,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.options.SuspendLayout();
             this.SuspendLayout();
             // 
             // SideMenuPanel
@@ -409,6 +414,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // options
+            // 
+            this.options.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detaljiToolStripMenuItem,
+            this.oKToolStripMenuItem});
+            this.options.Name = "options";
+            this.options.Size = new System.Drawing.Size(181, 70);
+            // 
+            // detaljiToolStripMenuItem
+            // 
+            this.detaljiToolStripMenuItem.Name = "detaljiToolStripMenuItem";
+            this.detaljiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detaljiToolStripMenuItem.Text = "Detalji";
+            this.detaljiToolStripMenuItem.Click += new System.EventHandler(this.DetaljiToolStripMenuItem_Click);
+            // 
+            // oKToolStripMenuItem
+            // 
+            this.oKToolStripMenuItem.Name = "oKToolStripMenuItem";
+            this.oKToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oKToolStripMenuItem.Text = "OK";
+            this.oKToolStripMenuItem.Click += new System.EventHandler(this.OKToolStripMenuItem_Click);
+            // 
             // frmIndexProdavac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,6 +448,7 @@
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "frmIndexProdavac";
             this.Text = "Prodavac panel";
+            this.Load += new System.EventHandler(this.FrmIndexProdavac_Load);
             this.SideMenuPanel.ResumeLayout(false);
             this.IzvjestajiSubMenuPanel.ResumeLayout(false);
             this.NarudzbeSubMenuPanel.ResumeLayout(false);
@@ -431,6 +459,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.options.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -460,6 +489,9 @@
         private System.Windows.Forms.Button btnIzvjestaji;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnPregledIzvjestaja;
+        private System.Windows.Forms.ContextMenuStrip options;
+        private System.Windows.Forms.ToolStripMenuItem detaljiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oKToolStripMenuItem;
     }
 }
 

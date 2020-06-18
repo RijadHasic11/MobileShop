@@ -61,6 +61,7 @@
             // 
             this.txtNaslov.Location = new System.Drawing.Point(64, 23);
             this.txtNaslov.Name = "txtNaslov";
+            this.txtNaslov.ReadOnly = true;
             this.txtNaslov.Size = new System.Drawing.Size(122, 20);
             this.txtNaslov.TabIndex = 2;
             // 
@@ -77,6 +78,7 @@
             // 
             this.txtKorisnik.Location = new System.Drawing.Point(328, 23);
             this.txtKorisnik.Name = "txtKorisnik";
+            this.txtKorisnik.ReadOnly = true;
             this.txtKorisnik.Size = new System.Drawing.Size(97, 20);
             this.txtKorisnik.TabIndex = 4;
             // 

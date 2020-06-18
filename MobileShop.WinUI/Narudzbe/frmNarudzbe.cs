@@ -41,10 +41,20 @@ namespace MobileShop.WinUI.Narudzbe
 
         private void DgvNarudzbe_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var NarudzbaId = int.Parse(dgvNarudzbe.SelectedRows[0].Cells[0].Value.ToString());
+            
+        }
 
-            frmNarudzbeDetalji forma = new frmNarudzbeDetalji(NarudzbaId);
-            forma.Show();
+        private void DgvNarudzbe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int NarudzbaId = Convert.ToInt32(dgvNarudzbe.Rows[dgvNarudzbe.CurrentRow.Index].Cells[0].Value);
+                frmNarudzbeDetalji frm = new frmNarudzbeDetalji(NarudzbaId);
+                frm.Show();
+            }
         }
     }
 }

@@ -9,14 +9,14 @@ namespace MobileShop.Model.Requests
     {
         [Required]
         [MinLength(4)]
+        [RegularExpression(@"^[0-9]*$")]
         public string BrojNabavke { get; set; }
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime Datum { get; set; }
         public decimal IznosRacuna { get; set; }
-        [Required]
         public decimal Pdv { get; set; }
-        [Required]
+        [MinLength(10)]
         public string Napomena { get; set; }
         public int SkladisteId { get; set; }
         public int KorisnikId { get; set; }
