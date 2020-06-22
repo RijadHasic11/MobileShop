@@ -70,6 +70,7 @@ namespace MobileShop.WinUI.Obavijesti
 
                     _service.Insert<Model.Models.Obavijesti>(request);
                     MessageBox.Show("Uspjesno objavljena nova obavijest!");
+                    this.Close();
 
                 }
                 else

@@ -390,7 +390,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+           
             // 
             // panelChildForm
             // 
@@ -434,7 +434,7 @@
             this.oKToolStripMenuItem.Name = "oKToolStripMenuItem";
             this.oKToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oKToolStripMenuItem.Text = "OK";
-            this.oKToolStripMenuItem.Click += new System.EventHandler(this.OKToolStripMenuItem_Click);
+           
             // 
             // frmIndexProdavac
             // 

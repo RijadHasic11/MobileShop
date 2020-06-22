@@ -24,7 +24,9 @@ namespace MobileShop.WinUI
         private int Id = 0;
         public frmIndexProdavac()
         {
+            
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             hideSubMenu();
         }
         private void hideSubMenu()
@@ -125,10 +127,7 @@ namespace MobileShop.WinUI
             hideSubMenu();
         }
         #endregion
-        //private void BtnExit_Click(object sender, EventArgs e)
-        //{
-        //    Application.Exit();
-        //}
+       
 
 
         private void BtnExit_Click_1(object sender, EventArgs e)
@@ -149,11 +148,7 @@ namespace MobileShop.WinUI
             childForm.Show();
         }
 
-        private void PictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private async void FrmIndexProdavac_Load(object sender, EventArgs e)
         {
             
@@ -221,9 +216,6 @@ namespace MobileShop.WinUI
 
         }
 
-        private void OKToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

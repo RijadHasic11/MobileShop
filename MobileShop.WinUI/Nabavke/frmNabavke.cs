@@ -45,7 +45,7 @@ namespace MobileShop.WinUI.Nabavke
             }
             
             lista.Insert(0, new Model.Models.Nabavke());
-            cmbNabavke.DisplayMember = "BrojNabavke";
+            cmbNabavke.DisplayMember = "Napomena";
             cmbNabavke.ValueMember = "NabavkaId";
             cmbNabavke.DataSource = lista;
 

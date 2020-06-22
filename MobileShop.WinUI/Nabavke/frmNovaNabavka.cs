@@ -31,6 +31,7 @@ namespace MobileShop.WinUI.Nabavke
         public frmNovaNabavka()
         {
             InitializeComponent();
+            
             dgvStavkeNabavke.AutoGenerateColumns = false;
             
         }
@@ -130,6 +131,7 @@ namespace MobileShop.WinUI.Nabavke
                     _serviceNabavke.Insert<Model.Models.Nabavke>(request);
 
                     MessageBox.Show("Nabavka zakljucena");
+                    this.Close();
                 }
             }
             else
