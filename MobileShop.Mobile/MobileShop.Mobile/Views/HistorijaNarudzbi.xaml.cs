@@ -15,7 +15,7 @@ namespace MobileShop.Mobile.Views
     public partial class HistorijaNarudzbi : ContentPage
     {
         private HistorijaNarudzbiViewModel model =null;
-        private APIService service = new APIService("PoslanaNarudzba");
+        
         public HistorijaNarudzbi()
         {
             InitializeComponent();

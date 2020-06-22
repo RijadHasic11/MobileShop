@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using MobileShop.Model;
 using MobileShop.Model.Requests;
 using System;
@@ -16,7 +17,7 @@ namespace MobileShop.WebAPI.Services
         }
         public override List<Model.Models.Zahtjevi> Get(ZahtjeviSearchRequest search)
         {
-            var query = _context.Set<Model.Database.Zahtjevi>().AsQueryable();
+            var query = _context.Set<Model.Database.Zahtjevi>().Include(x=>x.Klijent).AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(search.Naslov))
             {
@@ -25,7 +26,23 @@ namespace MobileShop.WebAPI.Services
 
             var list = query.ToList();
 
-            return _mapper.Map<List<Model.Models.Zahtjevi>>(list);
+            List<Model.Models.Zahtjevi> result = new List<Model.Models.Zahtjevi>();
+            foreach(var item in list)
+            {
+                Model.Models.Zahtjevi zahtjev = new Model.Models.Zahtjevi();
+                zahtjev.DatumZahtjeva = item.DatumZahtjeva;
+                zahtjev.Klijent = item.Klijent.KorisnickoIme;
+                zahtjev.KlijentId = item.KlijentId;
+                zahtjev.Naslov = item.Naslov;
+                zahtjev.Opis = item.Opis;
+                zahtjev.Id = item.Id;
+
+                result.Add(zahtjev);
+
+            }
+
+
+            return result;
         }
     }
 }

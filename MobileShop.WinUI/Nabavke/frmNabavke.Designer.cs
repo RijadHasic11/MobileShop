@@ -257,7 +257,7 @@
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "Skladiste:";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
+           
             // 
             // groupBox3
             // 

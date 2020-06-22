@@ -118,7 +118,7 @@
             this.txtIznosRacuna.ReadOnly = true;
             this.txtIznosRacuna.Size = new System.Drawing.Size(88, 20);
             this.txtIznosRacuna.TabIndex = 15;
-            this.txtIznosRacuna.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+          
             // 
             // label8
             // 
@@ -361,7 +361,7 @@
             this.txtBrojNabavke.Name = "txtBrojNabavke";
             this.txtBrojNabavke.Size = new System.Drawing.Size(67, 20);
             this.txtBrojNabavke.TabIndex = 1;
-            this.txtBrojNabavke.TextChanged += new System.EventHandler(this.TxtBrojNabavke_TextChanged);
+          
             this.txtBrojNabavke.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBrojNabavke_Validating);
             // 
             // label1

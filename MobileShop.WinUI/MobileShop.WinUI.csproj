@@ -100,12 +100,6 @@
     <Compile Include="frmIndexAdmin.Designer.cs">
       <DependentUpon>frmIndexAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmIndex.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmIndex.Designer.cs">
-      <DependentUpon>frmIndex.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,9 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmIndexAdmin.resx">
       <DependentUpon>frmIndexAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmIndex.resx">
-      <DependentUpon>frmIndex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

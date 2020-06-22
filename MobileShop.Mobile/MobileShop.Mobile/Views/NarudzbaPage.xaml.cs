@@ -71,7 +71,7 @@ namespace MobileShop.Mobile.Views
 
                 
                 request.IznosBezPdv += stavka.Cijena * stavka.Kolicina;
-                request.IznosSaPdv += request.IznosBezPdv + request.IznosBezPdv * PDV;
+                request.IznosSaPdv = request.IznosBezPdv + request.IznosBezPdv * PDV;
 
 
                 request.stavke.Add(stavka);

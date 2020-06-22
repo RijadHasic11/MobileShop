@@ -44,6 +44,7 @@
             // 
             this.rtxtText.Location = new System.Drawing.Point(12, 313);
             this.rtxtText.Name = "rtxtText";
+            this.rtxtText.ReadOnly = true;
             this.rtxtText.Size = new System.Drawing.Size(413, 181);
             this.rtxtText.TabIndex = 0;
             this.rtxtText.Text = "";

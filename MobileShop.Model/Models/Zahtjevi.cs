@@ -11,6 +11,7 @@ namespace MobileShop.Model.Models
         public string Naslov { get; set; }
         public string Opis { get; set; }
         public int KlijentId { get; set; }
+        public string Klijent { get; set; }
 
 
     }

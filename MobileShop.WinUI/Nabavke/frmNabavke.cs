@@ -23,11 +23,6 @@ namespace MobileShop.WinUI.Nabavke
             
         }
 
-        private void Label5_Click(object sender, EventArgs e)
-        {
-
-
-        }
 
         private async void BtnLoad_Click(object sender, EventArgs e)
         {

@@ -110,9 +110,6 @@ namespace MobileShop.WinUI.Narudzbe
             
         }
 
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

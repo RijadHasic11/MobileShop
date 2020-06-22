@@ -35,20 +35,7 @@ namespace MobileShop.WinUI.Nabavke
             
         }
 
-        private void TxtBrojNabavke_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label10_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private async void FrmNovaNabavka_Load(object sender, EventArgs e)
         {
@@ -125,21 +112,29 @@ namespace MobileShop.WinUI.Nabavke
 
         private void BtnZakljuci_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren()) {
+            if (request.stavke.Count > 0)
+            {
+                if (this.ValidateChildren())
+                {
 
-                request.BrojNabavke = txtBrojNabavke.Text;
-                request.Datum = dtpDatum.Value;
-                request.DobavljacId = int.Parse(cmbDobavljaci.SelectedValue.ToString());
-                request.KorisnikId = Global.PrijavljeniKorisnik.KorisnikId;
-                request.Napomena = txtNapomena.Text;
-                request.SkladisteId = int.Parse(cmbSkladista.SelectedValue.ToString());
-                request.IznosRacuna = Iznos + IznosPdv;
-                request.Pdv = IznosPdv;
+                    request.BrojNabavke = txtBrojNabavke.Text;
+                    request.Datum = dtpDatum.Value;
+                    request.DobavljacId = int.Parse(cmbDobavljaci.SelectedValue.ToString());
+                    request.KorisnikId = Global.PrijavljeniKorisnik.KorisnikId;
+                    request.Napomena = txtNapomena.Text;
+                    request.SkladisteId = int.Parse(cmbSkladista.SelectedValue.ToString());
+                    request.IznosRacuna = Iznos + IznosPdv;
+                    request.Pdv = IznosPdv;
 
 
-                _serviceNabavke.Insert<Model.Models.Nabavke>(request);
+                    _serviceNabavke.Insert<Model.Models.Nabavke>(request);
 
-                MessageBox.Show("Nabavka zakljucena");
+                    MessageBox.Show("Nabavka zakljucena");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nije moguce zakljuciti nabavku na kojoj ne postoji bar jedan artikal");
             }
 
         }

@@ -38,7 +38,7 @@ namespace MobileShop.Mobile.ViewModels
             {
                
                 NarudzbaList.Add(item);
-                //Iznos+= item.Kolicina * item.Artikal.Cijena;
+                
 
                
                 

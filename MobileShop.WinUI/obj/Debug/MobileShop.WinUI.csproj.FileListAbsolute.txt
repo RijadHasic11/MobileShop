@@ -103,7 +103,6 @@ C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\Mobile
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Dobavljaci.frmDobavljaciDetalji.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndexProdavac.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndexAdmin.resources
-C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmIndex.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.frmLogin.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Izvjestaji.frmIzvjestajiIndex.resources
 C:\Users\hasic_000\Documents\GitHub\MobileShop\MobileShop.WinUI\obj\Debug\MobileShop.WinUI.Klijenti.frmKlijenti.resources

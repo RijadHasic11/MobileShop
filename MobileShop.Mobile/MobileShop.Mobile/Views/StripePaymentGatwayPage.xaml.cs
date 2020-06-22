@@ -22,6 +22,9 @@ namespace MobileShop.Mobile.Views
                 Iznos = Iznos
             };
 
+            NavigationPage.SetHasBackButton(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
         protected override void OnAppearing()
         {
