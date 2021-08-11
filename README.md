@@ -1,6 +1,6 @@
 # MobileShop
 
-WebApi, .Net Core, WinForms, Xamarin
+WebApi, .Net Core, WinForms,Entity Framework, Xamarin
 
 Some parts of windows and mobile applications:
 
